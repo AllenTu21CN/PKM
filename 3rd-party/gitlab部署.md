@@ -1,8 +1,8 @@
 
-## °²×°
+## å®‰è£…
 
 ```
-# docker°²×°gitlab
+# dockerå®‰è£…gitlab
 docker search gitlab
 docker pull docker.io/gitlab/gitlab-ce
 
@@ -23,13 +23,13 @@ services:
     hostname: git.mmx2.ml
 ```
 
-## ÅäÖÃ
+## é…ç½®
 
 ```
-# ÅäÖÃÍâ²¿·ÃÎÊurl: ĞŞ¸Ä`/etc/gitlab/gitlab.rb`
+# é…ç½®å¤–éƒ¨è®¿é—®url: ä¿®æ”¹`/etc/gitlab/gitlab.rb`
 external_url 'http://git.mmx2.ml'
 
-# ÓÊÏäÅäÖÃ,²Î¿¼[ÎÄµµ](https://docs.gitlab.com/omnibus/settings/smtp.html)
+# é‚®ç®±é…ç½®,å‚è€ƒ[æ–‡æ¡£](https://docs.gitlab.com/omnibus/settings/smtp.html)
 gitlab_rails['smtp_enable'] = true
 gitlab_rails['smtp_address'] = "smtp.163.com"
 gitlab_rails['smtp_port'] = 465
@@ -43,30 +43,30 @@ gitlab_rails['smtp_tls'] = true
 gitlab_rails['gitlab_email_from'] = "tuyajie21cn@163.com"
 user["git_user_email"] = "tuyajie21cn@163.com"
 
-# ·¢ËÍ²âÊÔÓÊ¼ş
+# å‘é€æµ‹è¯•é‚®ä»¶
 gitlab-rails console 
 Notify.test_email('415929165@qq.com', 'test main', 'test').deliver_now
 ```
 
-## ³£ÓÃÃüÁî
+## å¸¸ç”¨å‘½ä»¤
 
 ```
-# ÖØĞÂÓ¦ÓÃgitlabµÄÅäÖÃ
+# é‡æ–°åº”ç”¨gitlabçš„é…ç½®
 gitlab-ctl reconfigure
  
-# ÖØÆôgitlab·şÎñ
+# é‡å¯gitlabæœåŠ¡
 gitlab-ctl restart
  
-# ²é¿´gitlabÔËĞĞ×´Ì¬
+# æŸ¥çœ‹gitlabè¿è¡ŒçŠ¶æ€
 gitlab-ctl status
  
-#Í£Ö¹gitlab·şÎñ
+#åœæ­¢gitlabæœåŠ¡
 gitlab-ctl stop
  
-# ²é¿´gitlabÔËĞĞÈÕÖ¾
+# æŸ¥çœ‹gitlabè¿è¡Œæ—¥å¿—
 gitlab-ctl tail
  
-# Í£Ö¹Ïà¹ØÊı¾İÁ¬½Ó·şÎñ
+# åœæ­¢ç›¸å…³æ•°æ®è¿æ¥æœåŠ¡
 gitlab-ctl stop unicorn
 gitlab-ctl stop sideki
 ```

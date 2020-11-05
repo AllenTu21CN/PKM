@@ -11,7 +11,8 @@ git remote -v           #所有的remote地址
 ## 原理
 
 * 本地仓库存储结构
-    ![](git存储结构.png)
+
+![](git存储结构.png)
 
 ## 创建
 
@@ -22,6 +23,8 @@ git clone /path/to/repository
 git clone git@xxxx/xxxx.git
 # 添加第二个远程
 git remote add username-xx git@xxxx/xxxx.git
+# 克隆指定分支的最近一次提交
+git clone --depth 1 /path/to/repository -b <branch-or-tag> 
 ```
 
 ## 文件添加/删除

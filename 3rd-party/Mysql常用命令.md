@@ -1,42 +1,117 @@
 
-* ·ÃÎÊ¶Ë¿Ú 3306
-* ³õ´Î°²×°£¬³õÊ¼ÃÜÂë£º`cat /var/log/mysqld.log |grep password`
-* ³£ÓÃÃüÁî
+## å®‰è£…
+
+* è®¿é—®ç«¯å£ 3306
+* åˆæ¬¡å®‰è£…ï¼Œåˆå§‹å¯†ç ï¼š`cat /var/log/mysqld.log |grep password`
+* æœåŠ¡å¯åŠ¨
+    ```
+    systemctl enable mysqld
+    systemctl start mysqld
+    ```
+
+## MySQLå‘½ä»¤
+
 ```
-systemctl enable mysqld
-systemctl start mysqld
+# ç™»å½•/è¿æ¥æ•°æ®åº“
+mysql [-h<address>] 
+      [-P<port>]
+      -u<username> 
+      -p<password>
+      -D<database-name>
 
-# µÇÂ¼
-mysql [-h <address>] -u root -p 
-# Ôö¼ÓÃÜÂë
+# å¢åŠ å¯†ç 
 mysqladmin -u root -password <new-pw>
-# ĞŞ¸ÄÃÜÂë
+# ä¿®æ”¹å¯†ç 
 mysqladmin -u root -p <old-pw> password <new-pw>
-
-# ÉèÖÃµ±Ç°ÓÃ»§ÃÜÂë
+# è®¾ç½®å½“å‰ç”¨æˆ·å¯†ç 
 mysql> set password = password('123');
 
-# ¿ªÆôÔ¶³Ì·ÃÎÊ
-mysql> grant all privileges on *.* to 'root'@'%' identified by 'your_password';
-# Ë¢ĞÂÈ¨ÏŞÉúĞ§
-mysql> flush privileges;
+# æŸ¥è¯¢ç”¨æˆ·
+mysql> SELECT * FROM mysql.user
 
-# ´´½¨Êı¾İ¿â
-mysql> create database <name>
+# æ‰§è¡ŒSQLæ–‡ä»¶1
+mysql [-h<address>] [-P<port>] -u<username> -p<password> -D<database-name> < xxx.sql
 
-# ÏÔÊ¾Êı¾İ¿â
-mysql> show databases;
-
-# É¾³ıÊı¾İ¿â
-mysql> drop database <name>;
-
-# Á¬½ÓÊı¾İ¿â
-mysql> use <name>
-
-# É¾³ıÊı¾İ±í
-mysql> drop table <name>;
-
-# ²éÑ¯ĞĞ
-mysql> select * from <name>;
-mysql> select * from <name> order by id limit 0,2;
+# æ‰§è¡ŒSQLæ–‡ä»¶2
+mysql [-h<address>] [-P<port>] -u<username> -p
+mysql> user <database-name>;
+mysql> source xxx.sql;
 ```
+
+## SQLè¯­å¥
+
+### æƒé™ç®¡ç†
+
+```sql
+# å¼€å¯è¿œç¨‹è®¿é—®(root)
+grant all privileges on *.* to 'root'@'%' identified by 'your_password';
+
+# åˆ·æ–°æƒé™ç”Ÿæ•ˆ
+flush privileges;
+
+# æˆæƒç”¨æˆ·å¯¹æœåŠ¡å™¨çš„æƒé™
+GRANT ALL ON *.* TO 'webapps'@'127.0.0.1';
+
+# æˆæƒç”¨æˆ·å¯¹æ•°æ®åº“çš„æƒé™
+GRANT ALL ON `webapps`.* TO 'webapps'@'127.0.0.1';
+```
+
+### æ•°æ®åº“æ“ä½œ
+
+```sql
+# æ˜¾ç¤ºæ•°æ®åº“
+show databases;
+
+# åˆ›å»ºæ•°æ®åº“
+CREATE DATABASE <name>
+CREATE DATABASE `webapps` CHARACTER SET utf8 COLLATE utf8_general_ci
+
+# åˆ é™¤æ•°æ®åº“
+drop database <name>;
+
+# è¿æ¥æ•°æ®åº“
+use <name>
+```
+
+### è¡¨æ“ä½œ
+
+```sql
+# åˆ›å»ºè¡¨
+CREATE TABLE `user` (
+`id`  int(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
+`username`  varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' ,
+`password`  varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' ,
+PRIMARY KEY (`id`)
+);
+
+# æ’å…¥æ•°æ®
+INSERT INTO `user` (`username`, `password`) VALUES ('Tuyj', '123')
+INSERT INTO `user` (`username`, `password`) VALUES ('Allen', '123')
+
+# åˆ é™¤è¡¨
+drop table <name>;
+
+# æŸ¥è¯¢è¡Œ
+select * from <name>;
+select * from <name> order by id limit 0,2;
+
+# æ›´æ–°è¡Œ
+UPDATE table_name SET column1=value1,column2=value2,... WHERE some_column=some_value;
+
+# åˆ é™¤è¡Œ
+DELETE FROM table_name WHERE some_column=some_value;
+
+```
+
+### ç”¨æˆ·æ“ä½œ
+
+```sql
+# åˆ›å»ºç”¨æˆ·
+CREATE USER 'webapps'@'127.0.0.1' IDENTIFIED BY 'tuyajieno1';
+```
+
+## å¸¸ç”¨
+
+### æ—¥æœŸæ“ä½œ
+
+https://www.cnblogs.com/pandaly/p/10268145.html

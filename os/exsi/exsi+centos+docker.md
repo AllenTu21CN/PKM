@@ -119,24 +119,85 @@
 
 ## 3. 配置外网访问
 
-### . 公网IP和域名绑定
-* 注册免费域名;略
+### 公网IP和域名绑定
+* 电话给电信客服，要公网IP
+* freenom注册免费顶级域名
+* freenom绑定域名和IP,测试DNS效果
 
-### . DDNS
-* 略
-* 配置DDNS
-    * freenom注册免费顶级域名
-    * 下载开源DDNS
-    * aliyun、dnspod尝试，最后选择cloudflare
-        * 注册账号，创建api token
-        * cloudflare上添加site
-        * 注册商freenom填写cloudflare dns导入地址
-    * 修改crontab任务
+### DDNS
+* 下载开源DDNS（尝试了[godns](https://github.com/TimothyYe/godns)和其他一些项目，最后选择了[NewFuture/DDNS](https://github.com/NewFuture/DDNS)）
+    * python实现，支持dnspod,阿里DNS,CloudFlare,DNSCOM...
+    * python3.5未尝试成功，python2.7可以
+    * 根据需求修改了run.py
+    * `config.json`如下
+    
+    ```
+    {
+      "$schema": "https://ddns.newfuture.cc/schema/v2.json", 
+      "debug": false, 
+      "dns": "cloudflare", 
+      "id": "415929165@qq.com", 
+      "index4": "url:http://ip.sb", 
+      "index6": false, 
+      "ipv4": [
+        "mmx2.ml", 
+        "www.mmx2.ml",
+        "git.mmx2.ml",
+        "disk.mmx2.ml"
+      ], 
+      "ipv6": [
+      ], 
+      "proxy": null, 
+      "token": "xxxxxxxxxx"
+    }
+    ```
+* 选择DNS厂商，尝试[aliyun](http://www.alidns.com/)、[dnspod](https://www.dnspod.cn/)，最后选择[cloudflare](https://www.cloudflare.com/)
+    * cloudflare域名解析免费且速度快，几乎秒更新，支持国内外；其特色收费服务是CDN
+    * cloudflare上注册账号，创建api token
+* 从域名注册厂商处将DNS转移至DNS厂商
+    * cloudflare上添加site,获取DNS转移地址
+    * freenom填写cloudflare dns导入地址
+* 配置crontab任务，定时检查公网IP变动并同步至cloudflare
+    * `start_task.sh`
 
+    ```
+    #!/usr/bin/env bash
+    RUN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
+    
+    INTERVAL=$1
+    [ -z "$INTERVAL" ] && INTERVAL=5
+    
+    crontab -l > _tmp_crontab.txt
+    
+    grep "ddns_timer_task.sh" _tmp_crontab.txt > /dev/null
+    
+    if [ $? -eq 0 ]; then
+        echo "Had added this task, ignore current action"
+    else
+        echo "Try to add task to crontab with interval $INTERVAL mins"
+        echo "*/$INTERVAL * * * * sh $RUN_DIR/ddns_timer_task.sh $RUN_DIR >> $RUN_DIR/record.log 2>&1" >> _tmp_crontab.txt
+        echo "1 1 1 * * touch $RUN_DIR/config.json" >> _tmp_crontab.txt
+        crontab _tmp_crontab.txt
+    fi
+    
+    rm _tmp_crontab.txt
+    ```
+    * `ddns_timer_task.sh`: 
+    
+    ```python2.7 \"$1/run.py\" -c "$1/config.json"```
 
-## 5. 计划
-* 搭建翻墙工具
-* 搭建公司反向代理
-* 搭建Gitlab
-* 个人云相册
-* PKM git/markdown化
+## 4.其他配置
+
+### 端口引射表
+* mmx2.ml:28443 -> 10.1.83.102:28443 -> ESXi Http
+* mmx2.ml:22103 -> 10.1.83.103:22103 -> SSH
+* mmx2.ml:28081 -> 10.1.83.103:28081 -> NextCloud Http:80
+* mmx2.ml:40001 -> 10.1.83.103:40001 -> Gitlab Http:80
+* mmx2.ml:40002 -> 10.1.83.103:40002 -> Gitlab Https:443
+* mmx2.ml:40003 -> 10.1.83.103:40003 -> SSH@11.5@3bu
+* mmx2.ml:40004 -> 10.1.83.103:40004 -> ProxyHttp@ss.3bu.cn
+* mmx2.ml:40005 -> 10.1.83.103:40005 -> ProxySocks5@ss.3bu.cn
+
+### SSH端口转发
+* 外网使用公司代理: `sshpass -p $REMOTE_SSH_PASSWD ssh -o StrictHostKeyChecking=no -p $REMOTE_SSH_PORT $REMOTE_SSH_SVR -NfR $REMOTE_PROXY_PORT:$LOCAL_PROXY_SVR:$LOCAL_PROXY_PORT`
+* 外网SSH公司服务器: `sshpass -p $REMOTE_SSH_PASSWD ssh -o StrictHostKeyChecking=no -p $REMOTE_SSH_PORT $REMOTE_SSH_SVR -NfR $REMOTE_PROXY_PORT:localhost:$LOCAL_SSH_PORT`

@@ -1,7 +1,7 @@
 
-## °²×°
+## 1. å®‰è£…
 
-* docker°²×°
+* dockerå®‰è£…
 
 ```
 yum install docker
@@ -9,100 +9,171 @@ systemctl enable docker
 systemctl start docker 
 ```
 
-* docker-compose°²×°
-    * ´Ó[Github](https://github.com/docker/compose/releases/)»ñÈ¡×îĞÂµÄrelease°æ±¾
-    * ÏÂÔØºó·ÅÈë`/user/bin`ÏÂ
+* docker-composeå®‰è£…
+    * ä»[Github](https://github.com/docker/compose/releases/)è·å–æœ€æ–°çš„releaseç‰ˆæœ¬
+    * ä¸‹è½½åæ”¾å…¥`/user/bin`ä¸‹
 
-* GUI¹ÜÀíPortainer°²×°
+* GUIç®¡ç†Portainerå®‰è£…
     * [https://portainer.io/install.html](https://portainer.io/install.html)
-    * Æô¶¯·şÎñ
+    * å¯åŠ¨æœåŠ¡
     
     ```
     docker volume create portainer_data
     docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
     ```
 
-## DockerÃüÁî
+## 2. Dockerå‘½ä»¤
 
-* ¾µÏñ²Ù×÷
+### 2.1 é•œåƒåŸºæœ¬æ“ä½œ
 
 ```
+# æœç´¢é•œåƒ
 docker search centos
-docker pull <img-name>:<tag>    # ÏÂÔØ/¸üĞÂ
+# ä¸‹è½½/æ›´æ–°
+docker pull <img-name>:<tag>
 docker pull centos
-docker images       # ²é¿´ÒÑÏÂÔØ¾µÏñ
+# æŸ¥çœ‹å·²ä¸‹è½½é•œåƒ
+docker images
+
+# åˆ é™¤é•œåƒ
+docker image rm [image] 
+                        --force    # å¼ºåˆ¶åˆ é™¤,å³ä¾¿æœ‰å®¹å™¨å¼•ç”¨è¯¥é•œåƒ
+                        --no-prune # ä¸è¦åˆ é™¤æœªå¸¦æ ‡ç­¾çš„çˆ¶é•œåƒ
+docker rmi [image] # åŒä¸Š
+# æ³¨: é€šè¿‡tagåˆ é™¤é•œåƒ: 1) ä¸€ä¸ªé•œåƒæœ‰å¤šä¸ªTAGæ—¶,åˆ é™¤æŸä¸ªTAGå¹¶ä¸ä¼šåˆ é™¤é•œåƒ 2) å½“ä¸€ä¸ªé•œåƒåªæœ‰ä¸€ä¸ªTAGæ—¶,åˆ é™¤è¿™ä¸ªTAGä¼šå¯¼è‡´é•œåƒè¢«åˆ é™¤
+
 ```
 
-* ÈİÆ÷ÆôÍ£/¹ÜÀí
+### 2.2 é•œåƒä¿®æ”¹å’Œåˆ¶ä½œ
+
+* ä»å®¹å™¨åˆ¶ä½œé•œåƒ
+
+  1) ä»é•œåƒåˆ›å»ºå®¹å™¨
+  2) è¿›å…¥å®¹å™¨å†…,ä¿®æ”¹é…ç½®
+  3) é€€å‡ºå®¹å™¨,å¹¶æäº¤æ”¹åŠ¨
+  ```
+  docker commit -m "Commit message" -a "Author" CONTAINER [REPOSITORY[:TAG]]
+  ```
+
+* é€šè¿‡Dockerfileä¿®æ”¹å¹¶åˆ›å»ºé•œåƒ
+  * Dockerfileå†…å®¹å‚è€ƒå¦‚ä¸‹
+    ```
+    # FROM æŒ‡å®šåŸºç¡€é•œåƒ
+    FROM centos:8.1.1911
+
+    # ç»´æŠ¤è€…çš„ä¿¡æ¯
+    MAINTAINER Tuyj <xxx@docker.com>
+
+    # RUN å¼€å¤´çš„æŒ‡ä»¤ä¼šåœ¨åˆ›å»ºä¸­è¿è¡Œ
+    RUN yum -y config-manager --set-enabled PowerTools
+    ```
+  * æ‰§è¡Œå‘½ä»¤ 
+    ```
+    docker build -t name[:tag] <Dockerfile-PATH>
+    ```
+  * Dockfile ä¸­çš„æŒ‡ä»¤è¢«ä¸€æ¡ä¸€æ¡çš„æ‰§è¡Œã€‚æ¯ä¸€æ­¥éƒ½åˆ›å»ºäº†ä¸€ä¸ªæ–°çš„å®¹å™¨ï¼Œåœ¨å®¹å™¨ä¸­æ‰§è¡ŒæŒ‡ä»¤å¹¶æäº¤ä¿®æ”¹ï¼ˆdocker commitï¼‰ã€‚å½“æ‰€æœ‰çš„æŒ‡ä»¤éƒ½æ‰§è¡Œå®Œæ¯•ä¹‹åï¼Œè¿”å›äº†æœ€ç»ˆçš„é•œåƒ idã€‚æ‰€æœ‰çš„ä¸­é—´æ­¥éª¤æ‰€äº§ç”Ÿçš„å®¹å™¨éƒ½è¢«åˆ é™¤å’Œæ¸…ç†äº†ã€‚*æ³¨æ„ä¸€ä¸ªé•œåƒä¸èƒ½è¶…è¿‡ 127 å±‚*
+
+### 2.3 å®¹å™¨ç®¡ç†
+
+* å®¹å™¨å¯åœ
 
 ```
-# ÔËĞĞÈİÆ÷: ¶ÌÔİÔËĞĞ
+# è¿è¡Œå®¹å™¨: çŸ­æš‚è¿è¡Œ
 docker run <img-name>[:<tag>] <cmd>
-# ÔËĞĞÈİÆ÷: ½»»¥Ê½(½øÈëÈİÆ÷)
-docker run -it <img-name>[:<tag>] <shell-name> # 'i':±£³Ö±ê×¼ÊäÈë´ò¿ª 't': ·ÖÅäÎ±ÖÕ¶ËÇÒ°ó¶¨±ê×¼ÊäÈë
-# ÔËĞĞÈİÆ÷: ºóÌ¨ÊØ»¤
+# è¿è¡Œå®¹å™¨: äº¤äº’å¼(è¿›å…¥å®¹å™¨)
+docker run -it <img-name>[:<tag>] <shell-name> # 'i':ä¿æŒæ ‡å‡†è¾“å…¥æ‰“å¼€ 't': åˆ†é…ä¼ªç»ˆç«¯ä¸”ç»‘å®šæ ‡å‡†è¾“å…¥
+# è¿è¡Œå®¹å™¨: åå°å®ˆæŠ¤
 docker run -d/--detach <img-name>[:<tag>] <cmd>
-# ÔËĞĞÆäËû²ÎÊı
-    -p/--publish [<ip>:]<host-port>:<container-port> # portÓ³Éä
-    -v/--volume <host-dir>:<container-dir>           # ´ÅÅÌÓ³Éä
-    --name                                           # ¶¨ÒåÈİÆ÷Ãû×Ö
-    -e                                               # ÉèÖÃ»·¾³±äÁ¿,¿ÉÒÔÓĞ¶à¸ö
-    --link                                           # ¹ØÁªÆäËûÈİÆ÷
-    --hostname                                       # Ö¸¶¨ÈİÆ÷ÖĞ°ó¶¨µÄÓòÃû£¬»áÔÚ´´½¨¾µÏñ²Ö¿âµÄÊ±ºòÊ¹ÓÃµ½
+# è¿è¡Œå…¶ä»–å‚æ•°
+    -p/--publish [<ip>:]<host-port>:<container-port> # portæ˜ å°„
+    -v/--volume <host-dir>:<container-dir>           # ç£ç›˜æ˜ å°„
+    --name                                           # å®šä¹‰å®¹å™¨åå­—
+    -e                                               # è®¾ç½®ç¯å¢ƒå˜é‡,å¯ä»¥æœ‰å¤šä¸ª
+    --link                                           # å…³è”å…¶ä»–å®¹å™¨
+    --hostname                                       # æŒ‡å®šå®¹å™¨ä¸­ç»‘å®šçš„åŸŸåï¼Œä¼šåœ¨åˆ›å»ºé•œåƒä»“åº“çš„æ—¶å€™ä½¿ç”¨åˆ°
 
-# ÔËĞĞÈİÆ÷: ÒÑÍ£Ö¹µÄ
+# è¿è¡Œå®¹å™¨: å·²åœæ­¢çš„
 docker start <name/id>
 
-# É¾³ı/Í£Ö¹/É±ËÀ
+# åˆ é™¤/åœæ­¢/æ€æ­»
 docker rm/stop/kill <name/id>
 
-# ²é¿´ÈİÆ÷ÄÚ²¿Êä³ö
-docker logs <name/id> -f # ¸ú×ÙÄ£Ê½
-                      -t # ÏÔÊ¾Ê±¼ä´Á
+# æŸ¥çœ‹å®¹å™¨å†…éƒ¨è¾“å‡º
+docker logs <name/id> -f # è·Ÿè¸ªæ¨¡å¼
+                      -t # æ˜¾ç¤ºæ—¶é—´æˆ³
 
-# ²é¿´ÒÑ´´½¨µÄÈİÆ÷
-docker ps       # (Ä¬ÈÏ)ÔËĞĞÖĞ
-          -a    # ËùÓĞ×´Ì¬
-          -n    # ×î½üµÄn¸ö(ËùÓĞ×´Ì¬)
-          -l    # ×î½üµÄ1¸ö(ËùÓĞ×´Ì¬)
-          -q    # quietÄ£Ê½µÄ´òÓ¡,Ö»ÏÔÊ¾id
+# æŸ¥çœ‹å·²åˆ›å»ºçš„å®¹å™¨
+docker ps       # (é»˜è®¤)è¿è¡Œä¸­
+          -a    # æ‰€æœ‰çŠ¶æ€
+          -n    # æœ€è¿‘çš„nä¸ª(æ‰€æœ‰çŠ¶æ€)
+          -l    # æœ€è¿‘çš„1ä¸ª(æ‰€æœ‰çŠ¶æ€)
+          -q    # quietæ¨¡å¼çš„æ‰“å°,åªæ˜¾ç¤ºid
 
-# ²é¿´ÈİÆ÷µ×²ãĞÅÏ¢
+# æŸ¥çœ‹å®¹å™¨åº•å±‚ä¿¡æ¯
 docker inspect <name/id>
-                         -f {{.State.Pid}} # ¸ñÊ½»¯Êä³ö,Àı: ²é¿´µÚÒ»¸ö½ø³ÌµÄID
+                         -f {{.State.Pid}} # æ ¼å¼åŒ–è¾“å‡º,ä¾‹: æŸ¥çœ‹ç¬¬ä¸€ä¸ªè¿›ç¨‹çš„ID
 ```
 
-* ÈİÆ÷½øÈë
+* å®¹å™¨è¿›å…¥
 
 ```
-# attach½øÈëÈİÆ÷
-docker attach <name/id>     # ¶à¸öÖÕ¶ËattachÍ¬Ò»¸öÈİÆ÷Ê±,ÊäÈëÊä³öÊ±Í¬²½/×èÈûµÄ
+# attachè¿›å…¥å®¹å™¨
+docker attach <name/id>     # å¤šä¸ªç»ˆç«¯attachåŒä¸€ä¸ªå®¹å™¨æ—¶,è¾“å…¥è¾“å‡ºæ—¶åŒæ­¥/é˜»å¡çš„
 
-# ÈİÆ÷ÄÚÔËĞĞSSHServer,Ô¶³ÌµÇÂ¼,µ«²»½¨ÒéÈç´Ë×ö
+# å®¹å™¨å†…è¿è¡ŒSSHServer,è¿œç¨‹ç™»å½•,ä½†ä¸å»ºè®®å¦‚æ­¤åš
 
-# nsenterÍ¨¹ıÈİÆ÷µÄµÚÒ»¸ö½ø³ÌID½øÈëÈİÆ÷µÄnamespace
+# nsenteré€šè¿‡å®¹å™¨çš„ç¬¬ä¸€ä¸ªè¿›ç¨‹IDè¿›å…¥å®¹å™¨çš„namespace
 nsenter --target 3326 --mount --uts --ipc --net --pid
 
-# exec½øÈëÈİÆ÷
+# execè¿›å…¥å®¹å™¨
 docker exec -it <name/id> /bin/bash 
 ```
 
-## docker-composeÃüÁî
+## 3. docker-composeå‘½ä»¤
+
+### 3.1 åŸºæœ¬å¯åœ
 
 ```
-# ¸ù¾İÅäÖÃÎÄ¼şºóÌ¨Æô¶¯ÈİÆ÷
-docker-compose up -d        # detachÄ£Ê½/ºóÌ¨Ä£Ê½
-# Í£Ö¹ÈİÆ÷
+# æ ¹æ®é…ç½®æ–‡ä»¶åå°å¯åŠ¨å®¹å™¨
+docker-compose up -d        # detachæ¨¡å¼/åå°æ¨¡å¼
+# åœæ­¢å®¹å™¨
 docker-compose down
 ```
 
-## Ê¾Àı: nextcloud°²×°ºÍÆô¶¯
+### é“¾æ¥å¤–éƒ¨å®¹å™¨
+
+1. åˆ›å»ºå…±äº«ç½‘ç»œ: `docker network create webapps`
+
+2. æŸ¥çœ‹å½“å‰Dockerç½‘ç»œ: `docker network ls`
+
+3. å„å®¹å™¨`docker-compose.yml`ä¸­ä½¿ç”¨æŒ‡å®šç½‘ç»œ
+
+```
+version: '2'
+services:
+  app:
+    ...
+
+    networks:
+    - webapps
+
+networks:
+  custom_net:
+   external:
+      name: webapps
+```
+
+4. å„å®¹å™¨ä¸­é€šè¿‡service nameæ¥è®¿é—®æŒ‡å®šå®¹å™¨ä¸­çš„ç«¯å£ï¼Œæ¯”å¦‚`jdbc:mysql://db:3306/webapps`
+
+## 4. ç¤ºä¾‹
+
+### 4.1 nextcloudå®‰è£…å’Œå¯åŠ¨
 
 ```
 docker search nextcloud
 docker pull docker.io/nextcloud
 
-# ÊÖ¶¯Æô¶¯ÈİÆ÷(²»ÍÆ¼ö)
+# æ‰‹åŠ¨å¯åŠ¨å®¹å™¨(ä¸æ¨è)
 docker run -d --restart=always --name nextcloud -p 80:80 -v /root/nextcloud:/data docker.io/nextcloud
 
 # docker-compose.yml

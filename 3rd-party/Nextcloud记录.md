@@ -1,8 +1,8 @@
-## °²×°
+## å®‰è£…
 
-* docker°²×°²Î¿¼[¹Ù·½ÎÄµµ](https://hub.docker.com/_/nextcloud/)
+* dockerå®‰è£…å‚è€ƒ[å®˜æ–¹æ–‡æ¡£](https://hub.docker.com/_/nextcloud/)
 
-* `docker-compose.yml`ÈçÏÂ
+* `docker-compose.yml`å¦‚ä¸‹
 
 ```
 version: '2'
@@ -32,22 +32,22 @@ services:
     restart: always
 ```
 
-* ¹Ù·½docker¾µÏñ
-    * Ó¦ÓÃÄ¿Â¼ÔÚ`/var/www/html`
-    * ÅäÖÃÎÄ¼ş`/var/www/html/config/config.php`
-    * Êı¾İÄ¿Â¼`/var/www/html/data`
+* å®˜æ–¹dockeré•œåƒ
+    * åº”ç”¨ç›®å½•åœ¨`/var/www/html`
+    * é…ç½®æ–‡ä»¶`/var/www/html/config/config.php`
+    * æ•°æ®ç›®å½•`/var/www/html/data`
 
-## ³£ÓÃÃüÁî
+## å¸¸ç”¨å‘½ä»¤
 ```
-# ²é¿´ÓÃ»§ÁĞ±í
+# æŸ¥çœ‹ç”¨æˆ·åˆ—è¡¨
 php occ user:list
 
-# É¨ÃèÖ¸¶¨ÓÃ»§ÏÂÃæµÄÎÄ¼ş(¸üĞÂwebÖĞµÄÎÄ¼şÁĞ±í)
+# æ‰«ææŒ‡å®šç”¨æˆ·ä¸‹é¢çš„æ–‡ä»¶(æ›´æ–°webä¸­çš„æ–‡ä»¶åˆ—è¡¨)
 php occ files:scan mm [--all] [-p=...]
 
-# È«Á¿Éú³ÉÍ¼Æ¬ËõÂÔÍ¼
+# å…¨é‡ç”Ÿæˆå›¾ç‰‡ç¼©ç•¥å›¾
 php occ preview:generate-all -vvv
 
-# ÔöÁ¿Éú³ÉÍ¼Æ¬ËõÂÔÍ¼
+# å¢é‡ç”Ÿæˆå›¾ç‰‡ç¼©ç•¥å›¾
 php occ preview:pre-generate 
 ```
