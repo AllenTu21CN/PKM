@@ -1,23 +1,23 @@
-# AndroidÖØÒªÏµÍ³ÊôĞÔ
+# Androidé‡è¦ç³»ç»Ÿå±æ€§
 
-|ÊôĞÔÃû|SDKÃû³Æ(android.os.Build)|º¬Òå|ÍşÊ¢820|RK3399|
+|å±æ€§å|SDKåç§°(android.os.Build)|å«ä¹‰|å¨ç››820|RK3399|
 |:-|:-|:-|:-|:-|
-|ro.product.name|PRODUCT|²úÆ·Ãû³Æ|vt6093|rk3399_firefly_aio_box|
-|ro.product.device|DEVICE|Éè±¸Ãû³Æ|vt6093|rk3399_firefly_aio_box|
-|ro.product.board|BOARD|°å¼¶Ãû³Æ|QC_Reference_Phone|rk30sdk|
-|ro.hardware|HARDWARE|Ó²¼şÃû³Æ|qcom|rk30board|
-|ro.product.manufacturer|MANUFACTURER|ÖÆÔìÉÌ|QUALCOMM|rockchip|
-|ro.product.brand|BRAND|Éè±¸Æ·ÅÆ|VIA|rockchip|
-|ro.product.model|MODEL|Éè±¸ĞÍºÅ|SOM-9X20_VT6105|AIO-3399J|
-|ro.bootloader|BOOTLOADER|bootloader°æ±¾ºÅ|unknown|unknown|
-|ro.product.cpu.abilist|SUPPORTED_ABIS|ËùÓĞÖ§³ÖµÄabi|arm64-v8a,armeabi-v7a,armeabi|arm64-v8a,armeabi-v7a,armeabi|
-|ro.product.cpu.abilist32|SUPPORTED_32_BIT_ABIS|ËùÓĞÖ§³ÖµÄ32Î»abi|armeabi-v7a,armeabi|armeabi-v7a,armeabi|
-|ro.product.cpu.abilist64|SUPPORTED_64_BIT_ABIS|ËùÓĞÖ§³ÖµÄ64Î»abi|arm64-v8a|arm64-v8a|
-|ro.kernel.qemu( == 1)|IS_EMULATOR|ÊÇ·ñÎªÄ£ÄâÆ÷|¡¡|¡¡|
-|ro.build.display.id|DISPLAY|¿É¶ÁµÄbulid id|eng.sanbu.20181112.114536|rk3399_firefly_aio_box-userdebug 7.1.2 NHG47K eng.sanbu.20181025.114158 test-keys|
-|ro.build.version.release|VERSION.RELEASE|ÏµÍ³°æ±¾|8.0.0|7.1.2|
-|ro.build.version.sdk|VERSION.SDK_INT|ÏµÍ³api°æ±¾|26|25|
-|ro.build.type|TYPE|ÏµÍ³±àÒëÀàĞÍ|userdebug|userdebug|
-|ro.build.tags|TAGS|ÏµÍ³±àÒë±êÇ©|test-keys|test-keys|
-|ro.build.user|USER|ÏµÍ³±àÒëÈË|sanbu|sanbu|
-|ro.build.host|HOST|ÏµÍ³±àÒëÖ÷»ú|android_builder|android_builder|
+|ro.product.name|PRODUCT|äº§å“åç§°|vt6093|rk3399_firefly_aio_box|
+|ro.product.device|DEVICE|è®¾å¤‡åç§°|vt6093|rk3399_firefly_aio_box|
+|ro.product.board|BOARD|æ¿çº§åç§°|QC_Reference_Phone|rk30sdk|
+|ro.hardware|HARDWARE|ç¡¬ä»¶åç§°|qcom|rk30board|
+|ro.product.manufacturer|MANUFACTURER|åˆ¶é€ å•†|QUALCOMM|rockchip|
+|ro.product.brand|BRAND|è®¾å¤‡å“ç‰Œ|VIA|rockchip|
+|ro.product.model|MODEL|è®¾å¤‡å‹å·|SOM-9X20_VT6105|AIO-3399J|
+|ro.bootloader|BOOTLOADER|bootloaderç‰ˆæœ¬å·|unknown|unknown|
+|ro.product.cpu.abilist|SUPPORTED_ABIS|æ‰€æœ‰æ”¯æŒçš„abi|arm64-v8a,armeabi-v7a,armeabi|arm64-v8a,armeabi-v7a,armeabi|
+|ro.product.cpu.abilist32|SUPPORTED_32_BIT_ABIS|æ‰€æœ‰æ”¯æŒçš„32ä½abi|armeabi-v7a,armeabi|armeabi-v7a,armeabi|
+|ro.product.cpu.abilist64|SUPPORTED_64_BIT_ABIS|æ‰€æœ‰æ”¯æŒçš„64ä½abi|arm64-v8a|arm64-v8a|
+|ro.kernel.qemu( == 1)|IS_EMULATOR|æ˜¯å¦ä¸ºæ¨¡æ‹Ÿå™¨|ã€€|ã€€|
+|ro.build.display.id|DISPLAY|å¯è¯»çš„bulid id|eng.sanbu.20181112.114536|rk3399_firefly_aio_box-userdebug 7.1.2 NHG47K eng.sanbu.20181025.114158 test-keys|
+|ro.build.version.release|VERSION.RELEASE|ç³»ç»Ÿç‰ˆæœ¬|8.0.0|7.1.2|
+|ro.build.version.sdk|VERSION.SDK_INT|ç³»ç»Ÿapiç‰ˆæœ¬|26|25|
+|ro.build.type|TYPE|ç³»ç»Ÿç¼–è¯‘ç±»å‹|userdebug|userdebug|
+|ro.build.tags|TAGS|ç³»ç»Ÿç¼–è¯‘æ ‡ç­¾|test-keys|test-keys|
+|ro.build.user|USER|ç³»ç»Ÿç¼–è¯‘äºº|sanbu|sanbu|
+|ro.build.host|HOST|ç³»ç»Ÿç¼–è¯‘ä¸»æœº|android_builder|android_builder|

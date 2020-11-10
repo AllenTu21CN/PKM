@@ -1,9 +1,9 @@
-# VSĞ¡¼¼ÇÉ
+# VSå°æŠ€å·§
 
-## MFC³ÌĞò±ê×¼Êä³öµ½¿ØÖÆÌ¨
+## MFCç¨‹åºæ ‡å‡†è¾“å‡ºåˆ°æ§åˆ¶å°
 
-* Í¨¹ıÈçÏÂ·½·¨Ê¹ÓÃ printf »òÕß std::cout ¿ÉÒÔÔÚ¿ØÖÆÌ¨ÖĞÊä³ö
+* é€šè¿‡å¦‚ä¸‹æ–¹æ³•ä½¿ç”¨ printf æˆ–è€… std::cout å¯ä»¥åœ¨æ§åˆ¶å°ä¸­è¾“å‡º
 
-* VS Project -> Setting... -> Ñ¡Ïî Post-builder step -> ĞÂ½¨command, ÊäÈëÈçÏÂ, ÆäÖĞ filename Îª¿ÉÖ´ĞĞÎÄ¼şÃû: 
+* VS Project -> Setting... -> é€‰é¡¹ Post-builder step -> æ–°å»ºcommand, è¾“å…¥å¦‚ä¸‹, å…¶ä¸­ filename ä¸ºå¯æ‰§è¡Œæ–‡ä»¶å: 
 
 ```editbin /SUBSYSTEM:CONSOLE $(OUTDIR)\$(TargetFileName)```

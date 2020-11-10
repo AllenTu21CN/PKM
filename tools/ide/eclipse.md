@@ -1,55 +1,55 @@
-# Eclipse±¸Íü
+# Eclipseå¤‡å¿˜
 
-## ³£ÓÃÂ·¾¶
+## å¸¸ç”¨è·¯å¾„
 
-* ÏîÄ¿´æ´¢Â·¾¶ĞŞ¸Ä: 
+* é¡¹ç›®å­˜å‚¨è·¯å¾„ä¿®æ”¹: 
 
 `D:\workspace\Eclipse\.metadata\.plugins\org.eclipse.core.resources\.projects`
 
-## ³£ÓÃ¿ì½İ¼ü
+## å¸¸ç”¨å¿«æ·é”®
 
-|Ãû³Æ   |¹¦ÄÜ   |¿ì½İ¼ü|
+|åç§°   |åŠŸèƒ½   |å¿«æ·é”®|
 |:-|:-|:-|
-|search   |¸ß¼¶ËÑË÷   |Ctrl+H 
-|nextSelectionMatchFindAction   |ÏÂÒ»¸ö±»Ñ¡ÖĞµÄËÑË÷   |Alt+F2(Ctrl+K) 
-|previousSelectionMatchFindAction   |ÉÏÒ»¸ö±»Ñ¡ÖĞµÄËÑË÷   |Alt+F3(Ctrl+Shift+K) 
-|ShowDescription   |¿ìËÙÏÔÊ¾¶¨Òå   |F2
-|goToDeclaration   |Ìø×ªÉêÃ÷/¶¨Òå   |F3 
-|openTypeHierarchy   |²éÕÒ¼Ì³Ğ   |F4 
-|referenceSearch   |²éÕÒÒıÓÃ(·½·¨ÊÓÍ¼)   |F5() 
-|referenceSearch   |²éÕÒÒıÓÃ(ÎÄ¼şÊÓÍ¼)   |F6(Ctrl+Shift+G) 
-|declaration   |²éÕÒÉêÃ÷/¶¨Òå(ÎÄ¼şÊÓÍ¼)   |F7(Ctrl+G)
-|navigateBack   |Ìø×ªÉÏÒ»²½   |Alt+LeftArrow
-|navigateForward   |Ìø×ªÏÂÒ»²½   |Alt+RightArrow 
-|gotoSymbol   |´Óµ±Ç°ÎÄ¼ş·ûºÅÁĞ±íÌø×ª   |Ctrl+O 
-|LastEditLocation   |ÉÏ¸öĞŞ¸ÄµÄÎ»ÖÃ   |Ctrl+Q
-|openPreviousRecentlyUsedEditorInGroup   |ÇĞ»»µ±Ç°·Ö×éÖĞµÄÎÄ¼ş   |Ctrl+E
-|SwitchtoEditor   |ÇĞ»»ËùÓĞ´ò¿ªµÄÎÄ¼ş   |Ctrl+Shift+E
-|ExploreMacroExpansion   |Õ¹¿ªºê   |Ctrl+# Ctrl+=
-|gotoLine   |ĞĞÌø×ª   |Ctrl+L 
-|deleteLines   |ĞĞÉ¾³ı   |Ctrl+D 
-|commentLine   |ĞĞ×¢ÊÍ   |Ctrl+/(Ctrl+Shift+C) 
-|ToggleBlockSelection   |ÁĞ±à¼­Ä£Ê½   |Alt+C
-|ToggleFolding   |¿ª¹ØÕÛµş¹¦ÄÜ   |Ctrl+Numpad_Divide
-|Collapse   |ÕÛµşµ±Ç°ÇøÓò   |Ctrl+Numpad_-
-|CollapseAll   |ÕÛµşµ±Ç°ÎÄ¼şËùÓĞ   |Ctrl+Alt+Numpad_-
-|Expand   |Õ¹¿ªµ±Ç°ÇøÓò   |Ctrl+Numpad_+
-|ExpandAll   |Õ¹¿ªµ±Ç°ÎÄ¼şËùÓĞ   |Ctrl+Alt+Numpad_+
-|blockComment   |(È¡Ïû)¿é×¢ÊÍ   |Ctrl+Shift+/ Ctrl+Shift+\
-|transformToUppercase   |´óĞ´×ª»»   |Ctrl+Shift+X 
-|transformToLowercase   |Ğ¡Ğ´×ª»»   |Ctrl+Shift+Y 
-|quickOpen   |´ò¿ª×ÊÔ´ÎÄ¼ş   |Ctrl+Shift+R 
-|showAllSymbols   |²éÕÒËùÓĞ·ûºÅ   |Ctrl+Shift+T 
-|deleteAllRight   |É¾³ıÓÒ±ß   |Ctrl+Shift+Delete
-|rename   |·ûºÅÖØÃüÃû   |Shift+Alt+R
-|ContentAssist   |´úÂëÌáÊ¾   |Alt+/
-|/////////////////////////////////////////////////////´ÎÖØÒª|
-|openIncludeBrowser   |´ò¿ªÍ·ÎÄ¼şÒıÓÃÁĞ±í   |Ctrl+I(Ctrl+Alt+I)
-|toggleSidebarVisibility   |Òş²Ø/ÏÔÊ¾ÆäËû²à±ßÀ¸   |Ctrl+M 
-|closeActiveEditor   |¹Ø±Õµ±Ç°±à¼­Æ÷   |Ctrl+W 
-|joinLines   |¶àĞĞÁªºÏºÏ²¢   |Ctrl+Alt+J 
-|formatSelection   |´úÂë¸ñÊ½»¯   |Ctrl+Shift+F 
-|triggerSuggest   |×Ô¶¯½¨Òé   |Ctrl+Space 
-|quickFix   |¿ìËÙĞŞ¸´   |Ctrl+1 
-|ShowKeyAssist   |ÏÔÊ¾¿ì½İ¼üÁĞ±í   |Ctrl+Shift+L
-|QuickAccess   |¿ìËÙ·ÃÎÊ   |Ctrl+3
+|search   |é«˜çº§æœç´¢   |Ctrl+H 
+|nextSelectionMatchFindAction   |ä¸‹ä¸€ä¸ªè¢«é€‰ä¸­çš„æœç´¢   |Alt+F2(Ctrl+K) 
+|previousSelectionMatchFindAction   |ä¸Šä¸€ä¸ªè¢«é€‰ä¸­çš„æœç´¢   |Alt+F3(Ctrl+Shift+K) 
+|ShowDescription   |å¿«é€Ÿæ˜¾ç¤ºå®šä¹‰   |F2
+|goToDeclaration   |è·³è½¬ç”³æ˜/å®šä¹‰   |F3 
+|openTypeHierarchy   |æŸ¥æ‰¾ç»§æ‰¿   |F4 
+|referenceSearch   |æŸ¥æ‰¾å¼•ç”¨(æ–¹æ³•è§†å›¾)   |F5() 
+|referenceSearch   |æŸ¥æ‰¾å¼•ç”¨(æ–‡ä»¶è§†å›¾)   |F6(Ctrl+Shift+G) 
+|declaration   |æŸ¥æ‰¾ç”³æ˜/å®šä¹‰(æ–‡ä»¶è§†å›¾)   |F7(Ctrl+G)
+|navigateBack   |è·³è½¬ä¸Šä¸€æ­¥   |Alt+LeftArrow
+|navigateForward   |è·³è½¬ä¸‹ä¸€æ­¥   |Alt+RightArrow 
+|gotoSymbol   |ä»å½“å‰æ–‡ä»¶ç¬¦å·åˆ—è¡¨è·³è½¬   |Ctrl+O 
+|LastEditLocation   |ä¸Šä¸ªä¿®æ”¹çš„ä½ç½®   |Ctrl+Q
+|openPreviousRecentlyUsedEditorInGroup   |åˆ‡æ¢å½“å‰åˆ†ç»„ä¸­çš„æ–‡ä»¶   |Ctrl+E
+|SwitchtoEditor   |åˆ‡æ¢æ‰€æœ‰æ‰“å¼€çš„æ–‡ä»¶   |Ctrl+Shift+E
+|ExploreMacroExpansion   |å±•å¼€å®   |Ctrl+# Ctrl+=
+|gotoLine   |è¡Œè·³è½¬   |Ctrl+L 
+|deleteLines   |è¡Œåˆ é™¤   |Ctrl+D 
+|commentLine   |è¡Œæ³¨é‡Š   |Ctrl+/(Ctrl+Shift+C) 
+|ToggleBlockSelection   |åˆ—ç¼–è¾‘æ¨¡å¼   |Alt+C
+|ToggleFolding   |å¼€å…³æŠ˜å åŠŸèƒ½   |Ctrl+Numpad_Divide
+|Collapse   |æŠ˜å å½“å‰åŒºåŸŸ   |Ctrl+Numpad_-
+|CollapseAll   |æŠ˜å å½“å‰æ–‡ä»¶æ‰€æœ‰   |Ctrl+Alt+Numpad_-
+|Expand   |å±•å¼€å½“å‰åŒºåŸŸ   |Ctrl+Numpad_+
+|ExpandAll   |å±•å¼€å½“å‰æ–‡ä»¶æ‰€æœ‰   |Ctrl+Alt+Numpad_+
+|blockComment   |(å–æ¶ˆ)å—æ³¨é‡Š   |Ctrl+Shift+/ Ctrl+Shift+\
+|transformToUppercase   |å¤§å†™è½¬æ¢   |Ctrl+Shift+X 
+|transformToLowercase   |å°å†™è½¬æ¢   |Ctrl+Shift+Y 
+|quickOpen   |æ‰“å¼€èµ„æºæ–‡ä»¶   |Ctrl+Shift+R 
+|showAllSymbols   |æŸ¥æ‰¾æ‰€æœ‰ç¬¦å·   |Ctrl+Shift+T 
+|deleteAllRight   |åˆ é™¤å³è¾¹   |Ctrl+Shift+Delete
+|rename   |ç¬¦å·é‡å‘½å   |Shift+Alt+R
+|ContentAssist   |ä»£ç æç¤º   |Alt+/
+|/////////////////////////////////////////////////////æ¬¡é‡è¦|
+|openIncludeBrowser   |æ‰“å¼€å¤´æ–‡ä»¶å¼•ç”¨åˆ—è¡¨   |Ctrl+I(Ctrl+Alt+I)
+|toggleSidebarVisibility   |éšè—/æ˜¾ç¤ºå…¶ä»–ä¾§è¾¹æ    |Ctrl+M 
+|closeActiveEditor   |å…³é—­å½“å‰ç¼–è¾‘å™¨   |Ctrl+W 
+|joinLines   |å¤šè¡Œè”åˆåˆå¹¶   |Ctrl+Alt+J 
+|formatSelection   |ä»£ç æ ¼å¼åŒ–   |Ctrl+Shift+F 
+|triggerSuggest   |è‡ªåŠ¨å»ºè®®   |Ctrl+Space 
+|quickFix   |å¿«é€Ÿä¿®å¤   |Ctrl+1 
+|ShowKeyAssist   |æ˜¾ç¤ºå¿«æ·é”®åˆ—è¡¨   |Ctrl+Shift+L
+|QuickAccess   |å¿«é€Ÿè®¿é—®   |Ctrl+3

@@ -1,216 +1,216 @@
 [TOC]
 ****
-### 1.  ¸ÅÊö
-Î¢ÈíÔÚ`WDK7600`ÒÔºó¾Í²»ÔÙÌá¹©¶ÀÁ¢µÄÄÚºËÇý¶¯¿ª·¢°üÁË,¶øÊÇ±ØÐëÊ×ÏÈ°²×°Î¢Èí¼¯³É¿ª·¢»·¾³VisualStudio,È»ºóÔÙ´ÓÎ¢Èí¹ÙÍøÏÂÔØ¼¯³ÉµÄWDK¿ª·¢°ü/»òÕßÀëÏß°²×°°ü,µ«ÊÇ°²×°ºóVisual Studio¾Í¼¯Çý¶¯³ÌÐò¿ª·¢/±àÒë/°²×°/²¿Êð/µ÷ÊÔÓÚÒ»Éí,Ê¹µÃWindowsÇý¶¯³ÌÐò¿ª·¢»á±äµÃ¸üÈÝÒ×. ¶ÔÓÚWindows 10ºÍVisual Studio2015Çý¶¯¿ª·¢WDK»·¾³±äÁ¿µÄÅäÖÃ,ÓëÆäËü°æ±¾µÄWindowsºÍWDK»·¾³µÄÅäÖÃÓÐºÜ´ó²»Í¬.
+### 1.  æ¦‚è¿°
+å¾®è½¯åœ¨`WDK7600`ä»¥åŽå°±ä¸å†æä¾›ç‹¬ç«‹çš„å†…æ ¸é©±åŠ¨å¼€å‘åŒ…äº†,è€Œæ˜¯å¿…é¡»é¦–å…ˆå®‰è£…å¾®è½¯é›†æˆå¼€å‘çŽ¯å¢ƒVisualStudio,ç„¶åŽå†ä»Žå¾®è½¯å®˜ç½‘ä¸‹è½½é›†æˆçš„WDKå¼€å‘åŒ…/æˆ–è€…ç¦»çº¿å®‰è£…åŒ…,ä½†æ˜¯å®‰è£…åŽVisual Studioå°±é›†é©±åŠ¨ç¨‹åºå¼€å‘/ç¼–è¯‘/å®‰è£…/éƒ¨ç½²/è°ƒè¯•äºŽä¸€èº«,ä½¿å¾—Windowsé©±åŠ¨ç¨‹åºå¼€å‘ä¼šå˜å¾—æ›´å®¹æ˜“. å¯¹äºŽWindows 10å’ŒVisual Studio2015é©±åŠ¨å¼€å‘WDKçŽ¯å¢ƒå˜é‡çš„é…ç½®,ä¸Žå…¶å®ƒç‰ˆæœ¬çš„Windowså’ŒWDKçŽ¯å¢ƒçš„é…ç½®æœ‰å¾ˆå¤§ä¸åŒ.
  
 ****
-### 2. WDFÇý¶¯Ä£ÐÍ
+### 2. WDFé©±åŠ¨æ¨¡åž‹
 VxD(Windows 95/98) -> WDM(2000) ->WDF(Vista)
  
-Éè±¸Çý¶¯³ÌÐòÊÇÓ²¼þÉè±¸Á¬½Óµ½¼ÆËã»úÏµÍ³µÄÈí¼þ½Ó¿Ú,ÈÎºÎÉè±¸¶¼±ØÐëÓÐÏàÓ¦µÄÇý¶¯³ÌÐò²ÅÄÜÔÚ¼ÆËã»úÏµÍ³ÉÏÕý³£¹¤×÷. Éè±¸Çý¶¯³ÌÐòµÄÓÅÁÓÖ±½Ó¹ØÏµµ½Õû¸öÏµÍ³µÄÐÔÄÜºÍÎÈ¶¨ÐÔ,Òò´Ë,Éè¼ÆºÍ¿ª·¢ÎÈ¶¨¸ßÐ§µÄÇý¶¯³ÌÐò¾ßÓÐÖØÒªÒâÒå.
+è®¾å¤‡é©±åŠ¨ç¨‹åºæ˜¯ç¡¬ä»¶è®¾å¤‡è¿žæŽ¥åˆ°è®¡ç®—æœºç³»ç»Ÿçš„è½¯ä»¶æŽ¥å£,ä»»ä½•è®¾å¤‡éƒ½å¿…é¡»æœ‰ç›¸åº”çš„é©±åŠ¨ç¨‹åºæ‰èƒ½åœ¨è®¡ç®—æœºç³»ç»Ÿä¸Šæ­£å¸¸å·¥ä½œ. è®¾å¤‡é©±åŠ¨ç¨‹åºçš„ä¼˜åŠ£ç›´æŽ¥å…³ç³»åˆ°æ•´ä¸ªç³»ç»Ÿçš„æ€§èƒ½å’Œç¨³å®šæ€§,å› æ­¤,è®¾è®¡å’Œå¼€å‘ç¨³å®šé«˜æ•ˆçš„é©±åŠ¨ç¨‹åºå…·æœ‰é‡è¦æ„ä¹‰.
  
-ÔçÆÚµÄWindows 95/98µÄÉè±¸Çý¶¯ÊÇVxD(Virtual DeviceDriver),ÆäÖÐx±íÊ¾Ä³Ò»ÀàÉè±¸. ´ÓWindows 2000¿ªÊ¼,¿ª·¢Çý¶¯³ÌÐò±ØÒÔWDM(Windows Driver Model)Îª»ù´¡µÄ,µ«ÊÇ,Èç¹ûÊ¹ÓÃDDKÀ´¿ª·¢WDM,Æä¿ª·¢ÄÑ¶ÈÖ®´ó,¸ù±¾²»ÄÜÉÝÍûÏñÓÃ»§Ä£Ê½Ó¦ÓÃ³ÌÐò¿ª·¢ÄÇÑùÈÝÒ×,Òò´Ë,Ò»°ãÓÃ»§¶¼ÊÇÊ¹ÓÃWinDriver/DriverStudioÖ®ÀàµÄµÚÈý·½¹¤¾ß.
+æ—©æœŸçš„Windows 95/98çš„è®¾å¤‡é©±åŠ¨æ˜¯VxD(Virtual DeviceDriver),å…¶ä¸­xè¡¨ç¤ºæŸä¸€ç±»è®¾å¤‡. ä»ŽWindows 2000å¼€å§‹,å¼€å‘é©±åŠ¨ç¨‹åºå¿…ä»¥WDM(Windows Driver Model)ä¸ºåŸºç¡€çš„,ä½†æ˜¯,å¦‚æžœä½¿ç”¨DDKæ¥å¼€å‘WDM,å…¶å¼€å‘éš¾åº¦ä¹‹å¤§,æ ¹æœ¬ä¸èƒ½å¥¢æœ›åƒç”¨æˆ·æ¨¡å¼åº”ç”¨ç¨‹åºå¼€å‘é‚£æ ·å®¹æ˜“,å› æ­¤,ä¸€èˆ¬ç”¨æˆ·éƒ½æ˜¯ä½¿ç”¨WinDriver/DriverStudioä¹‹ç±»çš„ç¬¬ä¸‰æ–¹å·¥å…·.
  
-Îª¸ÄÉÆÕâÖÖ¾ÖÃæ,´ÓVista¿ªÊ¼,Î¢ÈíÍÆ³öÁËÐÂµÄÇý¶¯³ÌÐò¿ª·¢»·¾³WDF(Windows Driver Foundation ). WDF(WindowsDriver Foundation)ÊÇÎ¢ÈíÌá³öµÄÏÂÒ»´úÈ«ÐÂµÄÇý¶¯³ÌÐòÄ£ÐÍ,ËüÊÇÔÚWDM(windowsDriver Model)µÄ»ù´¡ÉÏ·¢Õ¹¶øÀ´µÄ,Ö§³ÖÃæÏò¶ÔÏó/ÊÂ¼þÇý¶¯µÄÇý¶¯³ÌÐò¿ª·¢,Ìá¹©ÁË±ÈWDM¸ü¸ß²ã´Î³éÏóµÄ¸ß¶ÈÁé»î/¿ÉÀ©Õ¹/¿ÉÕï¶ÏµÄÇý¶¯³ÌÐò¿ò¼Ü. WDF¿ò¼Ü¹ÜÀíÁË´ó¶àÊýÓë²Ù×÷ÏµÍ³Ïà¹ØµÄ½»»¥,ÊµÏÖÁË¹«¹²µÄÇý¶¯³ÌÐò¹¦ÄÜ(ÈçµçÔ´¹ÜÀí/PnPÖ§³Ö),¸ôÀëÁËÉè±¸Çý¶¯³ÌÐòÓë²Ù×÷ÏµÍ³ÄÚºË,½µµÍÁËÇý¶¯³ÌÐò¶ÔÄÚºËµÄÓ°Ïì.
+ä¸ºæ”¹å–„è¿™ç§å±€é¢,ä»ŽVistaå¼€å§‹,å¾®è½¯æŽ¨å‡ºäº†æ–°çš„é©±åŠ¨ç¨‹åºå¼€å‘çŽ¯å¢ƒWDF(Windows Driver Foundation ). WDF(WindowsDriver Foundation)æ˜¯å¾®è½¯æå‡ºçš„ä¸‹ä¸€ä»£å…¨æ–°çš„é©±åŠ¨ç¨‹åºæ¨¡åž‹,å®ƒæ˜¯åœ¨WDM(windowsDriver Model)çš„åŸºç¡€ä¸Šå‘å±•è€Œæ¥çš„,æ”¯æŒé¢å‘å¯¹è±¡/äº‹ä»¶é©±åŠ¨çš„é©±åŠ¨ç¨‹åºå¼€å‘,æä¾›äº†æ¯”WDMæ›´é«˜å±‚æ¬¡æŠ½è±¡çš„é«˜åº¦çµæ´»/å¯æ‰©å±•/å¯è¯Šæ–­çš„é©±åŠ¨ç¨‹åºæ¡†æž¶. WDFæ¡†æž¶ç®¡ç†äº†å¤§å¤šæ•°ä¸Žæ“ä½œç³»ç»Ÿç›¸å…³çš„äº¤äº’,å®žçŽ°äº†å…¬å…±çš„é©±åŠ¨ç¨‹åºåŠŸèƒ½(å¦‚ç”µæºç®¡ç†/PnPæ”¯æŒ),éš”ç¦»äº†è®¾å¤‡é©±åŠ¨ç¨‹åºä¸Žæ“ä½œç³»ç»Ÿå†…æ ¸,é™ä½Žäº†é©±åŠ¨ç¨‹åºå¯¹å†…æ ¸çš„å½±å“.
  
-WDFÌá¹©ÁËÁ½¸ö¿ò¼Ü:KMDF(ÄÚºËÄ£Ê½Çý¶¯³ÌÐò¿ò¼Ü)ºÍUMDF(ÓÃ»§Ä£Ê½Çý¶¯³ÌÐò¿ò¼Ü):
-* ÄÚºËÄ£Ê½Çý¶¯³ÌÐò KMDF(Kernel-Mode DriverFramework):
-ÕâÀàÇý¶¯³ÌÐò×÷ÎªÄÚºËÄ£Ê½²Ù×÷ÏµÍ³×é¼þµÄÒ»²¿·ÖÖ´ÐÐ,ËüÃÇ¹ÜÀíI/O/¼´²å¼´ÓÃ/ÄÚ´æ/½ø³ÌºÍÏß³Ì/°²È«µÈ. ÄÚºËÄ£Ê½Çý¶¯³ÌÐòÍ¨³£Îª·Ö²ã½á¹¹. KMDFÊÇWindowsÏµÍ³µ×²ãÇý¶¯,ÎÄ¼þÃûÎª:`*.SYS`. ¹ØÓÚKMDF¸ü¶àµÄÄÚÈÝ,¿É²ÎÔÄ MSDNÖÐ`Getting Started with Kernel-ModeDriver Framework`.
-* ÓÃ»§Ä£Ê½Çý¶¯³ÌÐò UMDF(User-Mode DriverFramework):
-ÕâÀàÇý¶¯³ÌÐòÍ¨³£Ìá¹© Win32 Ó¦ÓÃ³ÌÐòÓëÄÚºËÄ£Ê½Çý¶¯³ÌÐò»òÆäËû²Ù×÷ÏµÍ³×é¼þÖ®¼äµÄ½Ó¿Ú. ÓÃ»§Ä£Ê½Çý¶¯³ÌÐòÖ§³Ö»ùÓÚÐ­Òé»ò»ùÓÚ´®ÐÐ×ÜÏß(ÈçÉãÏñ»úºÍ±ãÐ¯ÒôÀÖ²¥·ÅÆ÷)µÄÉè±¸. UMDFÊÇÓÃ»§²ãÇý¶¯,ÎÄ¼þÃûÎª:`*.DLL`. ¹ØÓÚKMDF¸ü¶àµÄÄÚÈÝ,¿É²ÎÔÄ MSDNÖÐ`Introduction to UMDF`.
+WDFæä¾›äº†ä¸¤ä¸ªæ¡†æž¶:KMDF(å†…æ ¸æ¨¡å¼é©±åŠ¨ç¨‹åºæ¡†æž¶)å’ŒUMDF(ç”¨æˆ·æ¨¡å¼é©±åŠ¨ç¨‹åºæ¡†æž¶):
+* å†…æ ¸æ¨¡å¼é©±åŠ¨ç¨‹åº KMDF(Kernel-Mode DriverFramework):
+è¿™ç±»é©±åŠ¨ç¨‹åºä½œä¸ºå†…æ ¸æ¨¡å¼æ“ä½œç³»ç»Ÿç»„ä»¶çš„ä¸€éƒ¨åˆ†æ‰§è¡Œ,å®ƒä»¬ç®¡ç†I/O/å³æ’å³ç”¨/å†…å­˜/è¿›ç¨‹å’Œçº¿ç¨‹/å®‰å…¨ç­‰. å†…æ ¸æ¨¡å¼é©±åŠ¨ç¨‹åºé€šå¸¸ä¸ºåˆ†å±‚ç»“æž„. KMDFæ˜¯Windowsç³»ç»Ÿåº•å±‚é©±åŠ¨,æ–‡ä»¶åä¸º:`*.SYS`. å…³äºŽKMDFæ›´å¤šçš„å†…å®¹,å¯å‚é˜… MSDNä¸­`Getting Started with Kernel-ModeDriver Framework`.
+* ç”¨æˆ·æ¨¡å¼é©±åŠ¨ç¨‹åº UMDF(User-Mode DriverFramework):
+è¿™ç±»é©±åŠ¨ç¨‹åºé€šå¸¸æä¾› Win32 åº”ç”¨ç¨‹åºä¸Žå†…æ ¸æ¨¡å¼é©±åŠ¨ç¨‹åºæˆ–å…¶ä»–æ“ä½œç³»ç»Ÿç»„ä»¶ä¹‹é—´çš„æŽ¥å£. ç”¨æˆ·æ¨¡å¼é©±åŠ¨ç¨‹åºæ”¯æŒåŸºäºŽåè®®æˆ–åŸºäºŽä¸²è¡Œæ€»çº¿(å¦‚æ‘„åƒæœºå’Œä¾¿æºéŸ³ä¹æ’­æ”¾å™¨)çš„è®¾å¤‡. UMDFæ˜¯ç”¨æˆ·å±‚é©±åŠ¨,æ–‡ä»¶åä¸º:`*.DLL`. å…³äºŽKMDFæ›´å¤šçš„å†…å®¹,å¯å‚é˜… MSDNä¸­`Introduction to UMDF`.
  
-ÎÞÂÛÄÚºËÄ£Ê½µÄÇý¶¯³ÌÐò»òÕßÓÃ»§Ä£Ê½µÄÇý¶¯³ÌÐò,¶¼Ê¹ÓÃÍ¬Ò»»·¾³½øÐÐ¹¹½¨,ÕâÒ»»·¾³³ÆÎªWDK; ¶¼²ÉÓÃÍ¬Ò»Ì×¶ÔÏóÄ£ÐÍ¹¹½¨,²ÉÓÃÍ¬Ò»¸ö»ù´¡³ÐÔØ,Õâ¸ö»ù´¡¾ÍÊÇWDF.
+æ— è®ºå†…æ ¸æ¨¡å¼çš„é©±åŠ¨ç¨‹åºæˆ–è€…ç”¨æˆ·æ¨¡å¼çš„é©±åŠ¨ç¨‹åº,éƒ½ä½¿ç”¨åŒä¸€çŽ¯å¢ƒè¿›è¡Œæž„å»º,è¿™ä¸€çŽ¯å¢ƒç§°ä¸ºWDK; éƒ½é‡‡ç”¨åŒä¸€å¥—å¯¹è±¡æ¨¡åž‹æž„å»º,é‡‡ç”¨åŒä¸€ä¸ªåŸºç¡€æ‰¿è½½,è¿™ä¸ªåŸºç¡€å°±æ˜¯WDF.
  
-ÓÉÓÚWDFÇý¶¯Ä£ÐÍÌá¹©ÁËÃæÏò¶ÔÏóºÍÊÂ¼þÇý¶¯µÄÇý¶¯³ÌÐò¿ª·¢¿ò¼Ü,´ó´ó½µµÍÁË¿ª·¢ÄÑ¶È. ´ÓÏÖÔÚ¿ªÊ¼,ÕÆÎÕWindowsÉè±¸Çý¶¯³ÌÐòµÄ¿ª·¢ÈËÔ±,ÓÉ¹ýÈ¥µÄ`×¨Òµ`ÈËÊ¿,½«±äÎª`ÆÕÍ¨`´óÖÚ. Òò´Ë,ÏñWinDriver/DriverStudioÖ®ÀàµÄµÚÈý·½¹¤¾ßÒ²ËæÖ®ÍË³öÀúÊ·ÎèÌ¨.
+ç”±äºŽWDFé©±åŠ¨æ¨¡åž‹æä¾›äº†é¢å‘å¯¹è±¡å’Œäº‹ä»¶é©±åŠ¨çš„é©±åŠ¨ç¨‹åºå¼€å‘æ¡†æž¶,å¤§å¤§é™ä½Žäº†å¼€å‘éš¾åº¦. ä»ŽçŽ°åœ¨å¼€å§‹,æŽŒæ¡Windowsè®¾å¤‡é©±åŠ¨ç¨‹åºçš„å¼€å‘äººå‘˜,ç”±è¿‡åŽ»çš„`ä¸“ä¸š`äººå£«,å°†å˜ä¸º`æ™®é€š`å¤§ä¼—. å› æ­¤,åƒWinDriver/DriverStudioä¹‹ç±»çš„ç¬¬ä¸‰æ–¹å·¥å…·ä¹Ÿéšä¹‹é€€å‡ºåŽ†å²èˆžå°.
  
-¸üÖØÒªµÄ,Ò²ÊÇÎ¢Èí·´¸´ìÅÒ«µÄÊÇ·â×°ÁËÇý¶¯³ÌÐòÖÐµÄÄ³Ð©¹²Í¬ÐÐÎª:ÀýÈç¼´²å¼´ÓÃºÍµçÔ´¹ÜÀí¾ÍÊôÓÚÕâÖÖ¹²Í¬ÐÐÎª. ÒòÎª´ó¶àÊýÇý¶¯³ÌÐòÖÐ¶¼ÐèÒª´¦Àí¼´²å¼´ÓÃºÍµçÔ´¹ÜÀíÎÊÌâ,¾ÝËµÕâ´ó¸ÅÒªÉÏÇ§ÐÐµÄ´úÂë,¿öÇÒ,Ã»ÓÐÏàµ±Ë®Æ½»¹²»Ò»¶¨ÄÜ´¦ÀíºÃ. ÎªÁËÒ»ÀÍÓÀÒÝ,WDF¸É´à½«¼´²å¼´ÓÃºÍµçÔ´¹ÜÀí·â×°ÁË½øÁË¶ÔÏóÖ®ÄÚ,Ò»¾Ù³ÉÁË¶ÔÏóµÄÄ¬ÈÏÐÐÎª.
+æ›´é‡è¦çš„,ä¹Ÿæ˜¯å¾®è½¯åå¤ç‚«è€€çš„æ˜¯å°è£…äº†é©±åŠ¨ç¨‹åºä¸­çš„æŸäº›å…±åŒè¡Œä¸º:ä¾‹å¦‚å³æ’å³ç”¨å’Œç”µæºç®¡ç†å°±å±žäºŽè¿™ç§å…±åŒè¡Œä¸º. å› ä¸ºå¤§å¤šæ•°é©±åŠ¨ç¨‹åºä¸­éƒ½éœ€è¦å¤„ç†å³æ’å³ç”¨å’Œç”µæºç®¡ç†é—®é¢˜,æ®è¯´è¿™å¤§æ¦‚è¦ä¸Šåƒè¡Œçš„ä»£ç ,å†µä¸”,æ²¡æœ‰ç›¸å½“æ°´å¹³è¿˜ä¸ä¸€å®šèƒ½å¤„ç†å¥½. ä¸ºäº†ä¸€åŠ³æ°¸é€¸,WDFå¹²è„†å°†å³æ’å³ç”¨å’Œç”µæºç®¡ç†å°è£…äº†è¿›äº†å¯¹è±¡ä¹‹å†…,ä¸€ä¸¾æˆäº†å¯¹è±¡çš„é»˜è®¤è¡Œä¸º.
  
-WDF½«Çý¶¯³ÌÐòÓë²Ù×÷ÏµÍ³ÄÚºËÖ®¼ä½øÐÐÁË·ÖÀë,Çý¶¯³ÌÐòÓë²Ù×÷ÏµÍ³½»»¥¹¤×÷½»¸ø¿ò¼ÜÄÚ·â×°µÄ·½·¨(º¯Êý)Íê³É,ÕâÑùÇý¶¯¿ª·¢ÕßÖ»Ðè×¨×¢´¦ÀíÓ²¼þµÄÐÐÎª¼´¿É. Õâ²»½ö±ÜÃâÁË¹Ë´ËÊ§±ËÁ½Ãæ²»ÖÜµÄ±×¶Ë,Ò²ÓÉÓÚË«·½µÄ·ÖÀë,¶Ô²Ù×÷ÏµÍ³ÄÚµÄÄ³Ð©¸Ä¶¯,Ó²¼þÖÆÔìÉÌÅäÌ×Çý¶¯³ÌÐòµÄ¿ª·¢¶¼ÓÐÄª´óµÄºÃ´¦.
+WDFå°†é©±åŠ¨ç¨‹åºä¸Žæ“ä½œç³»ç»Ÿå†…æ ¸ä¹‹é—´è¿›è¡Œäº†åˆ†ç¦»,é©±åŠ¨ç¨‹åºä¸Žæ“ä½œç³»ç»Ÿäº¤äº’å·¥ä½œäº¤ç»™æ¡†æž¶å†…å°è£…çš„æ–¹æ³•(å‡½æ•°)å®Œæˆ,è¿™æ ·é©±åŠ¨å¼€å‘è€…åªéœ€ä¸“æ³¨å¤„ç†ç¡¬ä»¶çš„è¡Œä¸ºå³å¯. è¿™ä¸ä»…é¿å…äº†é¡¾æ­¤å¤±å½¼ä¸¤é¢ä¸å‘¨çš„å¼Šç«¯,ä¹Ÿç”±äºŽåŒæ–¹çš„åˆ†ç¦»,å¯¹æ“ä½œç³»ç»Ÿå†…çš„æŸäº›æ”¹åŠ¨,ç¡¬ä»¶åˆ¶é€ å•†é…å¥—é©±åŠ¨ç¨‹åºçš„å¼€å‘éƒ½æœ‰èŽ«å¤§çš„å¥½å¤„.
  
 ****
-### 3. ÓÃ»§Ä£Ê½ºÍÄÚºËÄ£Ê½
-ÔËÐÐ Windows µÄ¼ÆËã»úÖÐµÄ´¦ÀíÆ÷ÓÐÁ½¸ö²»Í¬Ä£Ê½:`ÓÃ»§Ä£Ê½`ºÍ`ÄÚºËÄ£Ê½`. ¸ù¾Ý´¦ÀíÆ÷ÉÏÔËÐÐµÄ´úÂëµÄÀàÐÍ,´¦ÀíÆ÷ÔÚÁ½¸öÄ£Ê½Ö®¼äÇÐ»». Ó¦ÓÃ³ÌÐòÔÚÓÃ»§Ä£Ê½ÏÂÔËÐÐ,ºËÐÄ²Ù×÷ÏµÍ³×é¼þÔÚÄÚºËÄ£Ê½ÏÂÔËÐÐ. ¶à¸öÇý¶¯³ÌÐòÔÚÄÚºËÄ£Ê½ÏÂÔËÐÐÊ±,Ä³Ð©Çý¶¯³ÌÐò¿ÉÄÜÔÚÓÃ»§Ä£Ê½ÏÂÔËÐÐ.
+### 3. ç”¨æˆ·æ¨¡å¼å’Œå†…æ ¸æ¨¡å¼
+è¿è¡Œ Windows çš„è®¡ç®—æœºä¸­çš„å¤„ç†å™¨æœ‰ä¸¤ä¸ªä¸åŒæ¨¡å¼:`ç”¨æˆ·æ¨¡å¼`å’Œ`å†…æ ¸æ¨¡å¼`. æ ¹æ®å¤„ç†å™¨ä¸Šè¿è¡Œçš„ä»£ç çš„ç±»åž‹,å¤„ç†å™¨åœ¨ä¸¤ä¸ªæ¨¡å¼ä¹‹é—´åˆ‡æ¢. åº”ç”¨ç¨‹åºåœ¨ç”¨æˆ·æ¨¡å¼ä¸‹è¿è¡Œ,æ ¸å¿ƒæ“ä½œç³»ç»Ÿç»„ä»¶åœ¨å†…æ ¸æ¨¡å¼ä¸‹è¿è¡Œ. å¤šä¸ªé©±åŠ¨ç¨‹åºåœ¨å†…æ ¸æ¨¡å¼ä¸‹è¿è¡Œæ—¶,æŸäº›é©±åŠ¨ç¨‹åºå¯èƒ½åœ¨ç”¨æˆ·æ¨¡å¼ä¸‹è¿è¡Œ.
  
-µ±Æô¶¯ÓÃ»§Ä£Ê½µÄÓ¦ÓÃ³ÌÐòÊ±,Windows »áÎª¸ÃÓ¦ÓÃ³ÌÐò´´½¨`½ø³Ì`. ½ø³ÌÎªÓ¦ÓÃ³ÌÐòÌá¹©×¨ÓÃµÄ`ÐéÄâµØÖ·¿Õ¼ä`ºÍ×¨ÓÃµÄ`¾ä±ú±í¸ñ`. ÓÉÓÚÓ¦ÓÃ³ÌÐòµÄÐéÄâµØÖ·¿Õ¼äÎª×¨ÓÃ¿Õ¼ä,Ò»¸öÓ¦ÓÃ³ÌÐòÎÞ·¨¸ü¸ÄÊôÓÚÆäËûÓ¦ÓÃ³ÌÐòµÄÊý¾Ý. Ã¿¸öÓ¦ÓÃ³ÌÐò¶¼¹ÂÁ¢ÔËÐÐ,Èç¹ûÒ»¸öÓ¦ÓÃ³ÌÐòËð»µ,ÔòËð»µ»áÏÞÖÆµ½¸ÃÓ¦ÓÃ³ÌÐò. ÆäËûÓ¦ÓÃ³ÌÐòºÍ²Ù×÷ÏµÍ³²»»áÊÜ¸ÃËð»µµÄÓ°Ïì.
+å½“å¯åŠ¨ç”¨æˆ·æ¨¡å¼çš„åº”ç”¨ç¨‹åºæ—¶,Windows ä¼šä¸ºè¯¥åº”ç”¨ç¨‹åºåˆ›å»º`è¿›ç¨‹`. è¿›ç¨‹ä¸ºåº”ç”¨ç¨‹åºæä¾›ä¸“ç”¨çš„`è™šæ‹Ÿåœ°å€ç©ºé—´`å’Œä¸“ç”¨çš„`å¥æŸ„è¡¨æ ¼`. ç”±äºŽåº”ç”¨ç¨‹åºçš„è™šæ‹Ÿåœ°å€ç©ºé—´ä¸ºä¸“ç”¨ç©ºé—´,ä¸€ä¸ªåº”ç”¨ç¨‹åºæ— æ³•æ›´æ”¹å±žäºŽå…¶ä»–åº”ç”¨ç¨‹åºçš„æ•°æ®. æ¯ä¸ªåº”ç”¨ç¨‹åºéƒ½å­¤ç«‹è¿è¡Œ,å¦‚æžœä¸€ä¸ªåº”ç”¨ç¨‹åºæŸå,åˆ™æŸåä¼šé™åˆ¶åˆ°è¯¥åº”ç”¨ç¨‹åº. å…¶ä»–åº”ç”¨ç¨‹åºå’Œæ“ä½œç³»ç»Ÿä¸ä¼šå—è¯¥æŸåçš„å½±å“.
  
-ÓÃ»§Ä£Ê½Ó¦ÓÃ³ÌÐòµÄÐéÄâµØÖ·¿Õ¼ä³ýÁËÎª×¨ÓÃ¿Õ¼äÒÔÍâ,»¹»áÊÜµ½ÏÞÖÆ. ÔÚÓÃ»§Ä£Ê½ÏÂÔËÐÐµÄ´¦ÀíÆ÷ÎÞ·¨·ÃÎÊÎª¸Ã²Ù×÷ÏµÍ³±£ÁôµÄÐéÄâµØÖ·. ÏÞÖÆÓÃ»§Ä£Ê½Ó¦ÓÃ³ÌÐòµÄÐéÄâµØÖ·¿Õ¼ä¿É·ÀÖ¹Ó¦ÓÃ³ÌÐò¸ü¸Ä²¢ÇÒ¿ÉÄÜËð»µ¹Ø¼üµÄ²Ù×÷ÏµÍ³Êý¾Ý.
+ç”¨æˆ·æ¨¡å¼åº”ç”¨ç¨‹åºçš„è™šæ‹Ÿåœ°å€ç©ºé—´é™¤äº†ä¸ºä¸“ç”¨ç©ºé—´ä»¥å¤–,è¿˜ä¼šå—åˆ°é™åˆ¶. åœ¨ç”¨æˆ·æ¨¡å¼ä¸‹è¿è¡Œçš„å¤„ç†å™¨æ— æ³•è®¿é—®ä¸ºè¯¥æ“ä½œç³»ç»Ÿä¿ç•™çš„è™šæ‹Ÿåœ°å€. é™åˆ¶ç”¨æˆ·æ¨¡å¼åº”ç”¨ç¨‹åºçš„è™šæ‹Ÿåœ°å€ç©ºé—´å¯é˜²æ­¢åº”ç”¨ç¨‹åºæ›´æ”¹å¹¶ä¸”å¯èƒ½æŸåå…³é”®çš„æ“ä½œç³»ç»Ÿæ•°æ®.
  
-ÔÚÄÚºËÄ£Ê½ÏÂÔËÐÐµÄËùÓÐ´úÂë¶¼¹²Ïíµ¥¸öÐéÄâµØÖ·¿Õ¼ä. Õâ±íÊ¾ÄÚºËÄ£Ê½Çý¶¯³ÌÐòÎ´´ÓÆäËûÇý¶¯³ÌÐòºÍ²Ù×÷ÏµÍ³×ÔÉí¶ÀÁ¢¿ªÀ´. Èç¹ûÄÚºËÄ£Ê½Çý¶¯³ÌÐòÒâÍâÐ´Èë´íÎóµÄÐéÄâµØÖ·,ÔòÊôÓÚ²Ù×÷ÏµÍ³»òÆäËûÇý¶¯³ÌÐòµÄÊý¾Ý¿ÉÄÜ»áÊÜµ½Ëð»µ. Èç¹ûÄÚºËÄ£Ê½Çý¶¯³ÌÐòËð»µ,ÔòÕû¸ö²Ù×÷ÏµÍ³»áËð»µ.
+åœ¨å†…æ ¸æ¨¡å¼ä¸‹è¿è¡Œçš„æ‰€æœ‰ä»£ç éƒ½å…±äº«å•ä¸ªè™šæ‹Ÿåœ°å€ç©ºé—´. è¿™è¡¨ç¤ºå†…æ ¸æ¨¡å¼é©±åŠ¨ç¨‹åºæœªä»Žå…¶ä»–é©±åŠ¨ç¨‹åºå’Œæ“ä½œç³»ç»Ÿè‡ªèº«ç‹¬ç«‹å¼€æ¥. å¦‚æžœå†…æ ¸æ¨¡å¼é©±åŠ¨ç¨‹åºæ„å¤–å†™å…¥é”™è¯¯çš„è™šæ‹Ÿåœ°å€,åˆ™å±žäºŽæ“ä½œç³»ç»Ÿæˆ–å…¶ä»–é©±åŠ¨ç¨‹åºçš„æ•°æ®å¯èƒ½ä¼šå—åˆ°æŸå. å¦‚æžœå†…æ ¸æ¨¡å¼é©±åŠ¨ç¨‹åºæŸå,åˆ™æ•´ä¸ªæ“ä½œç³»ç»Ÿä¼šæŸå.
  
-´ËÍ¼ËµÃ÷ÁËÓÃ»§Ä£Ê½×é¼þÓëÄÚºËÄ£Ê½×é¼þÖ®¼äµÄÍ¨ÐÅ.
+æ­¤å›¾è¯´æ˜Žäº†ç”¨æˆ·æ¨¡å¼ç»„ä»¶ä¸Žå†…æ ¸æ¨¡å¼ç»„ä»¶ä¹‹é—´çš„é€šä¿¡.
 ![](http://www.th7.cn/d/file/p/2016/03/11/77a358360e67c0b6396520d05f027b8c.jpg)
  
 ****
-### 4. Çý¶¯Ä£ÐÍÌØµã
-UMDFºÍ´«Í³µÄÇý¶¯³ÌÐò²îÒì·Ç³£´ó,¼òÒªËµÀ´,UMDFÊÇÕâÑùµÄ: `UMDFÊÇ»ùÓÚCOMË¼ÏëµÄ,ÔËÐÐÓÚÓÃ»§Ä£Ê½(RING3)µÄÇý¶¯³ÌÐòÄ£¿é`.
+### 4. é©±åŠ¨æ¨¡åž‹ç‰¹ç‚¹
+UMDFå’Œä¼ ç»Ÿçš„é©±åŠ¨ç¨‹åºå·®å¼‚éžå¸¸å¤§,ç®€è¦è¯´æ¥,UMDFæ˜¯è¿™æ ·çš„: `UMDFæ˜¯åŸºäºŽCOMæ€æƒ³çš„,è¿è¡ŒäºŽç”¨æˆ·æ¨¡å¼(RING3)çš„é©±åŠ¨ç¨‹åºæ¨¡å—`.
  
-ÄÇÃ´,ÕâÖÖÇý¶¯Ä£ÐÍ´øÀ´Ê²Ã´±ä»¯ÄØ£¿
-* »ùÓÚCOMË¼Ïë,ÒýÈë½Ó¿Ú»úÖÆ,¿ÉÒÔ°ÑÏà¹ØÁªµÄº¯Êý·ÖÃÅ±ðÀà½øÐÐ×éÖ¯,Ê¹µÃÇý¶¯´úÂëÇåÎúÃ÷ÁË;
-* ÔËÐÐÔÚRING3µÄÇý¶¯,´ó·ù¶È½µµÍÁËÇý¶¯³ÌÐòÔÚÎÈ¶¨ÐÔºÍ°²È«ÐÔÉÏÃæµÄ·çÏÕ,UMDFÇý¶¯±ÀÀ£²»»áµ¼ÖÂBSoD(À¶ÆÁ);
-* UMDFÇý¶¯µÄËÞÖ÷½ø³ÌÊÇÔÚÊÜÏÞµÄÓÃ»§Éí·ÝÏÂÔËÐÐµÄ,²»ÊÇÊÜÐÅÈÎµÄÏµÍ³ÄÚºËÄ£¿é.
-* ÔÚUMDFÀïÃæÊ¹ÓÃWin32 API.
+é‚£ä¹ˆ,è¿™ç§é©±åŠ¨æ¨¡åž‹å¸¦æ¥ä»€ä¹ˆå˜åŒ–å‘¢ï¼Ÿ
+* åŸºäºŽCOMæ€æƒ³,å¼•å…¥æŽ¥å£æœºåˆ¶,å¯ä»¥æŠŠç›¸å…³è”çš„å‡½æ•°åˆ†é—¨åˆ«ç±»è¿›è¡Œç»„ç»‡,ä½¿å¾—é©±åŠ¨ä»£ç æ¸…æ™°æ˜Žäº†;
+* è¿è¡Œåœ¨RING3çš„é©±åŠ¨,å¤§å¹…åº¦é™ä½Žäº†é©±åŠ¨ç¨‹åºåœ¨ç¨³å®šæ€§å’Œå®‰å…¨æ€§ä¸Šé¢çš„é£Žé™©,UMDFé©±åŠ¨å´©æºƒä¸ä¼šå¯¼è‡´BSoD(è“å±);
+* UMDFé©±åŠ¨çš„å®¿ä¸»è¿›ç¨‹æ˜¯åœ¨å—é™çš„ç”¨æˆ·èº«ä»½ä¸‹è¿è¡Œçš„,ä¸æ˜¯å—ä¿¡ä»»çš„ç³»ç»Ÿå†…æ ¸æ¨¡å—.
+* åœ¨UMDFé‡Œé¢ä½¿ç”¨Win32 API.
  
-ÔËÐÐÓÚRING3µÄUMDF¶ÔÓÚ³ÌÐòÔ±¿ªËµÖÁÉÙ´øÀ´Á½¸ö¶îÍâºÃ´¦:
-* Çý¶¯³ÌÐò²»ÐèÒªÇ¿ÖÆÊý×ÖÇ©Ãû,ÒòÎªUMDFÇý¶¯²»ÊÇÏµÍ³ÐÅÈÎÄ£¿é,ËùÒÔÔÚx64ÏÂÃæµÄ²¿Êð¸ü¼Ó·½±ã. ÌØ±ðÊÇ¸öÈË¿ª·¢Õß¿ÉÄÜÎÞ·¨³ÐÊÜWHQLµÄ·ÑÓÃ,»òÕßÆäËûÔ­ÒòÔÝÊ±ÎÞ·¨WQHLµÄÇé¿öÏÂ,Ê¹ÓÃUMDFÊÇÒ»¸ö½ÏºÃµÄÑ¡Ôñ.
-* µ÷ÊÔÄÑ¶È´ó·ù½µµÍ,²»ÔÙÐèÒªSoftICEºÍSyserÖ®ÀàµÄµ¥»úÄÚºËµ÷ÊÔÆ÷»òÕßWinDBGÖ®ÀàµÄË«»úµ÷ÊÔ,ÎÒÃÇ¿ÉÒÔÓÃWinDBG»òÕßVSµ÷ÊÔÆ÷attachµ½UMDFËÞÖ÷½ø³Ì¼´¿É½øÐÐµ÷ÊÔ. ¿ÉÒÔ²Î¿¼µ÷ÊÔUMDFÇý¶¯.
+è¿è¡ŒäºŽRING3çš„UMDFå¯¹äºŽç¨‹åºå‘˜å¼€è¯´è‡³å°‘å¸¦æ¥ä¸¤ä¸ªé¢å¤–å¥½å¤„:
+* é©±åŠ¨ç¨‹åºä¸éœ€è¦å¼ºåˆ¶æ•°å­—ç­¾å,å› ä¸ºUMDFé©±åŠ¨ä¸æ˜¯ç³»ç»Ÿä¿¡ä»»æ¨¡å—,æ‰€ä»¥åœ¨x64ä¸‹é¢çš„éƒ¨ç½²æ›´åŠ æ–¹ä¾¿. ç‰¹åˆ«æ˜¯ä¸ªäººå¼€å‘è€…å¯èƒ½æ— æ³•æ‰¿å—WHQLçš„è´¹ç”¨,æˆ–è€…å…¶ä»–åŽŸå› æš‚æ—¶æ— æ³•WQHLçš„æƒ…å†µä¸‹,ä½¿ç”¨UMDFæ˜¯ä¸€ä¸ªè¾ƒå¥½çš„é€‰æ‹©.
+* è°ƒè¯•éš¾åº¦å¤§å¹…é™ä½Ž,ä¸å†éœ€è¦SoftICEå’ŒSyserä¹‹ç±»çš„å•æœºå†…æ ¸è°ƒè¯•å™¨æˆ–è€…WinDBGä¹‹ç±»çš„åŒæœºè°ƒè¯•,æˆ‘ä»¬å¯ä»¥ç”¨WinDBGæˆ–è€…VSè°ƒè¯•å™¨attachåˆ°UMDFå®¿ä¸»è¿›ç¨‹å³å¯è¿›è¡Œè°ƒè¯•. å¯ä»¥å‚è€ƒè°ƒè¯•UMDFé©±åŠ¨.
  
-¶øKMDFÄÚºËÄ£Ê½Çý¶¯³ÌÐòÖÐµÄ´íÎó»áËð»µÏµÍ³µØÖ·¿Õ¼ä,²¢¿ÉÄÜ»áµ¼ÖÂ¼ÆËã»úÊ§°Ü. ÓÉÓÚÕâÐ©Çý¶¯Ä£ÐÍµÄÌØµã,ÔÚ¹¹½¨Çý¶¯³ÌÐòµÄ¿ª·¢µ÷ÊÔ»·¾³ÊÇÒ²»áÓÐËùÇø±ð,Ò»°ãÔÚ×öKMDFÇý¶¯µÄ¿ª·¢µ÷ÊÔÊ±¶¼Ñ¡ÔñË«»ú»ò´î½¨ÐéÄâ»ú»·¾³½øÐÐ,¶øUMDFÇý¶¯¿ÉÒÔ½øÐÐµ¥»úµ÷ÊÔ,**ÏÂÃæµÄ»·¾³´î½¨Ö÷ÒªÒÔ¸üÎª¸´ÔÓµÄKMDFÄ£Ê½ÎªÀý**.
+è€ŒKMDFå†…æ ¸æ¨¡å¼é©±åŠ¨ç¨‹åºä¸­çš„é”™è¯¯ä¼šæŸåç³»ç»Ÿåœ°å€ç©ºé—´,å¹¶å¯èƒ½ä¼šå¯¼è‡´è®¡ç®—æœºå¤±è´¥. ç”±äºŽè¿™äº›é©±åŠ¨æ¨¡åž‹çš„ç‰¹ç‚¹,åœ¨æž„å»ºé©±åŠ¨ç¨‹åºçš„å¼€å‘è°ƒè¯•çŽ¯å¢ƒæ˜¯ä¹Ÿä¼šæœ‰æ‰€åŒºåˆ«,ä¸€èˆ¬åœ¨åšKMDFé©±åŠ¨çš„å¼€å‘è°ƒè¯•æ—¶éƒ½é€‰æ‹©åŒæœºæˆ–æ­å»ºè™šæ‹ŸæœºçŽ¯å¢ƒè¿›è¡Œ,è€ŒUMDFé©±åŠ¨å¯ä»¥è¿›è¡Œå•æœºè°ƒè¯•,**ä¸‹é¢çš„çŽ¯å¢ƒæ­å»ºä¸»è¦ä»¥æ›´ä¸ºå¤æ‚çš„KMDFæ¨¡å¼ä¸ºä¾‹**.
  
 ****
-### 5. ¿ª·¢µ÷ÊÔ»·¾³ÅäÖÃ
-#### 5.0 ÄÚºËÈÕÖ¾²é¿´
+### 5. å¼€å‘è°ƒè¯•çŽ¯å¢ƒé…ç½®
+#### 5.0 å†…æ ¸æ—¥å¿—æŸ¥çœ‹
 Enable DbgPrint/KdPrint Output 
-1. [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Debug Print Filter] add ¡°DEFAULT¡±=dword:0000000f 
+1. [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Debug Print Filter] add â€œDEFAULTâ€=dword:0000000f 
 2. then reboot and run DbgView.(there is no need to reboot at most time)
 
 
-#### 5.1 ¹¤¾ß¼°Æ½Ì¨»·¾³
-Æ½Ì¨:Windows 10²Ù×÷ÏµÍ³
-¿ª·¢»·¾³:Visual Studio 2015 EnterpriseºÍWindows WDK/Windows SDK
-µ÷ÊÔ»·¾³:Oracle VM VirtualBox 5.0.14ÐéÄâ»ú
+#### 5.1 å·¥å…·åŠå¹³å°çŽ¯å¢ƒ
+å¹³å°:Windows 10æ“ä½œç³»ç»Ÿ
+å¼€å‘çŽ¯å¢ƒ:Visual Studio 2015 Enterpriseå’ŒWindows WDK/Windows SDK
+è°ƒè¯•çŽ¯å¢ƒ:Oracle VM VirtualBox 5.0.14è™šæ‹Ÿæœº
  
-#### 5.2 ·½·¨/²½Öè
-##### 5.2.1 °²×°/ÅäÖÃÖ÷»úºÍ²âÊÔ»ú
-1. Ö÷»ú°²×°
-±¾´Î´î½¨»·¾³Ö÷»ú²Ù×÷ÏµÍ³Ê¹ÓÃwin10,Ê×ÏÈ°²×°Visual Studio 2015 Enterprise,È»ºó°²×°Wdk 10.
-`×¢Òâ:WDK10Ò»¶¨ÒªÔÚvs2015ºóÃæ°²×°,°²×°Íêºó,Æô¶¯vs2015ÔÚ½çÃæ²Ëµ¥ÉÏ»á³öÏÖdriver²Ëµ¥,ÈçÏÂÍ¼. ÁíÍâ,Ò»°ãVisualStudio 2015 EnterpriseÊÇÒÑ¾­ÄÚ´øwindows SDK,µ«ÊÇÈç¹û²»ÊÇºÍ°²×°µÄWDKÒ»ÖÂµÄ°æ±¾,½¨ÒéÔÚµ¥¶À°²×°windows SDK 10,Ê¹µÃWDKºÍSDK°æ±¾Ò»ÖÂ.`
+#### 5.2 æ–¹æ³•/æ­¥éª¤
+##### 5.2.1 å®‰è£…/é…ç½®ä¸»æœºå’Œæµ‹è¯•æœº
+1. ä¸»æœºå®‰è£…
+æœ¬æ¬¡æ­å»ºçŽ¯å¢ƒä¸»æœºæ“ä½œç³»ç»Ÿä½¿ç”¨win10,é¦–å…ˆå®‰è£…Visual Studio 2015 Enterprise,ç„¶åŽå®‰è£…Wdk 10.
+`æ³¨æ„:WDK10ä¸€å®šè¦åœ¨vs2015åŽé¢å®‰è£…,å®‰è£…å®ŒåŽ,å¯åŠ¨vs2015åœ¨ç•Œé¢èœå•ä¸Šä¼šå‡ºçŽ°driverèœå•,å¦‚ä¸‹å›¾. å¦å¤–,ä¸€èˆ¬VisualStudio 2015 Enterpriseæ˜¯å·²ç»å†…å¸¦windows SDK,ä½†æ˜¯å¦‚æžœä¸æ˜¯å’Œå®‰è£…çš„WDKä¸€è‡´çš„ç‰ˆæœ¬,å»ºè®®åœ¨å•ç‹¬å®‰è£…windows SDK 10,ä½¿å¾—WDKå’ŒSDKç‰ˆæœ¬ä¸€è‡´.`
 ![](http://www.th7.cn/d/file/p/2016/03/11/b8495c539a34e61864e7fd04483dd908.jpg)
 ![](http://www.th7.cn/d/file/p/2016/03/11/a0f118db224f49797997535c94c9ead1.jpg)
  
-2. ²âÊÔ»ú°²×°
-±¾´Î²âÊÔ»ú²ÉÓÃOracle VM VirtualBox 5.0.14ÐéÄâ»ú.Ê×ÏÈÔÚÖ÷»úÉÏ°²×°Oracle VM VirtualBox5.0.14ÐéÄâ»ú,È»ºóÔÚÐéÄâ»úÉÏ°²×°win10²Ù×÷ÏµÍ³.
+2. æµ‹è¯•æœºå®‰è£…
+æœ¬æ¬¡æµ‹è¯•æœºé‡‡ç”¨Oracle VM VirtualBox 5.0.14è™šæ‹Ÿæœº.é¦–å…ˆåœ¨ä¸»æœºä¸Šå®‰è£…Oracle VM VirtualBox5.0.14è™šæ‹Ÿæœº,ç„¶åŽåœ¨è™šæ‹Ÿæœºä¸Šå®‰è£…win10æ“ä½œç³»ç»Ÿ.
  
-3. ÁªÍ¨Ö÷»úºÍÄ¿±ê»ú
+3. è”é€šä¸»æœºå’Œç›®æ ‡æœº
  
-4. Ä¿±ê»úÔÊÐíÄÚºËµ÷ÊÔ
-ÔÚ²âÊÔ»úÉÏÓÃÏµÍ³¹ÜÀíÔ±ÕË»§´ò¿ªCMDÃüÁî´°¿Ú,ÊäÈëÏÂÃæÃüÁî:
+4. ç›®æ ‡æœºå…è®¸å†…æ ¸è°ƒè¯•
+åœ¨æµ‹è¯•æœºä¸Šç”¨ç³»ç»Ÿç®¡ç†å‘˜è´¦æˆ·æ‰“å¼€CMDå‘½ä»¤çª—å£,è¾“å…¥ä¸‹é¢å‘½ä»¤:
 ```
 C:/> bcdedit /set {default} DEBUG YES
 C:/> bcdedit /set TESTSIGNING ON
 ```
  
-##### 5.2.2 Ê¹ÓÃWinDbgµ÷ÊÔ
-ÓÉÓÚµ÷ÊÔ·½Ê½ÓÐºÃ¶àÖÖ,ÎÒÃÇÑ¡Ôñ³£ÓÃµÄ´®¿Úµ÷ÊÔºÍÍøÂçµ÷ÊÔÁ½ÖÖ·½Ê½½øÐÐÌÖÂÛ.
+##### 5.2.2 ä½¿ç”¨WinDbgè°ƒè¯•
+ç”±äºŽè°ƒè¯•æ–¹å¼æœ‰å¥½å¤šç§,æˆ‘ä»¬é€‰æ‹©å¸¸ç”¨çš„ä¸²å£è°ƒè¯•å’Œç½‘ç»œè°ƒè¯•ä¸¤ç§æ–¹å¼è¿›è¡Œè®¨è®º.
  
-###### 5.2.2.1 ´®¿Úµ÷ÊÔ·½Ê½
-a. ÔÚÐéÄâ»úÉÏÉèÖÃ´®¿Ú
-Ê×ÏÈ¹Ø±ÕÐéÄâ»úÉÏµÄ²Ù×÷ÏµÍ³,ÔÚÐéÄâ»úÉÏÉèÖÃ. ¶ÔÓÚÆÕÍ¨µÄVirtualBoxÖÐµÄÐéÄâ»ú,Ä¬ÈÏÅäÖÃÇé¿öÏÂ,ÊÇÃ»ÓÐ¿ªÆô¶ÔÓ¦µÄ´®¿ÚµÄ,ÆäÅäÖÃ¶ÔÓ¦µÄÊÇÕâÑùµÄ:
+###### 5.2.2.1 ä¸²å£è°ƒè¯•æ–¹å¼
+a. åœ¨è™šæ‹Ÿæœºä¸Šè®¾ç½®ä¸²å£
+é¦–å…ˆå…³é—­è™šæ‹Ÿæœºä¸Šçš„æ“ä½œç³»ç»Ÿ,åœ¨è™šæ‹Ÿæœºä¸Šè®¾ç½®. å¯¹äºŽæ™®é€šçš„VirtualBoxä¸­çš„è™šæ‹Ÿæœº,é»˜è®¤é…ç½®æƒ…å†µä¸‹,æ˜¯æ²¡æœ‰å¼€å¯å¯¹åº”çš„ä¸²å£çš„,å…¶é…ç½®å¯¹åº”çš„æ˜¯è¿™æ ·çš„:
 ![](http://www.th7.cn/d/file/p/2016/03/11/9e2882d60b580e00734ca2b89b52760c.jpg)
-°Ñ´®¿ÚÉèÖÃ³ÉÖ÷»úÉÏµÄÒ»¸ö¹ÜµÀpipe(pipeÊÇ¸öÈí¼þÉÏµÄ¸ÅÄî),pipeÃû: `//./pipe/<name>`
+æŠŠä¸²å£è®¾ç½®æˆä¸»æœºä¸Šçš„ä¸€ä¸ªç®¡é“pipe(pipeæ˜¯ä¸ªè½¯ä»¶ä¸Šçš„æ¦‚å¿µ),pipeå: `//./pipe/<name>`
  
-b. ÔÚ²âÊÔ»úÉÏÉèÖÃ´®¿Úµ÷ÊÔ
-ÔÚ²âÊÔ»úÉÏÓÃÏµÍ³¹ÜÀíÔ±ÕË»§´ò¿ªCMDÃüÁî´°¿Ú,ÊäÈëÏÂÃæÃüÁî:
+b. åœ¨æµ‹è¯•æœºä¸Šè®¾ç½®ä¸²å£è°ƒè¯•
+åœ¨æµ‹è¯•æœºä¸Šç”¨ç³»ç»Ÿç®¡ç†å‘˜è´¦æˆ·æ‰“å¼€CMDå‘½ä»¤çª—å£,è¾“å…¥ä¸‹é¢å‘½ä»¤:
 ```
 C:/> bcdedit /debug on
 C:/> bcdedit /dbgsettings serial debugport:1 baudrate:115200
 ```
-ÆäÖÐdebugport:1,±íÊ¾Ñ¡Ôñ´®¿Úcom1.
+å…¶ä¸­debugport:1,è¡¨ç¤ºé€‰æ‹©ä¸²å£com1.
  
-È»ºóÖØÆô²Ù×÷ÏµÍ³,ÔÚ²âÊÔ»úÉÏ´ò¿ªCMDÃüÁî´°¿Ú,ÊäÈëÏÂÃæÃüÁî,¾Í¿ÉÒÔ¿´µ½¸Õ²ÅÅäÖÃµÄ²ÎÊý:
+ç„¶åŽé‡å¯æ“ä½œç³»ç»Ÿ,åœ¨æµ‹è¯•æœºä¸Šæ‰“å¼€CMDå‘½ä»¤çª—å£,è¾“å…¥ä¸‹é¢å‘½ä»¤,å°±å¯ä»¥çœ‹åˆ°åˆšæ‰é…ç½®çš„å‚æ•°:
 ```
 C:/> bcdedit / bcdedit /dbgsettings
 ```
 ![](http://www.th7.cn/d/file/p/2016/03/11/283ce2c72c01ae1e805c9bfee5a0d522.jpg)
  
-c. ÔÚÖ÷»úÆô¶¯WinDbgµ÷ÊÔ³ÌÐò
-ÔÚÖ÷»úÉÏ´ò¿ªCMDÃüÁî´°¿Ú,½øÈëµ½WinDbg³ÌÐòµÄÎÄ¼þ¼Ð,Ò»°ãÔÚÈçÏÂµÄÂ·¾¶:
+c. åœ¨ä¸»æœºå¯åŠ¨WinDbgè°ƒè¯•ç¨‹åº
+åœ¨ä¸»æœºä¸Šæ‰“å¼€CMDå‘½ä»¤çª—å£,è¿›å…¥åˆ°WinDbgç¨‹åºçš„æ–‡ä»¶å¤¹,ä¸€èˆ¬åœ¨å¦‚ä¸‹çš„è·¯å¾„:
 ```
 C:/>cd C:/Program Files (x86)/Windows Kits/10/Debuggers/x64
 C:/> windbg -k com:pipe,port=//./pipe/vmbox,resets=0,reconnect
 ```
-Windbg³ÌÐòÕý³£ÔËÐÐ,Ð§¹ûÈçÏÂ,ËµÃ÷ÅäÖÃÕýÈ·,¿ÉÒÔÍ¨¹ý´®¿Úµ÷ÊÔÇý¶¯³ÌÐòÁË.
+Windbgç¨‹åºæ­£å¸¸è¿è¡Œ,æ•ˆæžœå¦‚ä¸‹,è¯´æ˜Žé…ç½®æ­£ç¡®,å¯ä»¥é€šè¿‡ä¸²å£è°ƒè¯•é©±åŠ¨ç¨‹åºäº†.
 ![](http://www.th7.cn/d/file/p/2016/03/11/fe1d0fafa686557f85156e45c11ccfdf.jpg)
  
-d. ÎÊÌâ:
-ÏÖÏñ:´ò¿ªÐéÄâ»úºóÎÞ·¨Á¬½Ó,ÌáÊÔÎÞ·¨´ò¿ªÁ¬½Ó¶Ë¿Ú.
-¹ÊÕÏÔ­Òò:WMWare7.x¼°ÒÔºóµÄ°æ±¾ÔÚÌí¼ÓSerial PortÊ±Ä¬ÈÏÎªSerial Port2,¼´COM2¶Ë¿Ú,¶øÏ°¹ßÁËÓÃWMWare6.xµÄÅóÓÑÃÇÉý¼¶7.xÊ±Ï°¹ßÁË°´¾ÉÓÐÉèÖÃ(COM1)À´½øÐÐË«»úµ÷ÊÔ,¾Í»áÁ¬½Ó²»ÉÏÁË.
-½â¾ö·½°¸:
-* ÔÚÌí¼ÓSerial PortÊ±½«ÐéÄâ»úÓ²¼þÅäÖÃÖÐµÄ´òÓ¡»úÉ¾³ý,ÔÙ´´½¨SerialPortÊ±¾ÍÊÇSerialPort1ÁË,ÆäËü²»ÓÃ¸Ä±ä,Ö±½Ó¿ÉÒÔ°´Ô­ÓÐ·½Ê½½øÐÐË«µ÷ÊÔµÄÉèÖÃ.
-* ÐéÄâµÄÓ²¼þÉèÖÃ²»±ä,ÔÚÐéÄâOSÖÐÌí¼Óµ÷ÊÔÒýµ¼ÏîÊ±(bcdeditÀï),°Ñ¶Ë¿ÚÉèÎªCOM2,Ò²ÊÇ¿ÉÐÐµÄ.
-ÒÔÉÏÁ½¸ö·½°¸ÈÎÑ¡ÆäÒ»¿É½â¾ö.
+d. é—®é¢˜:
+çŽ°åƒ:æ‰“å¼€è™šæ‹ŸæœºåŽæ— æ³•è¿žæŽ¥,æè¯•æ— æ³•æ‰“å¼€è¿žæŽ¥ç«¯å£.
+æ•…éšœåŽŸå› :WMWare7.xåŠä»¥åŽçš„ç‰ˆæœ¬åœ¨æ·»åŠ Serial Portæ—¶é»˜è®¤ä¸ºSerial Port2,å³COM2ç«¯å£,è€Œä¹ æƒ¯äº†ç”¨WMWare6.xçš„æœ‹å‹ä»¬å‡çº§7.xæ—¶ä¹ æƒ¯äº†æŒ‰æ—§æœ‰è®¾ç½®(COM1)æ¥è¿›è¡ŒåŒæœºè°ƒè¯•,å°±ä¼šè¿žæŽ¥ä¸ä¸Šäº†.
+è§£å†³æ–¹æ¡ˆ:
+* åœ¨æ·»åŠ Serial Portæ—¶å°†è™šæ‹Ÿæœºç¡¬ä»¶é…ç½®ä¸­çš„æ‰“å°æœºåˆ é™¤,å†åˆ›å»ºSerialPortæ—¶å°±æ˜¯SerialPort1äº†,å…¶å®ƒä¸ç”¨æ”¹å˜,ç›´æŽ¥å¯ä»¥æŒ‰åŽŸæœ‰æ–¹å¼è¿›è¡ŒåŒè°ƒè¯•çš„è®¾ç½®.
+* è™šæ‹Ÿçš„ç¡¬ä»¶è®¾ç½®ä¸å˜,åœ¨è™šæ‹ŸOSä¸­æ·»åŠ è°ƒè¯•å¼•å¯¼é¡¹æ—¶(bcdedité‡Œ),æŠŠç«¯å£è®¾ä¸ºCOM2,ä¹Ÿæ˜¯å¯è¡Œçš„.
+ä»¥ä¸Šä¸¤ä¸ªæ–¹æ¡ˆä»»é€‰å…¶ä¸€å¯è§£å†³.
  
-###### 5.2.2.2 ÍøÂçµ÷ÊÔ·½Ê½
-1. ÔÚ²âÊÔ»úÉÏÉèÖÃÍøÂçµ÷ÊÔ
-ÔÚ²âÊÔ»úÉÏÓÃÏµÍ³¹ÜÀíÔ±ÕË»§´ò¿ªCMDÃüÁî´°¿Ú,ÊäÈëÏÂÃæÃüÁî:
+###### 5.2.2.2 ç½‘ç»œè°ƒè¯•æ–¹å¼
+1. åœ¨æµ‹è¯•æœºä¸Šè®¾ç½®ç½‘ç»œè°ƒè¯•
+åœ¨æµ‹è¯•æœºä¸Šç”¨ç³»ç»Ÿç®¡ç†å‘˜è´¦æˆ·æ‰“å¼€CMDå‘½ä»¤çª—å£,è¾“å…¥ä¸‹é¢å‘½ä»¤:
 ```
 C:/> bcdedit /debug on
 C:/> bcdedit /dbgsettings net hostip:192.168.12.109 port:50000 key:1.2.3.4
 ```
-ÆäÖÐhostip:192.168.12.109,±íÊ¾Ö÷»úipµØÖ·,port:50000ÖÆ¶¨Í¨Ñ¶¶Ë¿Ú,key²ÎÊýÖ¸¶¨Í¨Ñ¶Ê¹ÓÃµÄ¼ÓÃÜÃÜÔ¿key.
+å…¶ä¸­hostip:192.168.12.109,è¡¨ç¤ºä¸»æœºipåœ°å€,port:50000åˆ¶å®šé€šè®¯ç«¯å£,keyå‚æ•°æŒ‡å®šé€šè®¯ä½¿ç”¨çš„åŠ å¯†å¯†é’¥key.
  
-È»ºóÖØÆô²Ù×÷ÏµÍ³,ÔÚ²âÊÔ»úÉÏ´ò¿ªCMDÃüÁî´°¿Ú,ÊäÈëÏÂÃæÃüÁî,¾Í¿ÉÒÔ¿´µ½¸Õ²ÅÅäÖÃµÄ²ÎÊý:
+ç„¶åŽé‡å¯æ“ä½œç³»ç»Ÿ,åœ¨æµ‹è¯•æœºä¸Šæ‰“å¼€CMDå‘½ä»¤çª—å£,è¾“å…¥ä¸‹é¢å‘½ä»¤,å°±å¯ä»¥çœ‹åˆ°åˆšæ‰é…ç½®çš„å‚æ•°:
 ```
 C:/> bcdedit / bcdedit /dbgsettings
 ```
 ![](http://www.th7.cn/d/file/p/2016/03/11/94102a725e66a7a23144b4ef778ca6b0.jpg)
  
-2. ÔÚÖ÷»úÆô¶¯WinDbgµ÷ÊÔ³ÌÐò
-ÔÚÖ÷»úÉÏ´ò¿ªCMDÃüÁî´°¿Ú,½øÈëµ½WinDbg³ÌÐòµÄÎÄ¼þ¼Ð,Ò»°ãÔÚÈçÏÂµÄÂ·¾¶:
+2. åœ¨ä¸»æœºå¯åŠ¨WinDbgè°ƒè¯•ç¨‹åº
+åœ¨ä¸»æœºä¸Šæ‰“å¼€CMDå‘½ä»¤çª—å£,è¿›å…¥åˆ°WinDbgç¨‹åºçš„æ–‡ä»¶å¤¹,ä¸€èˆ¬åœ¨å¦‚ä¸‹çš„è·¯å¾„:
 ```
 C:/>cd C:/Program Files (x86)/Windows Kits/10/Debuggers/x64
-C:/> WinDbg ¨Ck net:port=50000,key=1.2.3.4
+C:/> WinDbg â€“k net:port=50000,key=1.2.3.4
 ```
-Windbg³ÌÐòÕý³£ÔËÐÐ,Ð§¹ûÈçÏÂ,ËµÃ÷ÅäÖÃÕýÈ·,¿ÉÒÔÍ¨¹ý´®¿Úµ÷ÊÔÇý¶¯³ÌÐòÁË.
+Windbgç¨‹åºæ­£å¸¸è¿è¡Œ,æ•ˆæžœå¦‚ä¸‹,è¯´æ˜Žé…ç½®æ­£ç¡®,å¯ä»¥é€šè¿‡ä¸²å£è°ƒè¯•é©±åŠ¨ç¨‹åºäº†.
 ![](http://www.th7.cn/d/file/p/2016/03/11/9150446ec3b92db9423c63d053c96119.jpg)
  
-##### 5.2.3 ÉèÖÃVisual Studio 2015µ÷ÊÔ·½Ê½
-Visual Studio 2015±¾Éí¼¯Çý¶¯³ÌÐò¿ª·¢/±àÒë/°²×°/²¿Êð/µ÷ÊÔÓÚÒ»Éí,Ê¹µÃWindowsÇý¶¯³ÌÐò¿ª·¢»á±äµÃ¸üÈÝÒ×. Visual Studio 2015×÷Îªµ÷ÊÔ/²¿Êð½çÃæºÍÊ¹ÓÃWinDbg×÷Îªµ÷ÊÔ½çÃæÔÚÅäÖÃÉÏÓÐÒ»Ð©²»Í¬.
+##### 5.2.3 è®¾ç½®Visual Studio 2015è°ƒè¯•æ–¹å¼
+Visual Studio 2015æœ¬èº«é›†é©±åŠ¨ç¨‹åºå¼€å‘/ç¼–è¯‘/å®‰è£…/éƒ¨ç½²/è°ƒè¯•äºŽä¸€èº«,ä½¿å¾—Windowsé©±åŠ¨ç¨‹åºå¼€å‘ä¼šå˜å¾—æ›´å®¹æ˜“. Visual Studio 2015ä½œä¸ºè°ƒè¯•/éƒ¨ç½²ç•Œé¢å’Œä½¿ç”¨WinDbgä½œä¸ºè°ƒè¯•ç•Œé¢åœ¨é…ç½®ä¸Šæœ‰ä¸€äº›ä¸åŒ.
  
-###### 5.2.3.1 ´®¿Úµ÷ÊÔ·½Ê½
-1. ÅäÖÃÐéÄâ»ú,²Î¼û`5.2.2.1(1-2)`
+###### 5.2.3.1 ä¸²å£è°ƒè¯•æ–¹å¼
+1. é…ç½®è™šæ‹Ÿæœº,å‚è§`5.2.2.1(1-2)`
  
-2. ÉèÖÃ²âÊÔ»úÎªWDKRemoteUser
-ÔÚÄ¿±ê»úÉÏ,ÔËÐÐÓëÄ¿±ê»úÆ½Ì¨Æ¥ÅäµÄWDK²âÊÔÄ¿±ê°²×°³ÌÐò MSI. ¿ÉÒÔÔÚ°²×°¹ýWDK10µÄÖ÷»úµÄWDK10°²×°Ä¿Â¼ÏÂÕÒµ½¸ÃMSI.
+2. è®¾ç½®æµ‹è¯•æœºä¸ºWDKRemoteUser
+åœ¨ç›®æ ‡æœºä¸Š,è¿è¡Œä¸Žç›®æ ‡æœºå¹³å°åŒ¹é…çš„WDKæµ‹è¯•ç›®æ ‡å®‰è£…ç¨‹åº MSI. å¯ä»¥åœ¨å®‰è£…è¿‡WDK10çš„ä¸»æœºçš„WDK10å®‰è£…ç›®å½•ä¸‹æ‰¾åˆ°è¯¥MSI.
  
-ÀýÈç:`C:/Program Files (x86)/WindowsKits/10/Remote/x64/WDK Test Target Setup x64-x64_en-us.msi`
+ä¾‹å¦‚:`C:/Program Files (x86)/WindowsKits/10/Remote/x64/WDK Test Target Setup x64-x64_en-us.msi`
  
 ![](http://www.th7.cn/d/file/p/2016/03/11/2396fd545a44e2c0656658f45ac6a766.jpg)
  
-`×¢Òâ:Èç¹û¸Ã³ÌÐòÃ»ÓÐ°²×°,ÔòÏÂÒ»²½ÔÚvs2015ÉÏÃæ×öµÄÅäÖÃ¾Í²»ÄÜ³É¹¦,ÎÒ¾ÍÔÚÕâÒ»²½ÉÏ±»¿¨×¡ºÜ¾Ã,Ò»Ö±ÕÒ²»µ½Ô­Òò.`
+`æ³¨æ„:å¦‚æžœè¯¥ç¨‹åºæ²¡æœ‰å®‰è£…,åˆ™ä¸‹ä¸€æ­¥åœ¨vs2015ä¸Šé¢åšçš„é…ç½®å°±ä¸èƒ½æˆåŠŸ,æˆ‘å°±åœ¨è¿™ä¸€æ­¥ä¸Šè¢«å¡ä½å¾ˆä¹…,ä¸€ç›´æ‰¾ä¸åˆ°åŽŸå› .`
  
-3. ÔÚÖ÷»úÉèÖÃVisual Studio 2015
-ÔÚÖ÷»úÉÏ,ÔÚ Visual Studio µÄ`Driver`²Ëµ¥ÖÐ,Ñ¡Ôñ`Test>Configure Deivce`. µ¥»÷`Add New Device`.
+3. åœ¨ä¸»æœºè®¾ç½®Visual Studio 2015
+åœ¨ä¸»æœºä¸Š,åœ¨ Visual Studio çš„`Driver`èœå•ä¸­,é€‰æ‹©`Test>Configure Deivce`. å•å‡»`Add New Device`.
 ![](http://www.th7.cn/d/file/p/2016/03/11/d61f0815475c41775c90c8d0e7e95175.jpg)
  
-`×¢Òâ:Èç¹ûvs2015µÄ°æ±¾ÊÇvs2015 Update 1°æ±¾,ÕâÊ±ºò»á³öÏÖÒ»¸ö´íÎóÌáÊ¾´°¿Ú,²»ÄÜ½øÐÐÏàÓ¦µÄÉèÖÃ,ÌáÊ¾ÈçÏÂ:`
+`æ³¨æ„:å¦‚æžœvs2015çš„ç‰ˆæœ¬æ˜¯vs2015 Update 1ç‰ˆæœ¬,è¿™æ—¶å€™ä¼šå‡ºçŽ°ä¸€ä¸ªé”™è¯¯æç¤ºçª—å£,ä¸èƒ½è¿›è¡Œç›¸åº”çš„è®¾ç½®,æç¤ºå¦‚ä¸‹:`
 ![](http://www.th7.cn/d/file/p/2016/03/11/bc875548b70bd672a2c0fa65fcb1600b.jpg)
  
-ÕâÊÇ¿ÉÒÔ´ÓÇý¶¯³ÌÐòµÄÏîÄ¿µãÓÒ¼ü->Ñ¡ÔñÊôÐÔ²Ëµ¥->Ñ¡Ôñµ÷ÊÔÑ¡Ïî->ÔÚÓÒ±ßÒªÆô¶¯µÄµ÷ÊÔÆ÷ÉÏÑ¡ÔñDebugging Tools for windows ¨C Kernel Debugger->ÔÚRemote Computer NameÉÏµã»÷ÅäÖÃ,¾Í»á³öÏÖÅäÖÃ´°¿Ú,½çÃæÈçÏÂ:
+è¿™æ˜¯å¯ä»¥ä»Žé©±åŠ¨ç¨‹åºçš„é¡¹ç›®ç‚¹å³é”®->é€‰æ‹©å±žæ€§èœå•->é€‰æ‹©è°ƒè¯•é€‰é¡¹->åœ¨å³è¾¹è¦å¯åŠ¨çš„è°ƒè¯•å™¨ä¸Šé€‰æ‹©Debugging Tools for windows â€“ Kernel Debugger->åœ¨Remote Computer Nameä¸Šç‚¹å‡»é…ç½®,å°±ä¼šå‡ºçŽ°é…ç½®çª—å£,ç•Œé¢å¦‚ä¸‹:
 ![](http://www.th7.cn/d/file/p/2016/03/11/f8d323632faa90ae9ebde3342a92d80b.jpg)
  
-µã»÷`Add New Devide`Ìí¼ÓÌá¸ö²âÊÔÖ÷»ú,ÔÚ³öÏÖµÄ½çÃæÉÏÌîÐ´²âÊÔÄ¿±êÖ÷»úµÄÏÔÊ¾Ãû³Æ,Éè±¸ÀàÐÍ(¼ÆËã»úÉè±¸»òÒÆ¶¯Éè±¸),²âÊÔÄ¿±êÖ÷»úµÄÖ÷»úÃû(ÎÒ²âÊÔÌîIPµØÖ·Ò²¿ÉÒÔ),ÔÚProvision OptionsÑ¡ÏîÖÐ½¨ÒéÑ¡ÔñµÚÒ»Ïî`Provision Deviceand choose debugger setting`,ÕâÑùvs2015¾ÍÄÜ¾ÍÐÐ×Ô¶¯²¿Êð²âÊÔµÄÇý¶¯³ÌÐò,µ«ÊÇÉèÖÃµÄÊ±ºò²âÊÔÄ¿±êÖ÷»ú»á×Ô¶¯¶à´ÎÖØÆôÒÔÍê³ÉÉèÖÃ. Ñ¡ÔñµÚ¶þÏîµÄ»°,²âÊÔÄ¿±êÖ÷»ú²»»áÖØÆô,µ«ÊÇÐèÒªÊÖ¹¤²¿Êð²âÊÔµÄÇý¶¯³ÌÐò.
+ç‚¹å‡»`Add New Devide`æ·»åŠ æä¸ªæµ‹è¯•ä¸»æœº,åœ¨å‡ºçŽ°çš„ç•Œé¢ä¸Šå¡«å†™æµ‹è¯•ç›®æ ‡ä¸»æœºçš„æ˜¾ç¤ºåç§°,è®¾å¤‡ç±»åž‹(è®¡ç®—æœºè®¾å¤‡æˆ–ç§»åŠ¨è®¾å¤‡),æµ‹è¯•ç›®æ ‡ä¸»æœºçš„ä¸»æœºå(æˆ‘æµ‹è¯•å¡«IPåœ°å€ä¹Ÿå¯ä»¥),åœ¨Provision Optionsé€‰é¡¹ä¸­å»ºè®®é€‰æ‹©ç¬¬ä¸€é¡¹`Provision Deviceand choose debugger setting`,è¿™æ ·vs2015å°±èƒ½å°±è¡Œè‡ªåŠ¨éƒ¨ç½²æµ‹è¯•çš„é©±åŠ¨ç¨‹åº,ä½†æ˜¯è®¾ç½®çš„æ—¶å€™æµ‹è¯•ç›®æ ‡ä¸»æœºä¼šè‡ªåŠ¨å¤šæ¬¡é‡å¯ä»¥å®Œæˆè®¾ç½®. é€‰æ‹©ç¬¬äºŒé¡¹çš„è¯,æµ‹è¯•ç›®æ ‡ä¸»æœºä¸ä¼šé‡å¯,ä½†æ˜¯éœ€è¦æ‰‹å·¥éƒ¨ç½²æµ‹è¯•çš„é©±åŠ¨ç¨‹åº.
 ![](http://www.th7.cn/d/file/p/2016/03/11/3170aace6626b42f3571815276f3925a.jpg)
  
-µã»÷ÏÂÒ»²½,³öÏÖÁ¬½ÓÀàÐÍ(¿ÉÒÔÑ¡Ôñ´®¿Ú/ÍøÂçµÈ),È»ºóÌîÐ´ÔÚ²âÊÔÄ¿±êÖ÷»úÉÏÉèÖÃµÄ²ÎÊý,ÉèÖÃ½çÃæÈçÏÂ:
+ç‚¹å‡»ä¸‹ä¸€æ­¥,å‡ºçŽ°è¿žæŽ¥ç±»åž‹(å¯ä»¥é€‰æ‹©ä¸²å£/ç½‘ç»œç­‰),ç„¶åŽå¡«å†™åœ¨æµ‹è¯•ç›®æ ‡ä¸»æœºä¸Šè®¾ç½®çš„å‚æ•°,è®¾ç½®ç•Œé¢å¦‚ä¸‹:
 ![](http://www.th7.cn/d/file/p/2016/03/11/00f181685ce6a4c2a754e86a89430cba.jpg)
  
-ÉèÖÃÍê³É,µã»÷ÏÂÒ»²½,Ôò»áÔÚ²âÊÔÄ¿±êÖ÷»úÉÏ½øÐÐÏàÓ¦µÄ»·¾³ÉèÖÃ,ÆÚ¼ä²âÊÔÄ¿±êÖ÷»ú»áÓÐ¶à´ÎÖØÆô. ÏÔÊ¾½çÃæÈçÏÂ:
+è®¾ç½®å®Œæˆ,ç‚¹å‡»ä¸‹ä¸€æ­¥,åˆ™ä¼šåœ¨æµ‹è¯•ç›®æ ‡ä¸»æœºä¸Šè¿›è¡Œç›¸åº”çš„çŽ¯å¢ƒè®¾ç½®,æœŸé—´æµ‹è¯•ç›®æ ‡ä¸»æœºä¼šæœ‰å¤šæ¬¡é‡å¯. æ˜¾ç¤ºç•Œé¢å¦‚ä¸‹:
 ![](http://www.th7.cn/d/file/p/2016/03/11/ae822a7917c862747f59c49871c6b293.jpg)
  
-`×¢Òâ:Èç¹ûÔÚÉèÖÃ¹ý³ÌÖÐÔÚCreaing system restorepoint³öÏÖ´íÎóµÄ»°,ÐèÒªÔÚ²âÊÔÄ¿±êÖ÷»úµÄCÅÌÉÏ´ò¿ªÏµÍ³»¹Ô­µã. ÉèÖÃµÄ²½ÖèÎª:¿ªÊ¼ÓÒ¼ü->ÏµÍ³->ÏµÍ³±£»¤->ÅäÖÃ->Æô¶¯²¢ÉèÖÃCÅÌ»¹Ô­µã.`
+`æ³¨æ„:å¦‚æžœåœ¨è®¾ç½®è¿‡ç¨‹ä¸­åœ¨Creaing system restorepointå‡ºçŽ°é”™è¯¯çš„è¯,éœ€è¦åœ¨æµ‹è¯•ç›®æ ‡ä¸»æœºçš„Cç›˜ä¸Šæ‰“å¼€ç³»ç»Ÿè¿˜åŽŸç‚¹. è®¾ç½®çš„æ­¥éª¤ä¸º:å¼€å§‹å³é”®->ç³»ç»Ÿ->ç³»ç»Ÿä¿æŠ¤->é…ç½®->å¯åŠ¨å¹¶è®¾ç½®Cç›˜è¿˜åŽŸç‚¹.`
  
-ÉèÖÃÍê³ÉºóÏÔÊ¾ÈçÏÂ½çÃæ,ÌáÊ¾ÅäÖÃ³É¹¦:
+è®¾ç½®å®ŒæˆåŽæ˜¾ç¤ºå¦‚ä¸‹ç•Œé¢,æç¤ºé…ç½®æˆåŠŸ:
 ![](http://www.th7.cn/d/file/p/2016/03/11/1a0b26c36dbebfc39b78f52f293f7171.jpg)
  
-µã»÷Íê³É,ÏÔÊ¾ÈçÏÂ½çÃæ:
+ç‚¹å‡»å®Œæˆ,æ˜¾ç¤ºå¦‚ä¸‹ç•Œé¢:
 ![](http://www.th7.cn/d/file/p/2016/03/11/8fef349bc85b2f542950207a594efabb.jpg)
-µã»÷ApplyÓ¦ÓÃ,È»ºóÑ¡ÔñOK.
+ç‚¹å‡»Applyåº”ç”¨,ç„¶åŽé€‰æ‹©OK.
  
-4. ÔÚÖ÷»úVisual Studio 2015²âÊÔÅäÖÃ
-×îºóÔÚÖ÷»úµÄVS2015µÄµ÷ÊÔ²Ëµ¥ÖÐ->Ñ¡Ôñ¸½¼Óµ½½ø³Ì-->ÔÚ´«Êä(P)ÏÂÀ­¿òÖÐÑ¡ÔñWindows Kernel ModelDebugger,ÔÚÏÞ¶¨·û(Q)ÏÂÀ­¿òÖÐÑ¡Ôñ¸Õ²ÅÅäÖÃµÄ²âÊÔÄ¿±êÖ÷»úÃû³Æ->ÔÚ¿ÉÓÃ½ø³ÌÖÐÑ¡ÔñKernel->×îºóµã»÷¸½¼Ó°´Å¥.
+4. åœ¨ä¸»æœºVisual Studio 2015æµ‹è¯•é…ç½®
+æœ€åŽåœ¨ä¸»æœºçš„VS2015çš„è°ƒè¯•èœå•ä¸­->é€‰æ‹©é™„åŠ åˆ°è¿›ç¨‹-->åœ¨ä¼ è¾“(P)ä¸‹æ‹‰æ¡†ä¸­é€‰æ‹©Windows Kernel ModelDebugger,åœ¨é™å®šç¬¦(Q)ä¸‹æ‹‰æ¡†ä¸­é€‰æ‹©åˆšæ‰é…ç½®çš„æµ‹è¯•ç›®æ ‡ä¸»æœºåç§°->åœ¨å¯ç”¨è¿›ç¨‹ä¸­é€‰æ‹©Kernel->æœ€åŽç‚¹å‡»é™„åŠ æŒ‰é’®.
 ![](http://www.th7.cn/d/file/p/2016/03/11/e26c9eb2e768729fc8abcf629365ce5c.jpg)
  
-µã»÷¸½¼Ó°´Å¥ºó³öÏÖµ÷ÊÔ½çÃæ±íÊ¾ÅäÖÃ³É¹¦,¿ÉÒÔ½øÐÐÇý¶¯µ÷ÊÔÁË.
+ç‚¹å‡»é™„åŠ æŒ‰é’®åŽå‡ºçŽ°è°ƒè¯•ç•Œé¢è¡¨ç¤ºé…ç½®æˆåŠŸ,å¯ä»¥è¿›è¡Œé©±åŠ¨è°ƒè¯•äº†.
  
-`×¢Òâ:ÕâÀïÈç¹ûµã»÷¸½¼Ó°´Å¥ºóVs2015³öÏÖ±ÀÀ£ÏÖÏóÇë¼ì²éWin10µÄ°æ±¾,Èç¹ûwin10µÄ°æ±¾»¹ÊÇ10240°æ±¾µÄ»°ÇëÉý¼¶µ½10586°æ±¾. ¿ÉÒÔµã»÷VS2015µÄ°ïÖú²Ëµ¥->¹ØÓÚMicrosoft Visual Studio->ÏµÍ³ÐÅÏ¢¿ÉÒÔ²é¿´µ½ÏµÍ³µÄ°æ±¾. ±¾ÈËÔÚÕâÀïÕÛÌÚÁË½«½üÁ½ÌìµÄÊ±¼ä,×îºó²ÅÕÒµ½ÊÇÓÉÓÚ°æ±¾²»Æ¥ÅäµÄÎÊÌâ.`
+`æ³¨æ„:è¿™é‡Œå¦‚æžœç‚¹å‡»é™„åŠ æŒ‰é’®åŽVs2015å‡ºçŽ°å´©æºƒçŽ°è±¡è¯·æ£€æŸ¥Win10çš„ç‰ˆæœ¬,å¦‚æžœwin10çš„ç‰ˆæœ¬è¿˜æ˜¯10240ç‰ˆæœ¬çš„è¯è¯·å‡çº§åˆ°10586ç‰ˆæœ¬. å¯ä»¥ç‚¹å‡»VS2015çš„å¸®åŠ©èœå•->å…³äºŽMicrosoft Visual Studio->ç³»ç»Ÿä¿¡æ¯å¯ä»¥æŸ¥çœ‹åˆ°ç³»ç»Ÿçš„ç‰ˆæœ¬. æœ¬äººåœ¨è¿™é‡ŒæŠ˜è…¾äº†å°†è¿‘ä¸¤å¤©çš„æ—¶é—´,æœ€åŽæ‰æ‰¾åˆ°æ˜¯ç”±äºŽç‰ˆæœ¬ä¸åŒ¹é…çš„é—®é¢˜.`
  
-###### 5.2.3.2 ÍøÂçµ÷ÊÔ·½Ê½
-1. ÉèÖÃ²âÊÔ»úÎªWDKRemoteUser
-²Î¼û`5.2.3.1(2)`
+###### 5.2.3.2 ç½‘ç»œè°ƒè¯•æ–¹å¼
+1. è®¾ç½®æµ‹è¯•æœºä¸ºWDKRemoteUser
+å‚è§`5.2.3.1(2)`
  
-2. ÔÚÖ÷»úÉèÖÃVisual Studio 2015
-²Î¼û`5.2.3.1(3)`
+2. åœ¨ä¸»æœºè®¾ç½®Visual Studio 2015
+å‚è§`5.2.3.1(3)`
  
-3. ÔÚÖ÷»úVisual Studio 2015²âÊÔÅäÖÃ
-²Î¼û`5.2.3.1(4)`
+3. åœ¨ä¸»æœºVisual Studio 2015æµ‹è¯•é…ç½®
+å‚è§`5.2.3.1(4)`
 ![](http://www.th7.cn/d/file/p/2016/03/11/2179a5a5c9e9b762439ebe511a377d82.jpg)
