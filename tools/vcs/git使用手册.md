@@ -25,6 +25,8 @@ git clone git@xxxx/xxxx.git
 git remote add username-xx git@xxxx/xxxx.git
 # 克隆指定分支的最近一次提交
 git clone --depth 1 /path/to/repository -b <branch-or-tag> 
+# 重新拉取完整项目,解决depth不完整的问题
+git pull --unshallow
 ```
 
 ## 文件添加/删除

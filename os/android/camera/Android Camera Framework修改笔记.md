@@ -91,12 +91,12 @@ printCameras("CameraProviderManager::getCameraCharacteristics", characteristics)
 
 * SDK camera2(legacy)：
 
-    ![图片示例](res/camera2-sdk1.bmp)
+    ![图片示例](../res/camera2-sdk1.bmp)
 
 * SDK camera2(really)：
 
-    ![图片示例](res/camera2-sdk2.bmp)
+    ![图片示例](../res/camera2-sdk2.bmp)
 
 * NDK camera2：
 
-    ![图片示例](res/camera2-ndk.bmp)
+    ![图片示例](../res/camera2-ndk.bmp)

@@ -22,6 +22,7 @@
 -aspect         # 设定画面的比例
 -vn             # 不处理视频
 -vcodec         # 设定视频编解码器，未设定时则使用与输入流相同的编解码器
+-vf             # 旋转视频
 
 # 音频参数：
 -ar             # 设定采样率
@@ -98,4 +99,12 @@ ffmpeg -re -stream_loop -1 -i Trouble.Maker.1080P.avi -vcodec copy -acodec aac -
 
 # windows下查看音频采集设备
 ffmpeg -list_devices true -f dshow -i dummy
+
+# 旋转视频
+#   0=逆时针90° and 垂直翻转  (default) 
+#   1=顺时针90°
+#   2=逆时针90°  
+#   3=顺时针90° and 垂直翻转  
+fmpeg -i inputfile.mp4 -vf "transpose=1" outputfile.mp4
+
 ```

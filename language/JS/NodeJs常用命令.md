@@ -28,7 +28,7 @@ npm install <module-name> --save
 // 将模块安装到当前项目；
 // 且将模块依赖写入package.json的devDependencies中,
 // npm install初始化整个项目时将被自动下载
-npm install <module-name> --save
+npm install <module-name> --save-dev
 
 // dependencies和devDependencies差别:
 // 前者为运行时依赖,打包时会将其打入包中

@@ -12,6 +12,10 @@
 
 ## 学习资源
 
+### hello-algorithm
+* https://github.com/geekxh/hello-algorithm
+* 东半球最好的编程学习类项目
+
 ### AI-Expert-Roadmap
 * https://github.com/AMAI-GmbH/AI-Expert-Roadmap
 * AI的学习路径图
@@ -19,6 +23,10 @@
 ### Mastering_Go_ZH_CN
 * https://github.com/hantmac/Mastering_Go_ZH_CN
 * 《Mastering GO》中文译本，本书适用于 Golang 程序员。内容包括但不限于并发、网络编程、垃圾回收、组合、GO UNIX 系统编程、基本数据类型（Array、Slice、Map）、GO 源码、反射、接口、类型方法等高级概念。 
+
+### 开心学数学
+* https://github.com/3b1b/manim
+* 动画制作库，主要用于制作跟数学物理相关的动态视频，可快速构建有关数学的动画，非常精确且形象。
 
 ## 玩具
 
@@ -30,3 +38,9 @@
 * https://github.com/watilde/beeplay
 * 让你可以用 JS 写一首“歌”的库
 * demo: http://watilde.github.io/beeplay/
+
+### You-Get 和 youtube-dl
+* https://github.com/soimort/you-get
+* http://rg3.github.io/youtube-dl/
+* 从视频网站上自动下载多媒体
+
