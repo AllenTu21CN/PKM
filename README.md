@@ -20,3 +20,7 @@
 * 文档编辑和阅读：Office等原生工具、VSCode、Chrome+Markdown插件
 * 搜索、标签：Everything
 * 在线存储、外部分享：Gitlab
+
+### 知识结构
+
+![](tech_tree.png)
