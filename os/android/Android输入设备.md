@@ -1,3 +1,13 @@
+
+## 常用命令
+
+```shell
+// android shell执行,查看输入设备和监听事件
+getevent -lt [<dev-path>]  // -t: 显示事件时间戳 -l: 列表显示事件含义
+```
+
+## 键值匹配相关
+
 * 运行系统中键值文件目录:/system/usr/keylayout
 
 * AOSP中键值文件目录：frameworks/base/data/keyboards
