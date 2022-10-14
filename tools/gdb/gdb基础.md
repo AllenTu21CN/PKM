@@ -43,8 +43,16 @@ continue/c  # 继续执行到下个断点
 step/s      # 单步执行
 next/n      # 单步执行
 
-// 打印变量值
-print/p
+// 查看变量值/表达式
+print(p) value/expr
+
+// 修改并查看变量值
+print(p) value=222
+
+// 查看变量值/表达式2   
+//  每次执行到最初display处时都会打印一次
+//  格式化查看与x命令类似
+display value/expr
 
 // 查看所有线程栈
 info threads
@@ -73,4 +81,12 @@ list <function>
 // 设置一次显示源代码的行数。一般是打印当前行的上5行和下5行，如果显示函数是是上2行下8行
 set listsize <count>
 show listsize
+
+// x(examine)命令格式化打印内存值
+x/<nfu> <addr>   
+// 例如：x/9xb xxx.buf 打印buf这个地址上内存值: 9个字节 十六进制输出
+// nfu可选
+//  n: 内存单元个数
+//  f: 输出格式  x-十六进制 d-十进制 u-十六进制无符号 o-八进制 t-二进制 f-浮点格式 i-指令地址格式 c-字符格式
+//  u: 内存单元大小 b-单字节 h-双字节 w-四字节 g-八字节
 ```

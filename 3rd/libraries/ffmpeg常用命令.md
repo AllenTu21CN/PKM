@@ -1,3 +1,4 @@
+## ffmpeg
 
 * 更多参考`--help`和[说明](http://blog.csdn.net/thomashtq/article/details/44940457)
 
@@ -14,6 +15,8 @@
 -pix_fmts       # 查看所有支持的图片格式
 -sample_fmts    # 查看所有支持的像素格式
 -i input_file   # 查看媒体文件input_file的信息（注意后面不再接其它参数，例如: ffmpeg -i test.mp4，查看 test.mp4视频信息）
+-probesize  # 码流信息探测大小(单位字节)
+-analyzeduration  # 码流信息探测时长(单位us)
 
 # 视频参数：
 -b              # 设定视频流量，默认为200Kbit/s
@@ -33,7 +36,7 @@
 
 * 示例
 
-```
+```SHELL
 # 输入换成yuv
 ./ffmpeg -i ~/test/speed1.png  -pix_fmt yuv420p ~/test/speed1.yuv
 ./ffmpeg -i input_file -vcodec rawvideo -an output_file_yuv  
@@ -51,9 +54,6 @@ ffmpeg -i input_file -vcodec h264 output_file
 # 转换成H265编解码
 # 其中 -i 表示输入文件， -vcodec  hevc 表示视频编解码方式为 H265，注意ffmpeg 中名称为 hevc，不是H265！
 ffmpeg -i input_file -vcode hevc output_file  
-
-# 可视化帧信息
-./ffprobe -show_packets -of xml -i test_mix.mp4
 
 # 设置输出分辨率
 ffmpeg -i input_file -vcodec h264 -s 1280x720 output_file  
@@ -107,4 +107,46 @@ ffmpeg -list_devices true -f dshow -i dummy
 #   3=顺时针90° and 垂直翻转  
 fmpeg -i inputfile.mp4 -vf "transpose=1" outputfile.mp4
 
+# AAC转MP3
+ffmpeg -i 002.aac -acodec libmp3lame 2.mp3
+
+# 发送 H264 over RTP
+ffmpeg -re -i d:\videos\1080P.264 -vcodec copy -f rtp rtp://127.0.0.1:1234
+ffmpeg -re -i d:\videos\1080P.264 -vcodec copy -f rtp rtp://127.0.0.1:1234 > test_rtp_h264.sdp # 生成SDP文件
+
+# 接收 H264 over RTP
+ffplay -protocol_whitelist "file,udp,rtp" -i rtp://127.0.0.1:1234
+ffplay -protocol_whitelist "file,udp,rtp" -i test_rtp_h264.sdp  # 从SDP读取RTP信息
+
+# 发送 H264 over ts/udp
+ffmpeg -re -i d:\videos\1080P.264 -vcodec copy -f mpegts udp://127.0.0.1:1234
+
+# 接收 H264 over ts/udp
+ffplay -protocol_whitelist "file,udp,rtp" -i udp://127.0.0.1:1234
+
+# 发送 H264 over ts/rtp
+ffmpeg -re -i d:\videos\1080P.264 -vcodec copy -f rtp_mpegts rtp://127.0.0.1:1234
+
+# 接收 H264 over ts/rtp
+ffplay -protocol_whitelist "file,udp,rtp" -i rtp://127.0.0.1:1234
+
+# 发送 音视频分离
+ffmpeg  -re -i <media_file> -an -vcodec copy -f rtp rtp://<IP>:5004 -vn -acodec copy -f rtp rtp://<IP>:5005 > test.sdp
+```
+
+## ffprobe
+
+* 可视化帧信息
+
+* 可参考[ffprobe常用命令](https://www.jianshu.com/p/e14bc2551cfd)
+
+```SHELL
+./ffprobe -show_format -show_packets -of xml -i test_mix.mp4
+
+./ffprobe 
+    -show_format        # 多媒体封装格式
+    -show_packets       # 展示包信息
+    -of xml             # XML格式展示，还支持XML、INI、JSON、CSV、FLA
+    -show_data          # 展示包的数据
+    -i test_mix.mp4
 ```

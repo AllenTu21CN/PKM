@@ -35,3 +35,9 @@
 * 程序内存管理(泄露)测试：`valgrind`
 
 * 查看进程代码栈：`gstack <PID>`
+
+* CPU压力测试：
+
+```shell
+for i in `seq 1 $(cat /proc/cpuinfo |grep "processor" |wc -l)`; do dd if=/dev/zero of=/dev/null & done
+```
