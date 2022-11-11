@@ -1,0 +1,12 @@
+webrtc::VP8EncoderImpl::InitEncode()                    at webrtc/modules/video_coding/codecs/vp8/vp8_impl.cc:276
+webrtc::VCMCodecDataBase::SetSendCodec ()               at webrtc/modules/video_coding/main/source/codec_database.cc:250
+webrtc::vcm::VideoSender::RegisterSendCodec()           at webrtc/modules/video_coding/main/source/video_sender.cc:93
+webrtc::VideoCodingModuleImpl::RegisterSendCodec()      at webrtc/modules/video_coding/main/source/video_coding_impl.cc:88
+webrtc::ViEEncoder::Init ()                             at webrtc/video_engine/vie_encoder.cc:220
+webrtc::ViEChannelManager::CreateChannel ()             at webrtc/video_engine/vie_channel_manager.cc:110
+webrtc::ViEBaseImpl::CreateChannel ()                   at webrtc/video_engine/vie_base_impl.cc:159
+cricket::WebRtcVideoMediaChannel::CreateChannel ()      at talk/media/webrtc/webrtcvideoengine.cc:3041
+cricket::WebRtcVideoMediaChannel::Init ()               at talk/media/webrtc/webrtcvideoengine.cc:1539
+cricket::WebRtcVideoEngine::CreateChannel ()            at talk/media/webrtc/webrtcvideoengine.cc:1039
+cricket::CompositeMediaEngine::CreateVideoChannel ()    at ./talk/media/base/mediaengine.h:192
+cricket::ChannelManager::CreateVideoChannel_w ()        talk/session/media/channelmanager.cc:378

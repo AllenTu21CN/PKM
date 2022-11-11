@@ -1,0 +1,358 @@
+------client 113 connect Ser 100------69
+113:44488<->100:8888        connect
+113:44488 ->100:8888        info:GET user sign_in
+100:8888  ->113:44488       info:add,close,id,userList
+113:44488<->100:8888        close
+113:44489<->100:8888        connect
+113:44489 ->100:8888        info:GET id wait
+    
+------client 111 connect Ser 100------84
+111:4388<->100:8888         connect
+111:4388 ->100:8888         info:GET user sign_in
+100:8888 ->111:4388         info:add,close,id,userList
+111:4388<->100:8888         close
+111:4389<->100:8888         connect
+111:4389 ->100:8888         info:GET id wait
+
+100:8888 ->113:44489        info:OK,close,id,userList
+113:44489<->100:8888        close 
+113:44490<->100:8888        connect
+113:44490 ->100:8888        info:GET id wait
+ 
+------client 111 Play clinet 113------101
+111:4390<->100:8888         connect
+111:4390 ->100:8888         info:sdp-offer
+100:8888 ->111:4388         info:OK,close,id,NULL
+111:4390<->100:8888         close
+111:4392<->100:8888         connect
+111:4392 ->100:8888         info:POST message 13 to 12{sdp1-audio}
+100:8888 ->111:4392         info:OK,close,id,NULL
+111:4392<->100:8888         close
+111:4393<->100:8888         connect
+111:4393 ->100:8888         info:POST message 13 to 12{sdp2-aduio}
+100:8888 ->111:4393         info:OK,close,id,NULL
+111:4393<->100:8888         close
+111:4394<->100:8888         connect
+111:4394 ->100:8888         info:POST message 13 to 12{sdp1-video}
+100:8888 ->111:4394         info:OK,close,id,NULL
+111:4394<->100:8888         close
+111:4395<->100:8888         connect
+111:4395 ->100:8888         info:POST message 13 to 12{sdp2-video}
+100:8888 ->111:4395         info:OK,close,id,NULL
+111:4395<->100:8888         close
+
+
+
+
+100:8888 ->113:44490        info:sdp(ser+111)
+113:44490<->100:8888        close
+113:44491<->100:8888        connect
+113:44491 ->100:8888        info:GET id wait
+100:8888 ->113:44491        info:OK,close,id,message from 13(sdp1-audio)
+113:44491<->100:8888        close
+113:44496<->100:8888        connect
+113:44496 ->100:8888        info:GET id wait
+100:8888 ->113:44496        info:OK,close,id,message from 13(sdp2-audio)
+113:44496<->100:8888        close
+113:44497<->100:8888        connect
+113:44497 ->100:8888        info:GET id wait
+100:8888 ->113:44497        info:OK,close,id,message from 13(sdp1-video)
+113:44497<->100:8888        close
+113:44498<->100:8888        connect
+113:44498 ->100:8888        info:sdp-answer
+100:8888 ->113:44498        info:OK,close,id,NULL
+113:44498<->100:8888        close
+113:44499<->100:8888        connect
+113:44499 ->100:8888        info:GET id wait
+100:8888 ->113:44499        info:OK,close,id,message from 13(sdp2-video)
+113:44499<->100:8888        close
+113:44500<->100:8888        connect
+113:44500 ->100:8888        info:GET id wait
+113:44501<->100:8888        connect
+113:44501 ->100:8888        info:GET id wait
+
+100:8888 ->111:4389         info:sdp(ser+113)
+111:4389<->100:8888         close
+111:4396<->100:8888         connect
+    
+    
+....
+tcp-sdp–≠…Ã
+------client 111 Over clinet 113------122
+
+(!tcp.port == 445) and !(ip.dst == 10.1.255.255) and !(ip.dst == 10.4.255.255) and !arp
+!smb and !nbns and !arp and !tcp.port == 445
+!smb and !nbns and !arp and !tcp.port == 445 and ip.addr == 10.1.100.113
+10.1.40.100
+10.1.115.211
+
+ 0j)EO[@@s
+dq
+(d"" P|GET /sign_in?root@tuyj-U11 HTTP/1.0
+
+
+
+HTTP/1.1 200 Added
+Server: PeerConnectionTestServer/0.1
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/plain
+Content-Length: 19
+Pragma: 12
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, Content-Length, Connection, Cache-Control
+Access-Control-Expose-Headers: Content-Length, X-Peer-Id
+
+root@tuyj-U11,12,1
+
+
+GET /wait?peer_id=12 HTTP/1.0
+
+
+
+HTTP/1.1 200 OK
+Server: PeerConnectionTestServer/0.1
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/plain
+Content-Length: 32
+Pragma: 12
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, Content-Length, Connection, Cache-Control
+Access-Control-Expose-Headers: Content-Length, X-Peer-Id
+
+Administrator@yourcomputer,13,1
+
+
+HTTP/1.1 200 Added
+Server: PeerConnectionTestServer/0.1
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/plain
+Content-Length: 51
+Pragma: 13
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, Content-Length, Connection, Cache-Control
+Access-Control-Expose-Headers: Content-Length, X-Peer-Id
+
+Administrator@yourcomputer,13,1
+root@tuyj-U11,12,1
+
+GET /wait?peer_id=13 HTTP/1.0
+
+GET /wait?peer_id=12 HTTP/1.0
+
+
+a=rtpmap:100 VP8/90000
+a=rtpmap:116 red/90000
+a=rtpmap:117 ulpfec/90000
+a=ssrc:2340634945 cname:gHl5c3Dbmx5sUmS9
+a=ssrc:2340634945 msid:stream_label video_label
+a=ssrc:2340634945 mslabel:stream_label
+a=ssrc:2340634945 label:video_label
+",
+   "type" : "offer"
+}
+
+VPF 100 116 117
+c=IN IP4 0.0.0.0
+a=rtcp:1 IN IP4 0.0.0.0
+a=ice-ufrag:a2mB8K22XWu9T0PP
+a=ice-pwd:ssD5E0iX8QvsB658hQA3JSjh
+a=ice-options:google-ice
+a=extmap:2 urn:ietf:params:rtp-hdrext:toffset
+a=sendrecv
+a=mid:video
+a=rtcp-mux
+a=crypto:1 AES_CM_128_HMAC_SHA1_80 inline:pHpfdt7V+6NP7Bo283jpMyDQ5r7PkiPevlCRLUdo
+a=rtpmap:100 VP8/90000
+a=rtpmap:116 red/90000
+a=rtpmap:117 ulpfec/90000
+a=ssrc:2340634945 cname:gHl5c3Dbmx5sUmS9
+a=ssrc:2340634945 msid:stream_label video_label
+a=ssrc:2340634945 mslabel:stream_label
+a=ssrc:2340634945 label:video_label
+",
+   "type" : "offer"
+}
+
+HTTP/1.1 200 OK
+Server: PeerConnectionTestServer/0.1
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/plain
+Content-Length: 0
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, Content-Length, Connection, Cache-Control
+Access-Control-Expose-Headers: Content-Length, X-Peer-Id
+
+
+POST /message?peer_id=13&to=12 HTTP/1.0
+Content-Length: 154
+Content-Type: text/plain
+
+{
+   "candidate" : "a=candidate:3690773885 1 udp 2113937151 10.1.100.111 4391 typ host generation 0
+",
+   "sdpMLineIndex" : 0,
+   "sdpMid" : "audio"
+}
+
+
+HTTP/1.1 200 OK
+Server: PeerConnectionTestServer/0.1
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/plain
+Content-Length: 0
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, Content-Length, Connection, Cache-Control
+Access-Control-Expose-Headers: Content-Length, X-Peer-Id
+
+POST /message?peer_id=13&to=12 HTTP/1.0
+Content-Length: 154
+Content-Type: text/plain
+
+{
+   "candidate" : "a=candidate:3690773885 2 udp 2113937151 10.1.100.111 4391 typ host generation 0
+",
+   "sdpMLineIndex" : 0,
+   "sdpMid" : "audio"
+}
+
+HTTP/1.1 200 OK
+Server: PeerConnectionTestServer/0.1
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/plain
+Content-Length: 0
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, Content-Length, Connection, Cache-Control
+Access-Control-Expose-Headers: Content-Length, X-Peer-Id
+
+POST /message?peer_id=13&to=12 HTTP/1.0
+Content-Length: 154
+Content-Type: text/plain
+
+{
+   "candidate" : "a=candidate:3690773885 1 udp 2113937151 10.1.100.111 4391 typ host generation 0
+",
+   "sdpMLineIndex" : 1,
+   "sdpMid" : "video"
+}
+
+HTTP/1.1 200 OK
+Server: PeerConnectionTestServer/0.1
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/plain
+Content-Length: 154
+Pragma: 13
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, Content-Length, Connection, Cache-Control
+Access-Control-Expose-Headers: Content-Length, X-Peer-Id
+
+{
+   "candidate" : "a=candidate:3690773885 1 udp 2113937151 10.1.100.111 4391 typ host generation 0
+",
+   "sdpMLineIndex" : 0,
+   "sdpMid" : "audio"
+}
+
+
+a=rtpmap:117 ulpfec/90000
+a=ssrc:2819412108 cname:cqRftzpB9KgiyQWe
+a=ssrc:2819412108 msid:stream_label video_label
+a=ssrc:2819412108 mslabel:stream_label
+a=ssrc:2819412108 label:video_label
+",
+   "type" : "answer"
+}
+
+
+0.0.0.0
+a=rtcp:1 IN IP4 0.0.0.0
+a=ice-ufrag:UKJ6d8AL160eBsLu
+a=ice-pwd:8SuveNL+bnz2r3bsPXIlWoqj
+a=extmap:2 urn:ietf:params:rtp-hdrext:toffset
+a=sendrecv
+a=mid:video
+a=rtcp-mux
+a=crypto:1 AES_CM_128_HMAC_SHA1_80 inline:m0CHAdJTI6CLv1oliG/Crup6bGNKuaMyzK3zdncR
+a=rtpmap:100 VP8/90000
+a=rtpmap:116 red/90000
+a=rtpmap:117 ulpfec/90000
+a=ssrc:2819412108 cname:cqRftzpB9KgiyQWe
+a=ssrc:2819412108 msid:stream_label video_label
+a=ssrc:2819412108 mslabel:stream_label
+a=ssrc:2819412108 label:video_label
+",
+   "type" : "answer"
+}
+
+HTTP/1.1 200 OK
+Server: PeerConnectionTestServer/0.1
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/plain
+Content-Length: 0
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, Content-Length, Connection, Cache-Control
+Access-Control-Expose-Headers: Content-Length, X-Peer-Id
+
+HTTP/1.1 200 OK
+Server: PeerConnectionTestServer/0.1
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/plain
+Content-Length: 154
+Pragma: 13
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, Content-Length, Connection, Cache-Control
+Access-Control-Expose-Headers: Content-Length, X-Peer-Id
+
+{
+   "candidate" : "a=candidate:3690773885 2 udp 2113937151 10.1.100.111 4391 typ host generation 0\r\n",
+   "sdpMLineIndex" : 1,
+   "sdpMid" : "video"
+}
+
+POST /message?peer_id=12&to=13 HTTP/1.0
+Content-Length: 155
+Content-Type: text/plain
+
+{
+   "candidate" : "a=candidate:1911911926 1 udp 2113937151 10.1.100.113 47936 typ host generation 0\r\n",
+   "sdpMLineIndex" : 0,
+   "sdpMid" : "audio"
+}
+
+
+POST /message?peer_id=13&to=12 HTTP/1.0
+Content-Length: 154
+Content-Type: text/plain
+
+{
+   "candidate" : "a=candidate:2508145037 1 tcp 1509957375 10.1.100.111 4399 typ host generation 0\r\n",
+   "sdpMLineIndex" : 0,
+   "sdpMid" : "audio"
+}
+

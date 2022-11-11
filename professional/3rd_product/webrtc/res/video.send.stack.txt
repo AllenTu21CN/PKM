@@ -1,0 +1,91 @@
+webrtc::RTPSenderVideo::SendVideoPacket ()                                                                                      at third_party/webrtc/modules/rtp_rtcp/source/rtp_sender_video.cc:117
+webrtc::RTPSenderVideo::SendVP8 ()                                                                                              at third_party/webrtc/modules/rtp_rtcp/source/rtp_sender_video.cc:465
+webrtc::RTPSenderVideo::SendVideo ()                                                                                            at third_party/webrtc/modules/rtp_rtcp/source/rtp_sender_video.cc:313
+webrtc::RTPSender::SendOutgoingData ()                                                                                          at third_party/webrtc/modules/rtp_rtcp/source/rtp_sender.cc:386
+webrtc::ModuleRtpRtcpImpl::SendOutgoingData ()                                                                                  at third_party/webrtc/modules/rtp_rtcp/source/rtp_rtcp_impl.cc:895
+webrtc::ModuleRtpRtcpImpl::SendOutgoingData ()                                                                                  at third_party/webrtc/modules/rtp_rtcp/source/rtp_rtcp_impl.cc:948
+                                                                            
+webrtc::ViEEncoder::SendData ()                                                                                                 at third_party/webrtc/video_engine/vie_encoder.cc:902
+webrtc::ViEEncoder::DeliverEncodedFrame ()                                                                                      at third_party/webrtc/video_engine/vie_encoder.cc:710
+webrtc::ViEFrameProviderBase::DeliverEncodedFrame ()                                                                            at third_party/webrtc/video_engine/vie_frame_provider_base.cc:100
+webrtc::ViECapturer::DeliverEncodedImage ()                                                                                     at third_party/webrtc/video_engine/vie_capturer.cc:604
+webrtc::ViECapturer::OnIncomingEncodedFrame ()                                                                                  at third_party/webrtc/video_engine/vie_capturer.cc:367
+
+webrtc::videocapturemodule::VideoCaptureImpl::DeliverEncodedFrame ()                                                            at third_party/webrtc/modules/video_capture/video_capture_impl.cc:246
+webrtc::videocapturemodule::VideoCaptureImpl::IncomingEncodedFrame ()                                                           at third_party/webrtc/modules/video_capture/video_capture_impl.cc:352
+
+webrtc::ViECapturer::IncomingEncodedFrame ()                                                                                    at third_party/webrtc/video_engine/vie_capturer.cc:316
+
+cricket::WebRtcVideoMediaChannel::AdaptAndSendEncodedFrame ()                                                                   at talk/media/webrtc/webrtcvideoengine.cc:2812
+sigslot::_connection4<>::emit ()                                                                                                at ./talk/base/sigslot.h:1994
+sigslot::signal4<>::operator() ()                                                                                               at /home/root/vmediax/svn.vmediax/1+N/main/other/linux/libjingle/include/talk/base/sigslot.h:2545
+
+vmx::WebrtcCapturerEncodedFrameCallback::Encoded ()                                                                             at /home/root/vmediax/svn.vmediax/1+N/main/src/svcLibjingleAdapter/webrtcvideosource.cpp:653
+vmx::VMXEncoderImpl::onEncodedByVMX ()                                                                                          at /home/root/vmediax/svn.vmediax/1+N/main/src/svcLibjingleAdapter/vmxCodes/vmxcodes_impl.cc:477
+vmx::CEncoder::onOutputBuffer ()                                                                                                at /home/root/vmediax/svn.vmediax/1+N/main/src/svcLibjingleAdapter/vmxCodes/vmxcodes_impl.cc:601
+
+EncoderBase::onOutputBuffer ()                                                                                                  at /home/builder/build/baselib/main/src/libvideo/src/VideoEncoder.cpp:81
+EncoderH264_x264::_nal_code ()                                                                                                  at /home/builder/build/baselib/main/src/libvideo/src/VideoEncoderH264_x264.cpp:327
+EncoderH264_x264::nal_code ()                                                                                                   at /home/builder/build/baselib/main/src/libvideo/src/VideoEncoderH264_x264.cpp:253
+x264_thread_main () from /home/root/vmediax/svn.vmediax/1+N/main/other/linux/libvideo/lib/liblibvideo.so
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#0  webrtc::RTPSenderVideo::SendH264 ()
+                                                        at  webrtc/modules/rtp_rtcp/source/rtp_sender_video.cc:445
+#1  0x0248bc2d in webrtc::RTPSenderVideo::SendVideo ()
+                                                        at webrtc/modules/rtp_rtcp/source/rtp_sender_video.cc:342
+#2  0x0246cdc9 in webrtc::RTPSender::SendOutgoingData ()    
+                                                        at webrtc/modules/rtp_rtcp/source/rtp_sender.cc:445
+#3  0x0244da40 in webrtc::ModuleRtpRtcpImpl::SendOutgoingData ()
+                                                        at  webrtc/modules/rtp_rtcp/source/rtp_rtcp_impl.cc:606
+#4  0x0244dd26 in webrtc::ModuleRtpRtcpImpl::SendOutgoingData ()
+                                                        at  webrtc/modules/rtp_rtcp/source/rtp_rtcp_impl.cc:658
+#5  0x0242d2f7 in webrtc::ViEEncoder::SendData ()
+                                                        at  webrtc/video_engine/vie_encoder.cc:915
+#6  0x0242c85e in webrtc::ViEEncoder::DeliverEncodedFrame ()
+                                                        at  webrtc/video_engine/vie_encoder.cc:741
+#7  0x02432358 in webrtc::ViEFrameProviderBase::DeliverEncodedFrame ()
+                                                        at webrtc/video_engine/vie_frame_provider_base.cc:100
+#8  0x02419ed4 in webrtc::ViECapturer::DeliverEncodedImage ()
+                                                        at  webrtc/video_engine/vie_capturer.cc:653
+#9  0x0241913a in webrtc::ViECapturer::OnIncomingEncodedFrame ()
+                                                        at webrtc/video_engine/vie_capturer.cc:412
+#10 0x023c0173 in webrtc::videocapturemodule::VideoCaptureImpl::DeliverEncodedFrame ()
+                                                        at webrtc/modules/video_capture/video_capture_impl.cc:287
+#11 0x023c05f4 in webrtc::videocapturemodule::VideoCaptureImpl::IncomingEncodedFrame ()
+                                                        at webrtc/modules/video_capture/video_capture_impl.cc:394
+#12 0x02418c52 in webrtc::ViECapturer::IncomingEncodedFrame ()
+                                                        at  webrtc/video_engine/vie_capturer.cc:339
+#13 0x02316f27 in cricket::WebRtcVideoMediaChannel::SendEncodedFrame ()
+                                                        at talk/media/webrtc/webrtcvideoengine.cc:2894
+#14 0x02333e11 in sigslot::_connection4<cricket::WebRtcVideoMediaChannel, ...>::emit ()
+                                                        at  ./talk/base/sigslot.h:1993
+#16 0x008ef3d5 in vmx::WebRtcVideoSource::onEncodedFrame ()
+                                                        at /home/tyj/vmediax/source/mmap.edusvn/6.0-edu/src/svcWebrtcClient/video_device/Videosource.cpp:178
+#17 0x0090b542 in sigslot::_connection3<vmx::EncodedFrameReciver,...>::emit ()
+                                                        at  /home/tyj/vmediax/source/mmap.edusvn/6.0-edu/other/linux/libwebrtcclient/include/talk/base/sigslot.h:1944
+#19 0x00906c89 in vmx::EncodedCallbackToVideoSource::Encoded ()
+                                                        at /home/tyj/vmediax/source/mmap.edusvn/6.0-edu/src/svcWebrtcClient/vmxCodes/EncWrapper.cpp:778
+#20 0x008fb26d in vmx::VMXEncoderImpl::onEncodedByVMX ()
+                                                        at  /home/tyj/vmediax/source/mmap.edusvn/6.0-edu/src/svcWebrtcClient/vmxCodes/vmxcodes_impl.cc:563
+#21 0x008fc85d in vmx::CEncoder::onOutputBuffer ()
+                                                        at  /home/tyj/vmediax/source/mmap.edusvn/6.0-edu/src/svcWebrtcClient/vmxCodes/vmxcodes_impl.cc:762
+#22 0x010ca2cb in EncoderBase::onOutputBuffer ()
+                                                        at  /home/builder/build/baselib/branches/rhel6/src/libvideo/src/VideoEncoder.cpp:85
+#23 0x010ac3cc in EncoderH264_x264::_nal_code ()
+                                                        at  /home/builder/build/baselib/branches/rhel6/src/libvideo/src/VideoEncoderH264_x264.cpp:327
+#24 0x010abe96 in EncoderH264_x264::nal_code ()
+                                                        at  /home/builder/build/baselib/branches/rhel6/src/libvideo/src/VideoEncoderH264_x264.cpp:253

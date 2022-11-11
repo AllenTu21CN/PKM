@@ -1,0 +1,78 @@
+#0  webrtc::VCMJitterBuffer::InsertPacket ()     at webrtc/modules/video_coding/main/source/jitter_buffer.cc:638    
+#1  0x02842b07 in webrtc::VCMReceiver::InsertPacket ()     at webrtc/modules/video_coding/main/source/receiver.cc:95    
+#2  0x028350bb in webrtc::vcm::VideoReceiver::IncomingPacket ()        at webrtc/modules/video_coding/main/source/video_receiver.cc:682    
+#3  0x0282ff79 in webrtc::()::VideoCodingModuleImpl::IncomingPacket ()        at webrtc/modules/video_coding/main/source/video_coding_impl.cc:277    
+#4  0x0245bc16 in webrtc::ViEReceiver::OnReceivedPayloadData ()     at webrtc/video_engine/vie_receiver.cc:195    
+#5  0x024ade52 in webrtc::RTPReceiverVideo::ReceiveH264Codec ()        at webrtc/modules/rtp_rtcp/source/rtp_receiver_video.cc:216    
+#6  0x024adb5f in webrtc::RTPReceiverVideo::ParseVideoCodecSpecific ()     at webrtc/modules/rtp_rtcp/source/rtp_receiver_video.cc:128    
+#7  0x024ad99b in webrtc::RTPReceiverVideo::ParseRtpPacket ()     at webrtc/modules/rtp_rtcp/source/rtp_receiver_video.cc:75    
+#8  0x0248e1c7 in webrtc::RtpReceiverImpl::IncomingRtpPacket ()     at webrtc/modules/rtp_rtcp/source/rtp_receiver_impl.cc:244    
+#9  0x0245c1a9 in webrtc::ViEReceiver::ReceivePacket ()     at webrtc/video_engine/vie_receiver.cc:295    
+#10 0x0245c050 in webrtc::ViEReceiver::InsertRTPPacket ()     at webrtc/video_engine/vie_receiver.cc:276    
+#11 0x0245bbb4 in webrtc::ViEReceiver::ReceivedRTPPacket ()     at webrtc/video_engine/vie_receiver.cc:183    
+#12 0x02445a08 in webrtc::ViEChannel::ReceivedRTPPacket ()     at webrtc/video_engine/vie_channel.cc:1668    
+#13 0x0243468e in webrtc::ViENetworkImpl::ReceivedRTPPacket ()     at webrtc/video_engine/vie_network_impl.cc:160    
+#14 0x02338fc1 in cricket::WebRtcVideoMediaChannel::OnPacketReceived ()     at talk/media/webrtc/webrtcvideoengine.cc:2519
+
+================================================================================================================================================
+
+
+
+
+#0  webrtc::VCMJitterBuffer::InsertPacket (this=0xe33fa7a8, packet=..., retransmitted=0xe46fc84f) 
+    at webrtc/modules/video_coding/main/source/jitter_buffer.cc:638
+    
+#1  0x02842b07 in webrtc::VCMReceiver::InsertPacket (this=0xe33fa794, packet=..., frame_width=0, frame_height=0) 
+    at webrtc/modules/video_coding/main/source/receiver.cc:95
+    
+#2  0x028350bb in webrtc::vcm::VideoReceiver::IncomingPacket (this=0xe33fa618,     incomingPayload=0xe2fc7f4a "", <incomplete sequence \337>, payloadLength=1436, rtpInfo=...)    
+    at webrtc/modules/video_coding/main/source/video_receiver.cc:682
+    
+#3  0x0282ff79 in webrtc::(anonymous namespace)::VideoCodingModuleImpl::IncomingPacket (this=0xe33f9518,     incomingPayload=0xe2fc7f4a "", <incomplete sequence \337>, payloadLength=1436, rtpInfo=...)    
+    at webrtc/modules/video_coding/main/source/video_coding_impl.cc:277
+    
+#4  0x0245bc16 in webrtc::ViEReceiver::OnReceivedPayloadData (this=0xe33f88ec, payload_data=0xe2fc7f4a "", <incomplete sequence \337>, payload_size=1436, rtp_header=0xe46fcb24) at webrtc/video_engine/vie_receiver.cc:195
+#5  0x024ade52 in webrtc::RTPReceiverVideo::ReceiveH264Codec (this=0xe33fd0e0, rtp_header=0xe46fcb24,     payload_data=0xe2fc7f48 "|\201", <incomplete sequence \337>, payload_data_length=1438)    at webrtc/modules/rtp_rtcp/source/rtp_receiver_video.cc:216
+#6  0x024adb5f in webrtc::RTPReceiverVideo::ParseVideoCodecSpecific (this=0xe33fd0e0, rtp_header=0xe46fcb24, payload_data=0xe2fc7f48 "|\201", <incomplete sequence \337>, payload_data_length=1438, video_type=webrtc::kRtpVideoH264, now_ms=528550887, is_first_packet=true) at webrtc/modules/rtp_rtcp/source/rtp_receiver_video.cc:128
+#7  0x024ad99b in webrtc::RTPReceiverVideo::ParseRtpPacket (this=0xe33fd0e0, rtp_header=0xe46fcb24, specific_payload=..., is_red=false, payload=0xe2fc7f48 "|\201", <incomplete sequence \337>, payload_length=1438, timestamp_ms=528550887, is_first_packet=true) at webrtc/modules/rtp_rtcp/source/rtp_receiver_video.cc:75
+#8  0x0248e1c7 in webrtc::RtpReceiverImpl::IncomingRtpPacket (this=0xe33fd120, rtp_header=..., payload=0xe2fc7f48 "|\201", <incomplete sequence \337>, payload_length=1438, payload_specific=..., in_order=true) at webrtc/modules/rtp_rtcp/source/rtp_receiver_impl.cc:244
+#9  0x0245c1a9 in webrtc::ViEReceiver::ReceivePacket (this=0xe33f88ec, packet=0xe2fc7f30 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, packet_length=1462, header=..., in_order=true) at webrtc/video_engine/vie_receiver.cc:295
+#10 0x0245c050 in webrtc::ViEReceiver::InsertRTPPacket (this=0xe33f88ec, rtp_packet=0xe2fc7f30 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, rtp_packet_length=1462, packet_time=...) at webrtc/video_engine/vie_receiver.cc:276
+#11 0x0245bbb4 in webrtc::ViEReceiver::ReceivedRTPPacket (this=0xe33f88ec, rtp_packet=0xe2fc7f30, rtp_packet_length=1462, packet_time=...) at webrtc/video_engine/vie_receiver.cc:183
+#12 0x02445a08 in webrtc::ViEChannel::ReceivedRTPPacket (this=0xe33f8878, rtp_packet=0xe2fc7f30, rtp_packet_length=1462, packet_time=...) at webrtc/video_engine/vie_channel.cc:1668
+#13 0x0243468e in webrtc::ViENetworkImpl::ReceivedRTPPacket (this=0xe38d483c, video_channel=0, data=0xe2fc7f30, length=1462, packet_time=...) at webrtc/video_engine/vie_network_impl.cc:160
+#14 0x02338fc1 in cricket::WebRtcVideoMediaChannel::OnPacketReceived (this=0xe3341ad8, packet=0xe46fd100, packet_time=...) at talk/media/webrtc/webrtcvideoengine.cc:2519
+
+
+
+
+
+
+#15 0x025ad79c in cricket::BaseChannel::HandlePacket (this=0xe2f2b2f0, rtcp=false, packet=0xe46fd100, packet_time=...) at talk/session/media/channel.cc:849
+#16 0x025ac3f6 in cricket::BaseChannel::OnChannelRead (this=0xe2f2b2f0, channel=0xe2f2bae8, data=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, len=1472, packet_time=..., flags=0) at talk/session/media/channel.cc:623
+                                                            #17 0x025ce544 in sigslot::_connection5<cricket::BaseChannel, cricket::TransportChannel*, char const*, unsigned int, talk_base::PacketTime const&, int, sigslot::single_threaded>::emit (this=0xe2f2bc38, a1=0xe2f2bae8, a2=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, a3=1472, a4=..., a5=0) at ./talk/base/sigslot.h:2047
+                                                            #18 0x025966e5 in sigslot::signal5<cricket::TransportChannel*, char const*, unsigned int, talk_base::PacketTime const&, int, sigslot::single_threaded>::operator() (this=0xe2f2bb38, a1=0xe2f2bae8, a2=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, a3=1472, a4=..., a5=0) at ./talk/base/sigslot.h:2616
+#19 0x0259595b in cricket::TransportChannelProxy::OnReadPacket (this=0xe2f2bae8, channel=0xe2f2c080, data=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, size=1472, packet_time=..., flags=0) at talk/p2p/base/transportchannelproxy.cc:242
+                                                            #20 0x0259875e in sigslot::_connection5<cricket::TransportChannelProxy, cricket::TransportChannel*, char const*, unsigned int, talk_base::PacketTime const&, int, sigslot::single_threaded>::emit (this=0xe2f6d888, a1=0xe2f2c080, a2=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, a3=1472, a4=..., a5=0) at ./talk/base/sigslot.h:2047
+                                                            #21 0x025966e5 in sigslot::signal5<cricket::TransportChannel*, char const*, unsigned int, talk_base::PacketTime const&, int, sigslot::single_threaded>::operator() (this=0xe2f2c0d0, a1=0xe2f2c080, a2=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, a3=1472, a4=..., a5=0) at ./talk/base/sigslot.h:2616
+#22 0x025fd386 in cricket::DtlsTransportChannelWrapper::OnReadPacket (this=0xe2f2c080, channel=0xe2f2bf18, data=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>,  size=1472, packet_time=..., flags=0) at talk/p2p/base/dtlstransportchannel.cc:459
+                                                            #23 0x02600d8a in sigslot::_connection5<cricket::DtlsTransportChannelWrapper, cricket::TransportChannel*, char const*, unsigned int, talk_base::PacketTime const&, int, sigslot::single_threaded>::emit (this=0xe2f2c220, a1=0xe2f2bf18, a2=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, a3=1472, a4=..., a5=0) at ./talk/base/sigslot.h:2047
+                                                            #24 0x025966e5 in sigslot::signal5<cricket::TransportChannel*, char const*, unsigned int, talk_base::PacketTime const&, int, sigslot::single_threaded>::operator() (this=0xe2f2bf68, a1=0xe2f2bf18, a2=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, a3=1472, a4=..., a5=0) at ./talk/base/sigslot.h:2616
+#25 0x02608789 in cricket::P2PTransportChannel::OnReadPacket (this=0xe2f2bf18, connection=0xe2f8f0a8, data=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, len=1472, packet_time=...) at talk/p2p/base/p2ptransportchannel.cc:1240
+                                                            #26 0x0261114b in sigslot::_connection4<cricket::P2PTransportChannel, cricket::Connection*, char const*, unsigned int, talk_base::PacketTime const&, sigslot::single_threaded>::emit (this=0xe2f6d5b8, a1=0xe2f8f0a8, a2=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, a3=1472, a4=...) at ./talk/base/sigslot.h:1993
+                                                            #27 0x0254cfe4 in sigslot::signal4<cricket::Connection*, char const*, unsigned int, talk_base::PacketTime const&, sigslot::single_threaded>::operator() (this=0xe2f8f0ec, a1=0xe2f8f0a8, a2=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, a3=1472, a4=...) at ./talk/base/sigslot.h:2544
+#28 0x02547489 in cricket::Connection::OnReadPacket (this=0xe2f8f0a8, data=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, size=1472, packet_time=...)at talk/p2p/base/port.cc:942
+#29 0x02623122 in cricket::UDPPort::OnReadPacket (this=0xe2f8e980, socket=0xe2f6df78, data=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, size=1472, remote_addr=..., packet_time=...) at talk/p2p/base/stunport.cc:273
+#30 0x0259f38e in cricket::UDPPort::HandleIncomingPacket (this=0xe2f8e980, socket=0xe2f6df78, data=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, size=1472, remote_addr=..., packet_time=...) at ./talk/p2p/base/stunport.h:103
+#31 0x0259e639 in cricket::AllocationSequence::OnReadPacket (this=0xe2f6ded8, socket=0xe2f6df78, data=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, size=1472, remote_addr=..., packet_time=...) at talk/p2p/client/basicportallocator.cc:1036
+                                                            #32 0x025a9a4a in sigslot::_connection5<cricket::AllocationSequence, talk_base::AsyncPacketSocket*, char const*, unsigned int, talk_base::SocketAddress const&, talk_base::PacketTime const&, sigslot::single_threaded>::emit (this=0xe2f6de10, a1=0xe2f6df78, a2=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, a3=1472, a4=..., a5=...) at ./talk/base/sigslot.h:2047
+                                                            #33 0x025fada3 in sigslot::signal5<talk_base::AsyncPacketSocket*, char const*, unsigned int, talk_base::SocketAddress const&, talk_base::PacketTime const&, sigslot::single_threaded>::operator() (this=0xe2f6df98, a1=0xe2f6df78, a2=0xe2f6e340 "\220\177\310I\f\344\370\273\070w\021\354\276", <incomplete sequence \336>, a3=1472, a4=..., a5=...) at ./talk/base/sigslot.h:2616
+#34 0x0272cba0 in talk_base::AsyncUDPSocket::OnReadEvent (this=0xe2f6df78, socket=0xe2f6e25c) at talk/base/asyncudpsocket.cc:132
+                                                            #35 0x0272cde4 in sigslot::_connection1<talk_base::AsyncUDPSocket, talk_base::AsyncSocket*, sigslot::multi_threaded_local>::emit (this=0xe2f6dd78, a1=0xe2f6e25c) at ./talk/base/sigslot.h:1852
+                                                            #36 0x0230425d in sigslot::signal1<talk_base::AsyncSocket*, sigslot::multi_threaded_local>::operator() (this=0xe2f6e260, a1=0xe2f6e25c) at ./talk/base/sigslot.h:2346
+#37 0x02303b66 in talk_base::SocketDispatcher::OnEvent (this=0xe2f6e258, ff=1, err=0) at talk/base/physicalsocketserver.cc:905
+#38 0x0230073a in talk_base::PhysicalSocketServer::Wait (this=0xe7f03938, cmsWait=95, process_io=true) at talk/base/physicalsocketserver.cc:1421
+#39 0x022f284d in talk_base::MessageQueue::Get (this=0xe7f038a8, pmsg=0xe46fe308, cmsWait=-1, process_io=true) at talk/base/messagequeue.cc:266
+#40 0x02314e76 in talk_base::Thread::ProcessMessages (this=0xe7f038a8, cmsLoop=-1) at talk/base/thread.cc:503
+#41 0x023148bb in talk_base::Thread::Run (this=0xe7f038a8) at talk/base/thread.cc:365
+#42 0x02314846 in talk_base::Thread::PreRun (pv=0xe7f03aa8) at talk/base/thread.cc:353

@@ -1,0 +1,295 @@
+#0  webrtc::VCMJitterBuffer::SetNackMode (this=0xe4528d64, mode=webrtc::kNoNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1) at webrtc/modules/video_coding/main/source/jitter_buffer.cc:908
+#1  0x02961769 in webrtc::VCMReceiver::SetNackMode (this=0xe4528d50, nackMode=webrtc::kNoNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1)
+    at webrtc/modules/video_coding/main/source/receiver.cc:269
+#2  0x02960d72 in webrtc::VCMReceiver::Initialize (this=0xe4528d50) at webrtc/modules/video_coding/main/source/receiver.cc:77
+#3  0x02952164 in webrtc::vcm::VideoReceiver::InitializeReceiver (this=0xe4528468) at webrtc/modules/video_coding/main/source/video_receiver.cc:291
+#4  0x0294e1be in webrtc::(anonymous namespace)::VideoCodingModuleImpl::InitializeReceiver (this=0xe456c628) at webrtc/modules/video_coding/main/source/video_coding_impl.cc:209
+#5  0x0255d1a5 in webrtc::ViEChannel::Init (this=0xe49fce68) at webrtc/video_engine/vie_channel.cc:169
+#6  0x0256846d in webrtc::ViEChannelManager::CreateChannelObject (this=0xe4ed48a8, channel_id=0, vie_encoder=0xe4590188, bandwidth_observer=0xe490e040, remote_bitrate_estimator=0xe4590040, 
+    rtcp_rtt_stats=0xe4590030, intra_frame_observer=0xe4590168, sender=true) at webrtc/video_engine/vie_channel_manager.cc:414
+#7  0x025674fc in webrtc::ViEChannelManager::CreateChannel (this=0xe4ed48a8, channel_id=0xe458fda4) at webrtc/video_engine/vie_channel_manager.cc:110
+#8  0x02548644 in webrtc::ViEBaseImpl::CreateChannel (this=0xe4ed47c0, video_channel=@0xe458fda4) at webrtc/video_engine/vie_base_impl.cc:159
+#9  0x024599ae in cricket::WebRtcVideoMediaChannel::CreateChannel (this=0xe458fd40, ssrc_key=0, direction=cricket::WebRtcVideoMediaChannel::MD_SENDRECV, channel_id=0xe458fda4)
+    at talk/media/webrtc/webrtcvideoengine.cc:3041
+#10 0x02450a76 in cricket::WebRtcVideoMediaChannel::Init (this=0xe458fd40) at talk/media/webrtc/webrtcvideoengine.cc:1539
+#11 0x0244e557 in cricket::WebRtcVideoEngine::CreateChannel (this=0xe5100a30, voice_channel=0xe456d270) at talk/media/webrtc/webrtcvideoengine.cc:1039
+#12 0x0238d9ba in cricket::CompositeMediaEngine<cricket::WebRtcVoiceEngine, cricket::WebRtcVideoEngine>::CreateVideoChannel (this=0xe51007b8, channel=0xe456d270) at ./talk/media/base/mediaengine.h:192
+#13 0x026f45bb in cricket::ChannelManager::CreateVideoChannel_w (this=0xe4ed5498, session=0xe4c47b30, content_name="video", rtcp=true, voice_channel=0xe4590478) at talk/session/media/channelmanager.cc:378
+#14 0x02700443 in talk_base::MethodFunctor4<cricket::ChannelManager, cricket::VideoChannel* (cricket::ChannelManager::*)(cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*), cricket::VideoChannel*, cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*>::operator() (this=0xe66fe9b0) at ./talk/base/bind.h:273
+#15 0x026ff8de in talk_base::Thread::FunctorMessageHandler<cricket::VideoChannel*, talk_base::MethodFunctor4<cricket::ChannelManager, cricket::VideoChannel* (cricket::ChannelManager::*)(cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*), cricket::VideoChannel*, cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*> >::OnMessage (this=0xe66fe9ac, msg=0xe5cfe16c)
+    at ./talk/base/thread.h:233
+#16 0x02432d37 in talk_base::Thread::ReceiveSends (this=0xe9303ba0) at talk/base/thread.cc:451
+#17 0x024105a6 in talk_base::MessageQueue::Get (this=0xe9303ba0, pmsg=0xe5cfe308, cmsWait=-1, process_io=true) at talk/base/messagequeue.cc:200
+#18 0x02432f6a in talk_base::Thread::ProcessMessages (this=0xe9303ba0, cmsLoop=-1) at talk/base/thread.cc:503
+#19 0x024329af in talk_base::Thread::Run (this=0xe9303ba0) at talk/base/thread.cc:365
+#20 0x0243293a in talk_base::Thread::PreRun (pv=0xe9303db0) at talk/base/thread.cc:353
+#21 0x00c19a49 in start_thread () from /lib/libpthread.so.0
+#22 0x00b30aae in clone () from /lib/libc.so.6
+
+
+
+#0  webrtc::VCMJitterBuffer::SetNackMode (this=0xe45285f8, mode=webrtc::kNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1) at webrtc/modules/video_coding/main/source/jitter_buffer.cc:908
+#1  0x02961769 in webrtc::VCMReceiver::SetNackMode (this=0xe45285e4, nackMode=webrtc::kNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1)
+    at webrtc/modules/video_coding/main/source/receiver.cc:269
+#2  0x02951e3f in webrtc::vcm::VideoReceiver::SetVideoProtection (this=0xe4528468, videoProtection=webrtc::kProtectionNack, enable=true) at webrtc/modules/video_coding/main/source/video_receiver.cc:211
+#3  0x0294dee8 in webrtc::(anonymous namespace)::VideoCodingModuleImpl::SetVideoProtection (this=0xe456c628, videoProtection=webrtc::kProtectionNack, enable=true)
+    at webrtc/modules/video_coding/main/source/video_coding_impl.cc:150
+#4  0x0255f8ad in webrtc::ViEChannel::SetNACKStatus (this=0xe49fce68, enable=true) at webrtc/video_engine/vie_channel.cc:683
+#5  0x02556090 in webrtc::ViERTP_RTCPImpl::SetNACKStatus (this=0xe4ed485c, video_channel=0, enable=true) at webrtc/video_engine/vie_rtp_rtcp_impl.cc:486
+#6  0x0245c3b4 in cricket::WebRtcVideoMediaChannel::SetNackFec (this=0xe458fd40, channel_id=0, red_payload_type=-1, fec_payload_type=-1, nack_enabled=true) at talk/media/webrtc/webrtcvideoengine.cc:3329
+#7  0x0245a194 in cricket::WebRtcVideoMediaChannel::ConfigureChannel (this=0xe458fd40, channel_id=0, direction=cricket::WebRtcVideoMediaChannel::MD_SENDRECV, ssrc_key=0)
+    at talk/media/webrtc/webrtcvideoengine.cc:3085
+#8  0x02459afe in cricket::WebRtcVideoMediaChannel::CreateChannel (this=0xe458fd40, ssrc_key=0, direction=cricket::WebRtcVideoMediaChannel::MD_SENDRECV, channel_id=0xe458fda4)
+    at talk/media/webrtc/webrtcvideoengine.cc:3046
+#9  0x02450a76 in cricket::WebRtcVideoMediaChannel::Init (this=0xe458fd40) at talk/media/webrtc/webrtcvideoengine.cc:1539
+#10 0x0244e557 in cricket::WebRtcVideoEngine::CreateChannel (this=0xe5100a30, voice_channel=0xe456d270) at talk/media/webrtc/webrtcvideoengine.cc:1039
+#11 0x0238d9ba in cricket::CompositeMediaEngine<cricket::WebRtcVoiceEngine, cricket::WebRtcVideoEngine>::CreateVideoChannel (this=0xe51007b8, channel=0xe456d270) at ./talk/media/base/mediaengine.h:192
+#12 0x026f45bb in cricket::ChannelManager::CreateVideoChannel_w (this=0xe4ed5498, session=0xe4c47b30, content_name="video", rtcp=true, voice_channel=0xe4590478) at talk/session/media/channelmanager.cc:378
+#13 0x02700443 in talk_base::MethodFunctor4<cricket::ChannelManager, cricket::VideoChannel* (cricket::ChannelManager::*)(cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*), cricket::VideoChannel*, cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*>::operator() (this=0xe66fe9b0) at ./talk/base/bind.h:273
+#14 0x026ff8de in talk_base::Thread::FunctorMessageHandler<cricket::VideoChannel*, talk_base::MethodFunctor4<cricket::ChannelManager, cricket::VideoChannel* (cricket::ChannelManager::*)(cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*), cricket::VideoChannel*, cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*> >::OnMessage (this=0xe66fe9ac, msg=0xe5cfe16c)
+    at ./talk/base/thread.h:233
+#15 0x02432d37 in talk_base::Thread::ReceiveSends (this=0xe9303ba0) at talk/base/thread.cc:451
+#16 0x024105a6 in talk_base::MessageQueue::Get (this=0xe9303ba0, pmsg=0xe5cfe308, cmsWait=-1, process_io=true) at talk/base/messagequeue.cc:200
+#17 0x02432f6a in talk_base::Thread::ProcessMessages (this=0xe9303ba0, cmsLoop=-1) at talk/base/thread.cc:503
+#18 0x024329af in talk_base::Thread::Run (this=0xe9303ba0) at talk/base/thread.cc:365
+#19 0x0243293a in talk_base::Thread::PreRun (pv=0xe9303db0) at talk/base/thread.cc:353
+#20 0x00c19a49 in start_thread () from /lib/libpthread.so.0
+#21 0x00b30aae in clone () from /lib/libc.so.6
+
+
+
+#0  webrtc::VCMJitterBuffer::SetNackMode (this=0xe45285f8, mode=webrtc::kNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1) at webrtc/modules/video_coding/main/source/jitter_buffer.cc:908
+#1  0x02961769 in webrtc::VCMReceiver::SetNackMode (this=0xe45285e4, nackMode=webrtc::kNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1)
+    at webrtc/modules/video_coding/main/source/receiver.cc:269
+#2  0x02951e3f in webrtc::vcm::VideoReceiver::SetVideoProtection (this=0xe4528468, videoProtection=webrtc::kProtectionNack, enable=true) at webrtc/modules/video_coding/main/source/video_receiver.cc:211
+#3  0x0294dee8 in webrtc::(anonymous namespace)::VideoCodingModuleImpl::SetVideoProtection (this=0xe456c628, videoProtection=webrtc::kProtectionNack, enable=true)
+    at webrtc/modules/video_coding/main/source/video_coding_impl.cc:150
+#4  0x0255f95d in webrtc::ViEChannel::SetNACKStatus (this=0xe49fce68, enable=true) at webrtc/video_engine/vie_channel.cc:694
+#5  0x02556090 in webrtc::ViERTP_RTCPImpl::SetNACKStatus (this=0xe4ed485c, video_channel=0, enable=true) at webrtc/video_engine/vie_rtp_rtcp_impl.cc:486
+#6  0x0245c3b4 in cricket::WebRtcVideoMediaChannel::SetNackFec (this=0xe458fd40, channel_id=0, red_payload_type=-1, fec_payload_type=-1, nack_enabled=true) at talk/media/webrtc/webrtcvideoengine.cc:3329
+#7  0x0245a194 in cricket::WebRtcVideoMediaChannel::ConfigureChannel (this=0xe458fd40, channel_id=0, direction=cricket::WebRtcVideoMediaChannel::MD_SENDRECV, ssrc_key=0)
+    at talk/media/webrtc/webrtcvideoengine.cc:3085
+#8  0x02459afe in cricket::WebRtcVideoMediaChannel::CreateChannel (this=0xe458fd40, ssrc_key=0, direction=cricket::WebRtcVideoMediaChannel::MD_SENDRECV, channel_id=0xe458fda4)
+    at talk/media/webrtc/webrtcvideoengine.cc:3046
+#9  0x02450a76 in cricket::WebRtcVideoMediaChannel::Init (this=0xe458fd40) at talk/media/webrtc/webrtcvideoengine.cc:1539
+#10 0x0244e557 in cricket::WebRtcVideoEngine::CreateChannel (this=0xe5100a30, voice_channel=0xe456d270) at talk/media/webrtc/webrtcvideoengine.cc:1039
+#11 0x0238d9ba in cricket::CompositeMediaEngine<cricket::WebRtcVoiceEngine, cricket::WebRtcVideoEngine>::CreateVideoChannel (this=0xe51007b8, channel=0xe456d270) at ./talk/media/base/mediaengine.h:192
+#12 0x026f45bb in cricket::ChannelManager::CreateVideoChannel_w (this=0xe4ed5498, session=0xe4c47b30, content_name="video", rtcp=true, voice_channel=0xe4590478) at talk/session/media/channelmanager.cc:378
+#13 0x02700443 in talk_base::MethodFunctor4<cricket::ChannelManager, cricket::VideoChannel* (cricket::ChannelManager::*)(cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*), cricket::VideoChannel*, cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*>::operator() (this=0xe66fe9b0) at ./talk/base/bind.h:273
+#14 0x026ff8de in talk_base::Thread::FunctorMessageHandler<cricket::VideoChannel*, talk_base::MethodFunctor4<cricket::ChannelManager, cricket::VideoChannel* (cricket::ChannelManager::*)(cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*), cricket::VideoChannel*, cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*> >::OnMessage (this=0xe66fe9ac, msg=0xe5cfe16c)
+    at ./talk/base/thread.h:233
+#15 0x02432d37 in talk_base::Thread::ReceiveSends (this=0xe9303ba0) at talk/base/thread.cc:451
+#16 0x024105a6 in talk_base::MessageQueue::Get (this=0xe9303ba0, pmsg=0xe5cfe308, cmsWait=-1, process_io=true) at talk/base/messagequeue.cc:200
+#17 0x02432f6a in talk_base::Thread::ProcessMessages (this=0xe9303ba0, cmsLoop=-1) at talk/base/thread.cc:503
+#18 0x024329af in talk_base::Thread::Run (this=0xe9303ba0) at talk/base/thread.cc:365
+#19 0x0243293a in talk_base::Thread::PreRun (pv=0xe9303db0) at talk/base/thread.cc:353
+#20 0x00c19a49 in start_thread () from /lib/libpthread.so.0
+#21 0x00b30aae in clone () from /lib/libc.so.6
+
+
+
+
+#0  webrtc::VCMJitterBuffer::SetNackMode (this=0xe45909c0, mode=webrtc::kNoNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1) at webrtc/modules/video_coding/main/source/jitter_buffer.cc:908
+#1  0x02961769 in webrtc::VCMReceiver::SetNackMode (this=0xe45909ac, nackMode=webrtc::kNoNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1)
+    at webrtc/modules/video_coding/main/source/receiver.cc:269
+#2  0x029520cb in webrtc::vcm::VideoReceiver::SetVideoProtection (this=0xe4590830, videoProtection=webrtc::kProtectionNackFEC, enable=false) at webrtc/modules/video_coding/main/source/video_receiver.cc:269
+#3  0x0294dee8 in webrtc::(anonymous namespace)::VideoCodingModuleImpl::SetVideoProtection (this=0xe4590250, videoProtection=webrtc::kProtectionNackFEC, enable=false)
+    at webrtc/modules/video_coding/main/source/video_coding_impl.cc:150
+#4  0x0256ef8a in webrtc::ViEEncoder::UpdateProtectionMethod (this=0xe4590188, enable_nack=true) at webrtc/video_engine/vie_encoder.cc:841
+#5  0x025561a4 in webrtc::ViERTP_RTCPImpl::SetNACKStatus (this=0xe4ed485c, video_channel=0, enable=true) at webrtc/video_engine/vie_rtp_rtcp_impl.cc:504
+#6  0x0245c3b4 in cricket::WebRtcVideoMediaChannel::SetNackFec (this=0xe458fd40, channel_id=0, red_payload_type=-1, fec_payload_type=-1, nack_enabled=true) at talk/media/webrtc/webrtcvideoengine.cc:3329
+#7  0x0245a194 in cricket::WebRtcVideoMediaChannel::ConfigureChannel (this=0xe458fd40, channel_id=0, direction=cricket::WebRtcVideoMediaChannel::MD_SENDRECV, ssrc_key=0)
+    at talk/media/webrtc/webrtcvideoengine.cc:3085
+#8  0x02459afe in cricket::WebRtcVideoMediaChannel::CreateChannel (this=0xe458fd40, ssrc_key=0, direction=cricket::WebRtcVideoMediaChannel::MD_SENDRECV, channel_id=0xe458fda4)
+    at talk/media/webrtc/webrtcvideoengine.cc:3046
+#9  0x02450a76 in cricket::WebRtcVideoMediaChannel::Init (this=0xe458fd40) at talk/media/webrtc/webrtcvideoengine.cc:1539
+#10 0x0244e557 in cricket::WebRtcVideoEngine::CreateChannel (this=0xe5100a30, voice_channel=0xe456d270) at talk/media/webrtc/webrtcvideoengine.cc:1039
+#11 0x0238d9ba in cricket::CompositeMediaEngine<cricket::WebRtcVoiceEngine, cricket::WebRtcVideoEngine>::CreateVideoChannel (this=0xe51007b8, channel=0xe456d270) at ./talk/media/base/mediaengine.h:192
+#12 0x026f45bb in cricket::ChannelManager::CreateVideoChannel_w (this=0xe4ed5498, session=0xe4c47b30, content_name="video", rtcp=true, voice_channel=0xe4590478) at talk/session/media/channelmanager.cc:378
+#13 0x02700443 in talk_base::MethodFunctor4<cricket::ChannelManager, cricket::VideoChannel* (cricket::ChannelManager::*)(cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*), cricket::VideoChannel*, cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*>::operator() (this=0xe66fe9b0) at ./talk/base/bind.h:273
+#14 0x026ff8de in talk_base::Thread::FunctorMessageHandler<cricket::VideoChannel*, talk_base::MethodFunctor4<cricket::ChannelManager, cricket::VideoChannel* (cricket::ChannelManager::*)(cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*), cricket::VideoChannel*, cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*> >::OnMessage (this=0xe66fe9ac, msg=0xe5cfe16c)
+    at ./talk/base/thread.h:233
+#15 0x02432d37 in talk_base::Thread::ReceiveSends (this=0xe9303ba0) at talk/base/thread.cc:451
+#16 0x024105a6 in talk_base::MessageQueue::Get (this=0xe9303ba0, pmsg=0xe5cfe308, cmsWait=-1, process_io=true) at talk/base/messagequeue.cc:200
+#17 0x02432f6a in talk_base::Thread::ProcessMessages (this=0xe9303ba0, cmsLoop=-1) at talk/base/thread.cc:503
+#18 0x024329af in talk_base::Thread::Run (this=0xe9303ba0) at talk/base/thread.cc:365
+#19 0x0243293a in talk_base::Thread::PreRun (pv=0xe9303db0) at talk/base/thread.cc:353
+#20 0x00c19a49 in start_thread () from /lib/libpthread.so.0
+#21 0x00b30aae in clone () from /lib/libc.so.6
+
+
+
+#0  webrtc::VCMJitterBuffer::SetNackMode (this=0xe45285f8, mode=webrtc::kNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1) at webrtc/modules/video_coding/main/source/jitter_buffer.cc:908
+#1  0x02961769 in webrtc::VCMReceiver::SetNackMode (this=0xe45285e4, nackMode=webrtc::kNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1)
+    at webrtc/modules/video_coding/main/source/receiver.cc:269
+#2  0x02951e3f in webrtc::vcm::VideoReceiver::SetVideoProtection (this=0xe4528468, videoProtection=webrtc::kProtectionNack, enable=true) at webrtc/modules/video_coding/main/source/video_receiver.cc:211
+#3  0x0294dee8 in webrtc::(anonymous namespace)::VideoCodingModuleImpl::SetVideoProtection (this=0xe456c628, videoProtection=webrtc::kProtectionNack, enable=true)
+    at webrtc/modules/video_coding/main/source/video_coding_impl.cc:150
+#4  0x0255f8ad in webrtc::ViEChannel::SetNACKStatus (this=0xe49fce68, enable=true) at webrtc/video_engine/vie_channel.cc:683
+#5  0x02556090 in webrtc::ViERTP_RTCPImpl::SetNACKStatus (this=0xe4ed485c, video_channel=0, enable=true) at webrtc/video_engine/vie_rtp_rtcp_impl.cc:486
+#6  0x0245c3b4 in cricket::WebRtcVideoMediaChannel::SetNackFec (this=0xe458fd40, channel_id=0, red_payload_type=-1, fec_payload_type=-1, nack_enabled=true) at talk/media/webrtc/webrtcvideoengine.cc:3329
+#7  0x0245c035 in cricket::WebRtcVideoMediaChannel::ConfigureSending (this=0xe458fd40, channel_id=0, local_ssrc_key=0) at talk/media/webrtc/webrtcvideoengine.cc:3304
+#8  0x0245a1ec in cricket::WebRtcVideoMediaChannel::ConfigureChannel (this=0xe458fd40, channel_id=0, direction=cricket::WebRtcVideoMediaChannel::MD_SENDRECV, ssrc_key=0)
+    at talk/media/webrtc/webrtcvideoengine.cc:3098
+#9  0x02459afe in cricket::WebRtcVideoMediaChannel::CreateChannel (this=0xe458fd40, ssrc_key=0, direction=cricket::WebRtcVideoMediaChannel::MD_SENDRECV, channel_id=0xe458fda4)
+    at talk/media/webrtc/webrtcvideoengine.cc:3046
+#10 0x02450a76 in cricket::WebRtcVideoMediaChannel::Init (this=0xe458fd40) at talk/media/webrtc/webrtcvideoengine.cc:1539
+#11 0x0244e557 in cricket::WebRtcVideoEngine::CreateChannel (this=0xe5100a30, voice_channel=0xe456d270) at talk/media/webrtc/webrtcvideoengine.cc:1039
+#12 0x0238d9ba in cricket::CompositeMediaEngine<cricket::WebRtcVoiceEngine, cricket::WebRtcVideoEngine>::CreateVideoChannel (this=0xe51007b8, channel=0xe456d270) at ./talk/media/base/mediaengine.h:192
+#13 0x026f45bb in cricket::ChannelManager::CreateVideoChannel_w (this=0xe4ed5498, session=0xe4c47b30, content_name="video", rtcp=true, voice_channel=0xe4590478) at talk/session/media/channelmanager.cc:378
+#14 0x02700443 in talk_base::MethodFunctor4<cricket::ChannelManager, cricket::VideoChannel* (cricket::ChannelManager::*)(cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*), cricket::VideoChannel*, cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*>::operator() (this=0xe66fe9b0) at ./talk/base/bind.h:273
+#15 0x026ff8de in talk_base::Thread::FunctorMessageHandler<cricket::VideoChannel*, talk_base::MethodFunctor4<cricket::ChannelManager, cricket::VideoChannel* (cricket::ChannelManager::*)(cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*), cricket::VideoChannel*, cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*> >::OnMessage (this=0xe66fe9ac, msg=0xe5cfe16c)
+    at ./talk/base/thread.h:233
+#16 0x02432d37 in talk_base::Thread::ReceiveSends (this=0xe9303ba0) at talk/base/thread.cc:451
+#17 0x024105a6 in talk_base::MessageQueue::Get (this=0xe9303ba0, pmsg=0xe5cfe308, cmsWait=-1, process_io=true) at talk/base/messagequeue.cc:200
+#18 0x02432f6a in talk_base::Thread::ProcessMessages (this=0xe9303ba0, cmsLoop=-1) at talk/base/thread.cc:503
+#19 0x024329af in talk_base::Thread::Run (this=0xe9303ba0) at talk/base/thread.cc:365
+#20 0x0243293a in talk_base::Thread::PreRun (pv=0xe9303db0) at talk/base/thread.cc:353
+#21 0x00c19a49 in start_thread () from /lib/libpthread.so.0
+#22 0x00b30aae in clone () from /lib/libc.so.6
+
+
+
+#0  webrtc::VCMJitterBuffer::SetNackMode (this=0xe45285f8, mode=webrtc::kNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1) at webrtc/modules/video_coding/main/source/jitter_buffer.cc:908
+#1  0x02961769 in webrtc::VCMReceiver::SetNackMode (this=0xe45285e4, nackMode=webrtc::kNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1)
+    at webrtc/modules/video_coding/main/source/receiver.cc:269
+#2  0x02951e3f in webrtc::vcm::VideoReceiver::SetVideoProtection (this=0xe4528468, videoProtection=webrtc::kProtectionNack, enable=true) at webrtc/modules/video_coding/main/source/video_receiver.cc:211
+#3  0x0294dee8 in webrtc::(anonymous namespace)::VideoCodingModuleImpl::SetVideoProtection (this=0xe456c628, videoProtection=webrtc::kProtectionNack, enable=true)
+    at webrtc/modules/video_coding/main/source/video_coding_impl.cc:150
+#4  0x0255f95d in webrtc::ViEChannel::SetNACKStatus (this=0xe49fce68, enable=true) at webrtc/video_engine/vie_channel.cc:694
+#5  0x02556090 in webrtc::ViERTP_RTCPImpl::SetNACKStatus (this=0xe4ed485c, video_channel=0, enable=true) at webrtc/video_engine/vie_rtp_rtcp_impl.cc:486
+#6  0x0245c3b4 in cricket::WebRtcVideoMediaChannel::SetNackFec (this=0xe458fd40, channel_id=0, red_payload_type=-1, fec_payload_type=-1, nack_enabled=true) at talk/media/webrtc/webrtcvideoengine.cc:3329
+#7  0x0245c035 in cricket::WebRtcVideoMediaChannel::ConfigureSending (this=0xe458fd40, channel_id=0, local_ssrc_key=0) at talk/media/webrtc/webrtcvideoengine.cc:3304
+#8  0x0245a1ec in cricket::WebRtcVideoMediaChannel::ConfigureChannel (this=0xe458fd40, channel_id=0, direction=cricket::WebRtcVideoMediaChannel::MD_SENDRECV, ssrc_key=0)
+    at talk/media/webrtc/webrtcvideoengine.cc:3098
+#9  0x02459afe in cricket::WebRtcVideoMediaChannel::CreateChannel (this=0xe458fd40, ssrc_key=0, direction=cricket::WebRtcVideoMediaChannel::MD_SENDRECV, channel_id=0xe458fda4)
+    at talk/media/webrtc/webrtcvideoengine.cc:3046
+#10 0x02450a76 in cricket::WebRtcVideoMediaChannel::Init (this=0xe458fd40) at talk/media/webrtc/webrtcvideoengine.cc:1539
+#11 0x0244e557 in cricket::WebRtcVideoEngine::CreateChannel (this=0xe5100a30, voice_channel=0xe456d270) at talk/media/webrtc/webrtcvideoengine.cc:1039
+#12 0x0238d9ba in cricket::CompositeMediaEngine<cricket::WebRtcVoiceEngine, cricket::WebRtcVideoEngine>::CreateVideoChannel (this=0xe51007b8, channel=0xe456d270) at ./talk/media/base/mediaengine.h:192
+#13 0x026f45bb in cricket::ChannelManager::CreateVideoChannel_w (this=0xe4ed5498, session=0xe4c47b30, content_name="video", rtcp=true, voice_channel=0xe4590478) at talk/session/media/channelmanager.cc:378
+#14 0x02700443 in talk_base::MethodFunctor4<cricket::ChannelManager, cricket::VideoChannel* (cricket::ChannelManager::*)(cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*), cricket::VideoChannel*, cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*>::operator() (this=0xe66fe9b0) at ./talk/base/bind.h:273
+#15 0x026ff8de in talk_base::Thread::FunctorMessageHandler<cricket::VideoChannel*, talk_base::MethodFunctor4<cricket::ChannelManager, cricket::VideoChannel* (cricket::ChannelManager::*)(cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*), cricket::VideoChannel*, cricket::BaseSession*, std::string const&, bool, cricket::VoiceChannel*> >::OnMessage (this=0xe66fe9ac, msg=0xe5cfe16c)
+    at ./talk/base/thread.h:233
+#16 0x02432d37 in talk_base::Thread::ReceiveSends (this=0xe9303ba0) at talk/base/thread.cc:451
+#17 0x024105a6 in talk_base::MessageQueue::Get (this=0xe9303ba0, pmsg=0xe5cfe308, cmsWait=-1, process_io=true) at talk/base/messagequeue.cc:200
+#18 0x02432f6a in talk_base::Thread::ProcessMessages (this=0xe9303ba0, cmsLoop=-1) at talk/base/thread.cc:503
+#19 0x024329af in talk_base::Thread::Run (this=0xe9303ba0) at talk/base/thread.cc:365
+#20 0x0243293a in talk_base::Thread::PreRun (pv=0xe9303db0) at talk/base/thread.cc:353
+#21 0x00c19a49 in start_thread () from /lib/libpthread.so.0
+#22 0x00b30aae in clone () from /lib/libc.so.6
+
+
+
+#0  webrtc::VCMJitterBuffer::SetNackMode (this=0xe45285f8, mode=webrtc::kNoNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1) at webrtc/modules/video_coding/main/source/jitter_buffer.cc:908
+#1  0x02961769 in webrtc::VCMReceiver::SetNackMode (this=0xe45285e4, nackMode=webrtc::kNoNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1)
+    at webrtc/modules/video_coding/main/source/receiver.cc:269
+#2  0x02951e69 in webrtc::vcm::VideoReceiver::SetVideoProtection (this=0xe4528468, videoProtection=webrtc::kProtectionNack, enable=false) at webrtc/modules/video_coding/main/source/video_receiver.cc:213
+#3  0x0294dee8 in webrtc::(anonymous namespace)::VideoCodingModuleImpl::SetVideoProtection (this=0xe456c628, videoProtection=webrtc::kProtectionNack, enable=false)
+    at webrtc/modules/video_coding/main/source/video_coding_impl.cc:150
+#4  0x0255f8ad in webrtc::ViEChannel::SetNACKStatus (this=0xe49fce68, enable=false) at webrtc/video_engine/vie_channel.cc:683
+#5  0x02556090 in webrtc::ViERTP_RTCPImpl::SetNACKStatus (this=0xe4ed485c, video_channel=0, enable=false) at webrtc/video_engine/vie_rtp_rtcp_impl.cc:486
+#6  0x0245c3b4 in cricket::WebRtcVideoMediaChannel::SetNackFec (this=0xe458fd40, channel_id=0, red_payload_type=-1, fec_payload_type=-1, nack_enabled=false) at talk/media/webrtc/webrtcvideoengine.cc:3329
+#7  0x024516d4 in cricket::WebRtcVideoMediaChannel::SetSendCodecs (this=0xe458fd40, codecs=std::vector of length 1, capacity 1 = {...}) at talk/media/webrtc/webrtcvideoengine.cc:1639
+#8  0x026d2fd0 in cricket::VideoChannel::SetRemoteContent_w (this=0xe45669d8, content=0xe4c495b8, action=cricket::CA_ANSWER) at talk/session/media/channel.cc:2156
+#9  0x026cf626 in cricket::BaseChannel::OnMessage (this=0xe45669d8, pmsg=0xe5cfe16c) at talk/session/media/channel.cc:1400
+#10 0x026d3d94 in cricket::VideoChannel::OnMessage (this=0xe45669d8, pmsg=0xe5cfe16c) at talk/session/media/channel.cc:2387
+#11 0x02432d37 in talk_base::Thread::ReceiveSends (this=0xe9303ba0) at talk/base/thread.cc:451
+#12 0x024105a6 in talk_base::MessageQueue::Get (this=0xe9303ba0, pmsg=0xe5cfe308, cmsWait=-1, process_io=true) at talk/base/messagequeue.cc:200
+#13 0x02432f6a in talk_base::Thread::ProcessMessages (this=0xe9303ba0, cmsLoop=-1) at talk/base/thread.cc:503
+#14 0x024329af in talk_base::Thread::Run (this=0xe9303ba0) at talk/base/thread.cc:365
+#15 0x0243293a in talk_base::Thread::PreRun (pv=0xe9303db0) at talk/base/thread.cc:353
+#16 0x00c19a49 in start_thread () from /lib/libpthread.so.0
+#17 0x00b30aae in clone () from /lib/libc.so.6
+
+
+
+#0  webrtc::VCMJitterBuffer::SetNackMode (this=0xe45285f8, mode=webrtc::kNoNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1) at webrtc/modules/video_coding/main/source/jitter_buffer.cc:908
+#1  0x02961769 in webrtc::VCMReceiver::SetNackMode (this=0xe45285e4, nackMode=webrtc::kNoNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1)
+    at webrtc/modules/video_coding/main/source/receiver.cc:269
+#2  0x02951e69 in webrtc::vcm::VideoReceiver::SetVideoProtection (this=0xe4528468, videoProtection=webrtc::kProtectionNack, enable=false) at webrtc/modules/video_coding/main/source/video_receiver.cc:213
+#3  0x0294dee8 in webrtc::(anonymous namespace)::VideoCodingModuleImpl::SetVideoProtection (this=0xe456c628, videoProtection=webrtc::kProtectionNack, enable=false)
+    at webrtc/modules/video_coding/main/source/video_coding_impl.cc:150
+#4  0x0255f95d in webrtc::ViEChannel::SetNACKStatus (this=0xe49fce68, enable=false) at webrtc/video_engine/vie_channel.cc:694
+#5  0x02556090 in webrtc::ViERTP_RTCPImpl::SetNACKStatus (this=0xe4ed485c, video_channel=0, enable=false) at webrtc/video_engine/vie_rtp_rtcp_impl.cc:486
+#6  0x0245c3b4 in cricket::WebRtcVideoMediaChannel::SetNackFec (this=0xe458fd40, channel_id=0, red_payload_type=-1, fec_payload_type=-1, nack_enabled=false) at talk/media/webrtc/webrtcvideoengine.cc:3329
+#7  0x024516d4 in cricket::WebRtcVideoMediaChannel::SetSendCodecs (this=0xe458fd40, codecs=std::vector of length 1, capacity 1 = {...}) at talk/media/webrtc/webrtcvideoengine.cc:1639
+#8  0x026d2fd0 in cricket::VideoChannel::SetRemoteContent_w (this=0xe45669d8, content=0xe4c495b8, action=cricket::CA_ANSWER) at talk/session/media/channel.cc:2156
+#9  0x026cf626 in cricket::BaseChannel::OnMessage (this=0xe45669d8, pmsg=0xe5cfe16c) at talk/session/media/channel.cc:1400
+#10 0x026d3d94 in cricket::VideoChannel::OnMessage (this=0xe45669d8, pmsg=0xe5cfe16c) at talk/session/media/channel.cc:2387
+#11 0x02432d37 in talk_base::Thread::ReceiveSends (this=0xe9303ba0) at talk/base/thread.cc:451
+#12 0x024105a6 in talk_base::MessageQueue::Get (this=0xe9303ba0, pmsg=0xe5cfe308, cmsWait=-1, process_io=true) at talk/base/messagequeue.cc:200
+#13 0x02432f6a in talk_base::Thread::ProcessMessages (this=0xe9303ba0, cmsLoop=-1) at talk/base/thread.cc:503
+#14 0x024329af in talk_base::Thread::Run (this=0xe9303ba0) at talk/base/thread.cc:365
+#15 0x0243293a in talk_base::Thread::PreRun (pv=0xe9303db0) at talk/base/thread.cc:353
+#16 0x00c19a49 in start_thread () from /lib/libpthread.so.0
+#17 0x00b30aae in clone () from /lib/libc.so.6
+
+
+
+
+#0  webrtc::VCMJitterBuffer::SetNackMode (this=0xe45909c0, mode=webrtc::kNoNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1) at webrtc/modules/video_coding/main/source/jitter_buffer.cc:908
+#1  0x02961769 in webrtc::VCMReceiver::SetNackMode (this=0xe45909ac, nackMode=webrtc::kNoNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1)
+    at webrtc/modules/video_coding/main/source/receiver.cc:269
+#2  0x029520cb in webrtc::vcm::VideoReceiver::SetVideoProtection (this=0xe4590830, videoProtection=webrtc::kProtectionNackFEC, enable=false) at webrtc/modules/video_coding/main/source/video_receiver.cc:269
+#3  0x0294dee8 in webrtc::(anonymous namespace)::VideoCodingModuleImpl::SetVideoProtection (this=0xe4590250, videoProtection=webrtc::kProtectionNackFEC, enable=false)
+    at webrtc/modules/video_coding/main/source/video_coding_impl.cc:150
+#4  0x0256ef8a in webrtc::ViEEncoder::UpdateProtectionMethod (this=0xe4590188, enable_nack=false) at webrtc/video_engine/vie_encoder.cc:841
+#5  0x025561a4 in webrtc::ViERTP_RTCPImpl::SetNACKStatus (this=0xe4ed485c, video_channel=0, enable=false) at webrtc/video_engine/vie_rtp_rtcp_impl.cc:504
+#6  0x0245c3b4 in cricket::WebRtcVideoMediaChannel::SetNackFec (this=0xe458fd40, channel_id=0, red_payload_type=-1, fec_payload_type=-1, nack_enabled=false) at talk/media/webrtc/webrtcvideoengine.cc:3329
+#7  0x024516d4 in cricket::WebRtcVideoMediaChannel::SetSendCodecs (this=0xe458fd40, codecs=std::vector of length 1, capacity 1 = {...}) at talk/media/webrtc/webrtcvideoengine.cc:1639
+#8  0x026d2fd0 in cricket::VideoChannel::SetRemoteContent_w (this=0xe45669d8, content=0xe4c495b8, action=cricket::CA_ANSWER) at talk/session/media/channel.cc:2156
+#9  0x026cf626 in cricket::BaseChannel::OnMessage (this=0xe45669d8, pmsg=0xe5cfe16c) at talk/session/media/channel.cc:1400
+#10 0x026d3d94 in cricket::VideoChannel::OnMessage (this=0xe45669d8, pmsg=0xe5cfe16c) at talk/session/media/channel.cc:2387
+#11 0x02432d37 in talk_base::Thread::ReceiveSends (this=0xe9303ba0) at talk/base/thread.cc:451
+#12 0x024105a6 in talk_base::MessageQueue::Get (this=0xe9303ba0, pmsg=0xe5cfe308, cmsWait=-1, process_io=true) at talk/base/messagequeue.cc:200
+#13 0x02432f6a in talk_base::Thread::ProcessMessages (this=0xe9303ba0, cmsLoop=-1) at talk/base/thread.cc:503
+#14 0x024329af in talk_base::Thread::Run (this=0xe9303ba0) at talk/base/thread.cc:365
+#15 0x0243293a in talk_base::Thread::PreRun (pv=0xe9303db0) at talk/base/thread.cc:353
+#16 0x00c19a49 in start_thread () from /lib/libpthread.so.0
+#17 0x00b30aae in clone () from /lib/libc.so.6
+
+
+
+#0  webrtc::VCMJitterBuffer::SetNackMode (this=0xe45285f8, mode=webrtc::kNoNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1) at webrtc/modules/video_coding/main/source/jitter_buffer.cc:908
+#1  0x02961769 in webrtc::VCMReceiver::SetNackMode (this=0xe45285e4, nackMode=webrtc::kNoNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1)
+    at webrtc/modules/video_coding/main/source/receiver.cc:269
+#2  0x02951e69 in webrtc::vcm::VideoReceiver::SetVideoProtection (this=0xe4528468, videoProtection=webrtc::kProtectionNack, enable=false) at webrtc/modules/video_coding/main/source/video_receiver.cc:213
+#3  0x0294dee8 in webrtc::(anonymous namespace)::VideoCodingModuleImpl::SetVideoProtection (this=0xe456c628, videoProtection=webrtc::kProtectionNack, enable=false)
+    at webrtc/modules/video_coding/main/source/video_coding_impl.cc:150
+#4  0x0255f8ad in webrtc::ViEChannel::SetNACKStatus (this=0xe49fce68, enable=false) at webrtc/video_engine/vie_channel.cc:683
+#5  0x02556090 in webrtc::ViERTP_RTCPImpl::SetNACKStatus (this=0xe4ed485c, video_channel=0, enable=false) at webrtc/video_engine/vie_rtp_rtcp_impl.cc:486
+#6  0x0245c3b4 in cricket::WebRtcVideoMediaChannel::SetNackFec (this=0xe458fd40, channel_id=0, red_payload_type=-1, fec_payload_type=-1, nack_enabled=false) at talk/media/webrtc/webrtcvideoengine.cc:3329
+#7  0x02451991 in cricket::WebRtcVideoMediaChannel::SetSendCodecs (this=0xe458fd40, codecs=std::vector of length 1, capacity 1 = {...}) at talk/media/webrtc/webrtcvideoengine.cc:1655
+#8  0x026d2fd0 in cricket::VideoChannel::SetRemoteContent_w (this=0xe45669d8, content=0xe4c495b8, action=cricket::CA_ANSWER) at talk/session/media/channel.cc:2156
+#9  0x026cf626 in cricket::BaseChannel::OnMessage (this=0xe45669d8, pmsg=0xe5cfe16c) at talk/session/media/channel.cc:1400
+#10 0x026d3d94 in cricket::VideoChannel::OnMessage (this=0xe45669d8, pmsg=0xe5cfe16c) at talk/session/media/channel.cc:2387
+#11 0x02432d37 in talk_base::Thread::ReceiveSends (this=0xe9303ba0) at talk/base/thread.cc:451
+#12 0x024105a6 in talk_base::MessageQueue::Get (this=0xe9303ba0, pmsg=0xe5cfe308, cmsWait=-1, process_io=true) at talk/base/messagequeue.cc:200
+#13 0x02432f6a in talk_base::Thread::ProcessMessages (this=0xe9303ba0, cmsLoop=-1) at talk/base/thread.cc:503
+#14 0x024329af in talk_base::Thread::Run (this=0xe9303ba0) at talk/base/thread.cc:365
+#15 0x0243293a in talk_base::Thread::PreRun (pv=0xe9303db0) at talk/base/thread.cc:353
+#16 0x00c19a49 in start_thread () from /lib/libpthread.so.0
+#17 0x00b30aae in clone () from /lib/libc.so.6
+
+
+#0  webrtc::VCMJitterBuffer::SetNackMode (this=0xe45285f8, mode=webrtc::kNoNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1) at webrtc/modules/video_coding/main/source/jitter_buffer.cc:908
+#1  0x02961769 in webrtc::VCMReceiver::SetNackMode (this=0xe45285e4, nackMode=webrtc::kNoNack, low_rtt_nack_threshold_ms=-1, high_rtt_nack_threshold_ms=-1)
+    at webrtc/modules/video_coding/main/source/receiver.cc:269
+#2  0x02951e69 in webrtc::vcm::VideoReceiver::SetVideoProtection (this=0xe4528468, videoProtection=webrtc::kProtectionNack, enable=false) at webrtc/modules/video_coding/main/source/video_receiver.cc:213
+#3  0x0294dee8 in webrtc::(anonymous namespace)::VideoCodingModuleImpl::SetVideoProtection (this=0xe456c628, videoProtection=webrtc::kProtectionNack, enable=false)
+    at webrtc/modules/video_coding/main/source/video_coding_impl.cc:150
+#4  0x0255f95d in webrtc::ViEChannel::SetNACKStatus (this=0xe49fce68, enable=false) at webrtc/video_engine/vie_channel.cc:694
+#5  0x02556090 in webrtc::ViERTP_RTCPImpl::SetNACKStatus (this=0xe4ed485c, video_channel=0, enable=false) at webrtc/video_engine/vie_rtp_rtcp_impl.cc:486
+#6  0x0245c3b4 in cricket::WebRtcVideoMediaChannel::SetNackFec (this=0xe458fd40, channel_id=0, red_payload_type=-1, fec_payload_type=-1, nack_enabled=false) at talk/media/webrtc/webrtcvideoengine.cc:3329
+#7  0x02451991 in cricket::WebRtcVideoMediaChannel::SetSendCodecs (this=0xe458fd40, codecs=std::vector of length 1, capacity 1 = {...}) at talk/media/webrtc/webrtcvideoengine.cc:1655
+#8  0x026d2fd0 in cricket::VideoChannel::SetRemoteContent_w (this=0xe45669d8, content=0xe4c495b8, action=cricket::CA_ANSWER) at talk/session/media/channel.cc:2156
+#9  0x026cf626 in cricket::BaseChannel::OnMessage (this=0xe45669d8, pmsg=0xe5cfe16c) at talk/session/media/channel.cc:1400
+#10 0x026d3d94 in cricket::VideoChannel::OnMessage (this=0xe45669d8, pmsg=0xe5cfe16c) at talk/session/media/channel.cc:2387
+#11 0x02432d37 in talk_base::Thread::ReceiveSends (this=0xe9303ba0) at talk/base/thread.cc:451
+#12 0x024105a6 in talk_base::MessageQueue::Get (this=0xe9303ba0, pmsg=0xe5cfe308, cmsWait=-1, process_io=true) at talk/base/messagequeue.cc:200
+#13 0x02432f6a in talk_base::Thread::ProcessMessages (this=0xe9303ba0, cmsLoop=-1) at talk/base/thread.cc:503
+#14 0x024329af in talk_base::Thread::Run (this=0xe9303ba0) at talk/base/thread.cc:365
+#15 0x0243293a in talk_base::Thread::PreRun (pv=0xe9303db0) at talk/base/thread.cc:353
+#16 0x00c19a49 in start_thread () from /lib/libpthread.so.0
+#17 0x00b30aae in clone () from /lib/libc.so.6
