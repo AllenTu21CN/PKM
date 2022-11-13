@@ -187,8 +187,8 @@ services:
     volumes:
       - ./mariadb:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=tuyajieno1
-      - MYSQL_PASSWORD=tuyajieno1
+      - MYSQL_ROOT_PASSWORD=<pwd>
+      - MYSQL_PASSWORD=<pwd>
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
 

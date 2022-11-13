@@ -33,15 +33,15 @@ external_url 'http://git.mmx2.ml'
 gitlab_rails['smtp_enable'] = true
 gitlab_rails['smtp_address'] = "smtp.163.com"
 gitlab_rails['smtp_port'] = 465
-gitlab_rails['smtp_user_name'] = "tuyajie21cn@163.com"
-gitlab_rails['smtp_password'] = "tuyajie31CN"
+gitlab_rails['smtp_user_name'] = "<email>"
+gitlab_rails['smtp_password'] = "<pwd>"
 gitlab_rails['smtp_domain'] = "163.com"
 gitlab_rails['smtp_authentication'] = "login"
 gitlab_rails['smtp_enable_starttls_auto'] = true
 gitlab_rails['smtp_tls'] = true
 
-gitlab_rails['gitlab_email_from'] = "tuyajie21cn@163.com"
-user["git_user_email"] = "tuyajie21cn@163.com"
+gitlab_rails['gitlab_email_from'] = "<email>"
+user["git_user_email"] = "<email>"
 
 # 发送测试邮件
 gitlab-rails console 

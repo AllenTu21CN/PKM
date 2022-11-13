@@ -107,7 +107,7 @@ DELETE FROM table_name WHERE some_column=some_value;
 
 ```sql
 # 创建用户
-CREATE USER 'webapps'@'127.0.0.1' IDENTIFIED BY 'tuyajieno1';
+CREATE USER 'webapps'@'127.0.0.1' IDENTIFIED BY '<pwd>';
 ```
 
 ## 常用
